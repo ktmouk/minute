@@ -1,0 +1,32 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:testing-library/react",
+    "prettier"
+  ],
+  "rules": {
+    "testing-library/no-manual-cleanup": "off",
+    "@typescript-eslint/consistent-type-imports": "error",
+    "@typescript-eslint/strict-boolean-expressions": "error",
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "CallExpression[callee.object.name='z'][callee.property.name='object']",
+        "message": "Avoid using z.object, use z.strictObject instead."
+      }
+    ]
+  }
+}

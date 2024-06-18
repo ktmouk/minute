@@ -1,0 +1,24 @@
+name: semantic-pr
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+permissions:
+  pull-requests: read
+jobs:
+  run-semantic-pr:
+    timeout-minutes: 10
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Run semantic-pr
+        uses: amannn/action-semantic-pull-request@e9fabac35e210fea40ca5b14c0da95a099eff26f
+        with:
+          subjectPattern: ^(?![A-Z]).+$
+          subjectPatternError: |
+            The subject "{subject}" found in the pull request title "{title}"
+            didn't match the configured pattern. Please ensure that the subject
+            doesn't start with an uppercase character.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

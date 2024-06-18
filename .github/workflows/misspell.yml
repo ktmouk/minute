@@ -1,0 +1,27 @@
+name: misspell
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  run-misspell:
+    timeout-minutes: 10
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab
+
+      - name: Install misspell
+        run: |
+          wget -O - -q https://raw.githubusercontent.com/client9/misspell/c0b55c8239520f6b5aa15a0207ca8b28027ba49e/install-misspell.sh > ./install-misspell.sh
+          echo "050ac939fcd7b6439454c92bb2c9219bf52b330efcb4cbf8b85129495ff267e4  install-misspell.sh" | shasum -a 256 -c
+          cat ./install-misspell.sh | sh -s -- -b .
+          echo "3b04babaa1ad1b8732459ca5abbd562e15d685a935b3a673e776d27318e98a0c  misspell" | shasum -a 256 -c
+
+      - name: Run misspell
+        run: git ls-files --empty-directory | xargs ./misspell -error

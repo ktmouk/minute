@@ -1,0 +1,5 @@
+{
+  "extends": "@minute/tsconfig/library",
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"]
+}

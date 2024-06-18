@@ -1,0 +1,41 @@
+{
+  "name": "@minute/prisma",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./vitest/factories": "./vitest/factories/index.ts",
+    "./vitest/helpers": "./vitest/helpers/index.ts"
+  },
+  "scripts": {
+    "db:generate": "prisma generate",
+    "db:studio": "prisma studio",
+    "db:push": "prisma db push",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:test:push": "dotenv -e .env.test -- prisma db push",
+    "db:test:studio": "dotenv -e .env.test -- prisma studio",
+    "format:fix": "prisma format",
+    "lint": "eslint --max-warnings=0 '**/*.{ts,tsx,js,jsx,mjs}'",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf node_modules .turbo"
+  },
+  "devDependencies": {
+    "@factory-js/factory": "^0.2.1",
+    "@factory-js/prisma-factory": "^0.1.1",
+    "@faker-js/faker": "^8.4.1",
+    "@minute/eslint-config": "workspace:*",
+    "@minute/tsconfig": "workspace:*",
+    "date-fns": "^3.6.0",
+    "dotenv-cli": "^7.4.2",
+    "lint-staged": "^15.2.5",
+    "prisma": "^5.15.0",
+    "typescript": "5.4.5"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.15.0",
+    "server-only": "^0.0.1"
+  }
+}

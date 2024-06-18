@@ -1,0 +1,203 @@
+{
+  "common": {
+    "validation": {
+      "required": "{label}を入力してください",
+      "invalidFormat": "{label}の書式が正しくありません",
+      "timeBefore": "{label1}は{label2}より前の時刻を設定してください",
+      "minSelect": "{label}は最低{min}つ以上選択してください"
+    }
+  },
+  "components": {
+    "SignInForm": {
+      "welcome": "minuteへようこそ",
+      "description": "有意義な時間を増やしましょう！ ⏰",
+      "signInOrUpWithGitHub": "GitHubでログインまたは登録"
+    },
+    "DotLoading": {
+      "loading": "読み込み中"
+    },
+    "AccountMenu": {
+      "totalDuration": "計測した合計",
+      "signOut": "ログアウト"
+    },
+    "SidebarNav": {
+      "timer": "計測する",
+      "calendar": "カレンダーを見る",
+      "reports": "振り返る"
+    },
+    "SidebarTab": {
+      "folders": "フォルダ",
+      "categories": "カテゴリ",
+      "archives": "アーカイブを表示"
+    },
+    "RunningTimeEntryForm": {
+      "addTo": "保存する先",
+      "timerIsRunning": "現在、作業をしています",
+      "timerIsNotRunning": "現在、計測中の作業はありません",
+      "startWorking": "作業をする",
+      "stopWorking": "作業をやめる",
+      "selectFolder": "保存先のフォルダを変更する",
+      "noFolders": "計測を始めるにはフォルダを作成してください",
+      "timerStarted": "計測を開始しました。さっそく作業を始めましょう！",
+      "timerStopped": "計測を終了しました。お疲れさまでした！🎉"
+    },
+    "RunningTimeEntryDescription": {
+      "description": "作業の内容",
+      "placeholder": {
+        "unfocused": "始める作業の内容を入力...",
+        "focused": {
+          "0": "たとえば、〇〇の本を読む、アプリの開発、企画書の作成など...",
+          "1": "入力した内容はいつでも編集できます 😀",
+          "2": "どんな作業を始めるのか楽しみです",
+          "3": "適度な休憩もお忘れなく ☕"
+        }
+      }
+    },
+    "SidebarFolderPanel": {
+      "addNewFolder": "新しいフォルダを追加",
+      "folderCreated": "フォルダを追加しました",
+      "folderMoved": "フォルダを移動しました",
+      "taskMoved": "タスクを移動しました"
+    },
+    "SidebarCategoryPanel": {
+      "addNewCategory": "新しいカテゴリを追加"
+    },
+    "CategoryTreeItem": {
+      "openMenu": "編集、削除など",
+      "editCategory": "編集する",
+      "deleteCategory": "削除する",
+      "confirmDelete": "カテゴリを削除しますか？",
+      "categoryDeleted": "カテゴリを削除しました"
+    },
+    "TaskSuggestionList": {
+      "recentEntries": "最近の記録から選ぶ",
+      "startThis": "この作業をする"
+    },
+    "TimeEntryList": {
+      "new": "追加",
+      "addManually": "手動で追加",
+      "viewInCalendar": "カレンダーで見る",
+      "startSameTask": "同じ作業をする"
+    },
+    "TimeEntryListItem": {
+      "timerStarted": "計測を開始しました。さっそく作業を始めましょう！",
+      "startSameTask": "同じ作業をする"
+    },
+    "FolderSelect": {
+      "selectFolder": "フォルダを選ぶ",
+      "noFolder": "フォルダが存在しません"
+    },
+    "MultipleCategorySelect": {
+      "selectCategory": "カテゴリを選ぶ"
+    },
+    "MultipleFolderSelect": {
+      "selectFolder": "フォルダを選ぶ"
+    },
+    "TaskTreeItem": {
+      "openMenu": "編集、削除など",
+      "editTask": "編集する",
+      "deleteTask": "削除する",
+      "confirmDelete": "タスクを削除しますか？タスクに含まれる記録も同時に削除されます。この操作は取り消しできません",
+      "taskUpdated": "タスクを更新しました",
+      "taskDeleted": "タスクを削除しました"
+    },
+    "FolderTreeItem": {
+      "openMenu": "編集、削除など",
+      "editFolder": "編集する",
+      "deleteFolder": "削除する",
+      "confirmDelete": "フォルダを削除しますか？フォルダに含まれるフォルダや記録も同時に削除されます。この操作は取り消しできません",
+      "folderUpdated": "フォルダを更新しました",
+      "folderDeleted": "フォルダを削除しました"
+    },
+    "InlineFolderForm": {
+      "changeColor": "色を変更",
+      "changeEmoji": "絵文字を変更",
+      "enterFolderName": "フォルダ名を入力..."
+    },
+    "InlineTaskForm": {
+      "enterTaskName": "タスク名を入力..."
+    },
+    "DatePicker": {
+      "selectDate": "日付を選ぶ",
+      "selectStartDate": "開始日を選ぶ",
+      "selectEndDate": "終了日を選ぶ",
+      "next": "次の期間へ",
+      "prev": "前の期間へ"
+    },
+    "CalendarHeader": {
+      "today": "今日"
+    },
+    "CalendarContent": {
+      "timeEntryMoved": "記録を移動しました"
+    },
+    "ChartHeader": {
+      "edit": "編集する"
+    },
+    "ReportHeader": {
+      "beforeWeek": "7日前",
+      "beforeMonth": "30日前",
+      "beforeYear": "1年前",
+      "thisWeek": "今週",
+      "thisMonth": "今月",
+      "prevWeek": "先週",
+      "prevMonth": "先月",
+      "unit": "集計の単位",
+      "fromToday": "今日から",
+      "perDay": "日ごと",
+      "perMonth": "月ごと"
+    },
+    "TimeEntryModal": {
+      "addTo": "保存する先",
+      "editTimeEntry": "記録を編集する",
+      "newTimeEntry": "記録を追加する",
+      "confirmDelete": "記録を削除しますか？この操作は取り消しできません",
+      "startedAt": "開始日時",
+      "stoppedAt": "終了日時",
+      "startDate": "開始日",
+      "endDate": "終了日",
+      "startTime": "開始時刻",
+      "endTime": "終了時刻",
+      "delete": "記録を削除",
+      "description": "タスク名",
+      "descriptionPlaceholder": "どんな作業をしましたか？",
+      "save": "保存",
+      "timeEntryCreated": "記録を追加しました",
+      "timeEntryUpdated": "記録を更新しました",
+      "timeEntryDeleted": "記録を削除しました"
+    },
+    "NewChartButton": {
+      "addNewChart": "新しいチャートを追加"
+    },
+    "ChartModal": {
+      "newChart": "新しいチャートを追加",
+      "editChart": "チャートを編集",
+      "confirmDelete": "チャートを削除しますか？",
+      "delete": "チャートを削除",
+      "save": "保存",
+      "name": "チャート名",
+      "folders": "分析するフォルダ",
+      "categories": "分析するカテゴリ",
+      "multiple": "（複数選択可）",
+      "defaultChartName": "📊 新しいチャート",
+      "chartCreated": "チャートを追加しました",
+      "chartUpdated": "チャートを更新しました",
+      "chartDeleted": "チャートを削除しました"
+    },
+    "CategoryModal": {
+      "newCategory": "新しいカテゴリを追加",
+      "editCategory": "カテゴリを編集",
+      "confirmDelete": "カテゴリを削除しますか？",
+      "delete": "カテゴリを削除",
+      "save": "保存",
+      "name": "カテゴリ名",
+      "emoji": "絵文字",
+      "color": "色",
+      "folders": "含めるフォルダ",
+      "multiple": "（複数選択可）",
+      "defaultCategoryName": "新しいカテゴリ",
+      "categoryCreated": "カテゴリを追加しました",
+      "categoryUpdated": "カテゴリを更新しました",
+      "categoryDeleted": "カテゴリを削除しました"
+    }
+  }
+}

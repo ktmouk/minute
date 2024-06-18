@@ -1,0 +1,53 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Envs
+.env*
+!.env.sample
+!.env.test.sample
+!.env.e2e.sample
+
+# TypeScript
+*.tsbuildinfo
+
+# Dist
+dist
+
+# Turbo
+.turbo
+graph.png
+
+# Testing
+coverage
+
+# Next.js
+.next
+out
+build
+next-env.d.ts
+
+# Prisma
+generated
+
+# Vercel
+.vercel
+
+# Playwright
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/

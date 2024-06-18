@@ -1,0 +1,202 @@
+{
+  "common": {
+    "validation": {
+      "required": "Please enter {label}",
+      "invalidFormat": "The format of {label} is incorrect",
+      "timeBefore": "Please set {label1} to a time before {label2}",
+      "minSelect": "Please select at least {min} {label}"
+    }
+  },
+  "components": {
+    "SignInForm": {
+      "welcome": "Welcome to minute!",
+      "description": "Let's increase your meaningful time. ⏰",
+      "signInOrUpWithGitHub": "Sign in/up with GitHub"
+    },
+    "DotLoading": {
+      "loading": "Loading"
+    },
+    "AccountMenu": {
+      "totalDuration": "Total Duration",
+      "signOut": "Sign out"
+    },
+    "SidebarNav": {
+      "timer": "New Timer",
+      "calendar": "Calendar",
+      "reports": "Reports"
+    },
+    "SidebarTab": {
+      "folders": "Folders",
+      "categories": "Categories",
+      "archives": "View archives"
+    },
+    "RunningTimeEntryForm": {
+      "addTo": "Add To",
+      "timerIsRunning": "Timer is running",
+      "timerIsNotRunning": "Timer is not running",
+      "startWorking": "Start Working",
+      "stopWorking": "Stop Working",
+      "selectFolder": "Select Folder",
+      "noFolders": "Please create a folder to start timer",
+      "timerStarted": "Timer started. Let's get to work!",
+      "timerStopped": "Timer stopped. Good job! 🎉"
+    },
+    "RunningTimeEntryDescription": {
+      "description": "Task description",
+      "placeholder": {
+        "unfocused": "Enter the description of what you're working on...",
+        "focused": {
+          "0": "For example, reading books, developing an app, creating a document, etc...",
+          "1": "You can edit this description at any time 😀",
+          "2": "I'm looking forward to seeing what work you begin!",
+          "3": "Remember to take regular breaks ☕"
+        }
+      }
+    },
+    "SidebarFolderPanel": {
+      "addNewFolder": "Add New Folder",
+      "folderCreated": "Folder added",
+      "folderMoved": "Folder moved",
+      "taskMoved": "Task moved"
+    },
+    "SidebarCategoryPanel": {
+      "addNewCategory": "Add New Category"
+    },
+    "CategoryTreeItem": {
+      "openMenu": "Edit, delete, etc.",
+      "editCategory": "Edit",
+      "deleteCategory": "Delete",
+      "confirmDelete": "Do you want to delete the category?",
+      "categoryDeleted": "Category deleted"
+    },
+    "TaskSuggestionList": {
+      "recentEntries": "Recent Entries",
+      "startThis": "Start This"
+    },
+    "TimeEntryList": {
+      "new": "New",
+      "addManually": "Add Manually",
+      "viewInCalendar": "View In Calendar"
+    },
+    "TimeEntryListItem": {
+      "timerStarted": "Timer started. Let's get to work!",
+      "startSameTask": "Start Same Task"
+    },
+    "FolderSelect": {
+      "selectFolder": "Select Folder",
+      "noFolder": "The folder is not found"
+    },
+    "MultipleCategorySelect": {
+      "selectCategory": "Select Category"
+    },
+    "MultipleFolderSelect": {
+      "selectFolder": "Select Folder"
+    },
+    "TaskTreeItem": {
+      "openMenu": "Edit, delete, etc.",
+      "editTask": "Edit task",
+      "deleteTask": "Delete task",
+      "confirmDelete": "Do you want to delete the task? All time entries within it will also be deleted. This action cannot be undone.",
+      "taskUpdated": "Task updated",
+      "taskDeleted": "Task deleted"
+    },
+    "FolderTreeItem": {
+      "openMenu": "Edit, delete, etc.",
+      "editFolder": "Edit folder",
+      "deleteFolder": "Delete folder",
+      "confirmDelete": "Do you want to delete the folder? All subfolders and files within it will also be deleted. This action cannot be undone.",
+      "folderUpdated": "Folder updated",
+      "folderDeleted": "Folder deleted"
+    },
+    "InlineFolderForm": {
+      "changeColor": "Change Color",
+      "changeEmoji": "Change Emoji",
+      "enterFolderName": "Enter folder name..."
+    },
+    "InlineTaskForm": {
+      "enterTaskName": "Enter task name..."
+    },
+    "DatePicker": {
+      "selectDate": "Select Date",
+      "selectStartDate": "Select Start Date",
+      "selectEndDate": "Select End Date",
+      "next": "Next",
+      "prev": "Previous"
+    },
+    "CalendarHeader": {
+      "today": "Today"
+    },
+    "CalendarContent": {
+      "timeEntryMoved": "Time entry moved"
+    },
+    "ChartHeader": {
+      "edit": "Edit"
+    },
+    "ReportHeader": {
+      "beforeWeek": "7 days",
+      "beforeMonth": "30 days",
+      "beforeYear": "1 year",
+      "thisWeek": "This Week",
+      "thisMonth": "This Month",
+      "prevWeek": "Last Week",
+      "prevMonth": "Last Month",
+      "unit": "Unit",
+      "fromToday": "From Today",
+      "perDay": "Per Day",
+      "perMonth": "Per Month"
+    },
+    "TimeEntryModal": {
+      "addTo": "Add To",
+      "editTimeEntry": "Edit time entry",
+      "newTimeEntry": "Add time entry",
+      "confirmDelete": "Do you want to delete the record? This action cannot be undone.",
+      "startedAt": "Start Date",
+      "stoppedAt": "End Date",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "startTime": "Start Time",
+      "endTime": "End Time",
+      "delete": "Delete Time Entry",
+      "description": "Task description",
+      "descriptionPlaceholder": "What tasks did you do?",
+      "save": "Save",
+      "timeEntryCreated": "Time entry added",
+      "timeEntryUpdated": "Time entry updated",
+      "timeEntryDeleted": "Time entry deleted"
+    },
+    "NewChartButton": {
+      "addNewChart": "Add New Chart"
+    },
+    "ChartModal": {
+      "newChart": "Add new chart",
+      "editChart": "Edit chart",
+      "confirmDelete": "Do you want to delete the chart?",
+      "delete": "Delete Chart",
+      "save": "Save",
+      "name": "Chart Name",
+      "folders": "Folders to Analyze",
+      "categories": "Categories to Analyze",
+      "multiple": "(Multiple Selections)",
+      "defaultChartName": "📊 New Chart",
+      "chartCreated": "Chart added",
+      "chartUpdated": "Chart updated",
+      "chartDeleted": "Chart deleted"
+    },
+    "CategoryModal": {
+      "newCategory": "Add new category",
+      "editCategory": "Edit category",
+      "confirmDelete": "Do you want to delete the category?",
+      "delete": "Delete Category",
+      "save": "Save",
+      "name": "Category name",
+      "emoji": "Emoji",
+      "color": "Color",
+      "folders": "Folders",
+      "multiple": "(Multiple Selections Allowed)",
+      "defaultCategoryName": "New Category",
+      "categoryCreated": "Category added",
+      "categoryUpdated": "Category updated",
+      "categoryDeleted": "Category deleted"
+    }
+  }
+}

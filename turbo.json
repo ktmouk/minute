@@ -1,0 +1,62 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": [
+    "POSTGRES_PRISMA_URL",
+    "POSTGRES_URL_NON_POOLING",
+    "ORIGIN",
+    "NEXTAUTH_URL",
+    "NEXTAUTH_SECRET",
+    "GITHUB_ID",
+    "GITHUB_SECRET",
+    "ALLOWED_IPS",
+    "ALLOWED_GITHUB_IDS",
+    "NODE_ENV"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["@minute/prisma#db:generate", "^build"],
+      "outputs": [".next/**", "!.next/cache/**", "dist/**"]
+    },
+    "dev": {
+      "dependsOn": ["@minute/prisma#db:generate"],
+      "cache": false,
+      "persistent": true
+    },
+    "type-check": {
+      "dependsOn": ["@minute/prisma#db:generate"],
+      "cache": false
+    },
+    "lint": {
+      "dependsOn": ["@minute/prisma#db:generate"],
+      "cache": false
+    },
+    "test:e2e": {
+      "dependsOn": ["@minute/prisma#db:test:push", "build"],
+      "cache": false
+    },
+    "test:unit": {
+      "dependsOn": ["@minute/prisma#db:test:push"],
+      "cache": false
+    },
+    "test:unit:coverage": {
+      "dependsOn": ["@minute/prisma#db:test:push"],
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    },
+    "@minute/prisma#db:generate": {
+      "cache": false
+    },
+    "@minute/prisma#db:test:push": {
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    },
+    "format:fix": {
+      "cache": false
+    }
+  }
+}

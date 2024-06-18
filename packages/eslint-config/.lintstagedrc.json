@@ -1,0 +1,4 @@
+{
+  "*.{md,html,css,scss,json,yml,yaml}": ["prettier -w -u"],
+  "**/*": ["secretlint --maskSecrets"]
+}

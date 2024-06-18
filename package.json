@@ -1,0 +1,38 @@
+{
+  "name": "minute",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev --concurrency 11",
+    "build": "turbo run build",
+    "build:graph": "turbo run build --graph=graph.png",
+    "start": "turbo run start",
+    "test:e2e": "turbo run test:e2e",
+    "test:unit": "turbo run test:unit",
+    "test:unit:coverage": "turbo run test:unit:coverage",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "db:generate": "pnpm -F @minute/prisma db:generate",
+    "db:studio": "pnpm -F @minute/prisma db:studio",
+    "db:push": "pnpm -F @minute/prisma db:push",
+    "db:migrate:dev": "pnpm -F @minute/prisma db:migrate:dev",
+    "db:migrate:deploy": "pnpm -F @minute/prisma db:migrate:deploy",
+    "db:test:studio": "pnpm -F @minute/prisma db:test:studio",
+    "db:test:push": "pnpm -F @minute/prisma db:test:push",
+    "clean": "turbo run clean && rm -rf node_modules",
+    "format": "prettier --ignore-path .gitignore --check .",
+    "format:fix": "turbo run format:fix && prettier --ignore-path .gitignore -w .",
+    "secretlint": "secretlint --secretlintignore .gitignore --maskSecrets '**/*'",
+    "vercel-build": "pnpm run db:generate && pnpm run db:migrate:deploy && pnpm run build",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@secretlint/secretlint-rule-preset-recommend": "^8.2.4",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.5",
+    "prettier": "^3.3.1",
+    "secretlint": "^8.2.4",
+    "turbo": "^2.0.3"
+  },
+  "packageManager": "pnpm@8.15.4"
+}
