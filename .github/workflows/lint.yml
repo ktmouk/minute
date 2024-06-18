@@ -34,9 +34,6 @@ jobs:
       - name: Run format
         run: pnpm run format
 
-      - name: Run generator build
-        run: pnpm -F @minute/prisma-factory build && pnpm i --frozen-lockfile
-
       - name: Run type-check
         run: pnpm exec turbo run type-check
 
