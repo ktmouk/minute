@@ -185,11 +185,11 @@ export const FolderTreeItem = ({
           <div className="flex flex-1 justify-between" ref={setNodeRef}>
             <button
               type="button"
-              className="block w-full px-4 text-sm"
+              className="block flex-1 min-w-0 px-4 text-sm"
               onClick={toggleIsOpen}
             >
               <TreePath depth={depth}>
-                <span title={name} className="flex w-full min-w-0 items-center">
+                <span title={name} className="flex min-w-0 items-center">
                   <TreeItemArrowIcon isOpen={isOpen} />
                   <span style={{ color }} className="mr-2">
                     <PiFolder size={20} />
