@@ -1,5 +1,5 @@
-import { differenceInDays, formatISO, isSameYear } from "date-fns";
-import { useFormatter } from "next-intl";
+import { differenceInDays, formatISO, isSameYear, startOfDay } from "date-fns";
+import { useFormatter, useLocale } from "next-intl";
 import { useMemo } from "react";
 import { PiTimer } from "react-icons/pi";
 import { Duration } from "../_components/Duration";
@@ -13,6 +13,10 @@ type Props = {
   now: Date;
 };
 
+const capitalize = (text: string) => {
+  return `${text.charAt(0).toUpperCase()}${text.slice(1)}`;
+};
+
 export const TimeEntryTreeItem = ({
   depth,
   color,
@@ -21,15 +25,23 @@ export const TimeEntryTreeItem = ({
   now,
 }: Props) => {
   const formatDate = useFormatter();
+  const locale = useLocale();
 
   const readableDate = useMemo(() => {
     return differenceInDays(now, startedAt) < 4
-      ? formatDate.relativeTime(startedAt, { now, unit: "day" })
+      ? capitalize(
+          new Intl.RelativeTimeFormat(locale, {
+            numeric: "auto",
+          }).format(
+            differenceInDays(startOfDay(now), startOfDay(startedAt)),
+            "day",
+          ),
+        )
       : formatDate.dateTime(
           startedAt,
           isSameYear(startedAt, now) ? "short" : "long",
         );
-  }, [formatDate, startedAt, now]);
+  }, [formatDate, startedAt, locale, now]);
 
   const handleClick = () => {
     /** TODO */
