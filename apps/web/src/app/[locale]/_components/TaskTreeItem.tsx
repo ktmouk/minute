@@ -128,7 +128,7 @@ export const TaskTreeItem = ({
       <div className="group flex hover:bg-gray-200">
         <button
           type="button"
-          className="block w-full px-4 text-sm"
+          className="block w-full min-w-0 px-4 text-sm"
           onClick={handleClick}
         >
           <TreePath depth={depth}>
