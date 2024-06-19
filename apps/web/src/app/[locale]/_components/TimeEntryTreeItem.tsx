@@ -33,7 +33,7 @@ export const TimeEntryTreeItem = ({
           new Intl.RelativeTimeFormat(locale, {
             numeric: "auto",
           }).format(
-            differenceInDays(startOfDay(now), startOfDay(startedAt)),
+            differenceInDays(startOfDay(startedAt), startOfDay(now)),
             "day",
           ),
         )
