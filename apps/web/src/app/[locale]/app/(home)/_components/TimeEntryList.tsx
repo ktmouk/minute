@@ -60,7 +60,7 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
       new Intl.RelativeTimeFormat(locale, {
         numeric: "auto",
       }).format(
-        differenceInDays(startOfDay(new Date()), startOfDay(date)),
+        differenceInDays(startOfDay(date), startOfDay(new Date())),
         "day",
       ),
     );
