@@ -4,7 +4,7 @@ export const CalendarRowLines = () => {
   return (
     <div aria-hidden className="flex flex-col flex-1 h-full w-14">
       {R.times(24, (hour) => {
-        const padded = `${`${hour}`.padStart(2, "0")}:00`;
+        const padded = `${hour.toString().padStart(2, "0")}:00`;
         return (
           <span
             key={hour}

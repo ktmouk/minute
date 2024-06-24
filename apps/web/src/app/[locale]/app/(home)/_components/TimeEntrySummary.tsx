@@ -55,7 +55,7 @@ export const TimeEntrySummary = ({ date }: Props) => {
                   <li
                     style={{
                       backgroundColor: color,
-                      width: `${(Number(duration) / totalDuration) * 100}%`,
+                      width: `${((Number(duration) / totalDuration) * 100).toString()}%`,
                     }}
                     className="inline-block transition-all h-full"
                     key={id}
@@ -64,7 +64,7 @@ export const TimeEntrySummary = ({ date }: Props) => {
                       side="top"
                       sideOffset={4}
                       delayDuration={30}
-                      content={`${emoji} ${name}: ${fromS(Number(duration), "hh:mm:ss")} ${Math.round((Number(duration) / totalDuration) * 100)}%`}
+                      content={`${emoji} ${name}: ${fromS(Number(duration), "hh:mm:ss")} ${Math.round((Number(duration) / totalDuration) * 100).toString()}%`}
                     >
                       <span className="h-full w-full items-center justify-center cursor-pointer group-hover:visible invisible inline-flex text-sm" />
                     </Tooltip>

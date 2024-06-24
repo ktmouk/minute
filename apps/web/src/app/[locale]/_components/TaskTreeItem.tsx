@@ -114,7 +114,7 @@ export const TaskTreeItem = ({
   }
 
   const transformStyle = transform
-    ? `translate(${transform.x}px, ${transform.y}px)`
+    ? `translate(${transform.x.toString()}px, ${transform.y.toString()}px)`
     : undefined;
 
   return (
