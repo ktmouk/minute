@@ -13,9 +13,6 @@
       "description": "Let's increase your meaningful time. ⏰",
       "signInOrUpWithGitHub": "Sign in/up with GitHub"
     },
-    "DotLoading": {
-      "loading": "Loading"
-    },
     "AccountMenu": {
       "totalDuration": "Total Duration",
       "signOut": "Sign out"

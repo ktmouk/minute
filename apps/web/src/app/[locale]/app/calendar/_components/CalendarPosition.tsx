@@ -34,11 +34,11 @@ const CalendarPosition = ({
   return (
     <>
       {children?.({
-        top: `${getPercent(clampByDate(startDate), baseDate)}%`,
-        left: `${offsetPercent}%`,
-        width: `${100 - offsetPercent}%`,
+        top: `${getPercent(clampByDate(startDate), baseDate).toString()}%`,
+        left: `${offsetPercent.toString()}%`,
+        width: `${(100 - offsetPercent).toString()}%`,
         height: endDate
-          ? `${getPercent(clampByDate(endDate), clampByDate(startDate))}%`
+          ? `${getPercent(clampByDate(endDate), clampByDate(startDate)).toString()}%`
           : undefined,
       })}
     </>

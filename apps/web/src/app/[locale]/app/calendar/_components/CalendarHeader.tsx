@@ -23,7 +23,7 @@ export const CalendarHeader = ({ date, today }: Props) => {
     isHighlighted: boolean;
   }) => {
     router.push(
-      `/app/calendar?date=${format(date, "yyyy-MM-dd")}&isHighlighted=${isHighlighted}`,
+      `/app/calendar?date=${format(date, "yyyy-MM-dd")}&isHighlighted=${isHighlighted ? "true" : "false"}`,
     );
   };
 

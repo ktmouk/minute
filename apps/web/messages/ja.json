@@ -13,9 +13,6 @@
       "description": "有意義な時間を増やしましょう！ ⏰",
       "signInOrUpWithGitHub": "GitHubでログインまたは登録"
     },
-    "DotLoading": {
-      "loading": "読み込み中"
-    },
     "AccountMenu": {
       "totalDuration": "計測した合計",
       "signOut": "ログアウト"

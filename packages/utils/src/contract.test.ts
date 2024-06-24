@@ -15,7 +15,7 @@ describe("omitUndefined", () => {
             baz: z.string(),
           }),
         },
-        ({ foo, bar }) => ({ baz: `${foo}${bar}` }),
+        ({ foo, bar }) => ({ baz: `${foo}${bar.toString()}` }),
       );
       expect(execute({ foo: "foo", bar: 123 })).toStrictEqual({
         baz: "foo123",
@@ -35,7 +35,7 @@ describe("omitUndefined", () => {
             baz: z.string(),
           }),
         },
-        ({ foo, bar }) => ({ baz: `${foo}${bar}` }),
+        ({ foo, bar }) => ({ baz: `${foo}${bar.toString()}` }),
       );
       expect(() =>
         // @ts-expect-error throws a type error
