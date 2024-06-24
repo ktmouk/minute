@@ -8,6 +8,10 @@
         "@tanstack/react-query-devtools"
       ],
       "allowedVersions": "<5"
+    },
+    {
+      "matchPackageNames": ["eslint"],
+      "allowedVersions": "<9"
     }
   ]
 }
