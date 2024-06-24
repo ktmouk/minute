@@ -21,9 +21,9 @@ export const CalendarEvent = ({
       <div
         className="py-1 px-1.5 w-full h-full text-left border-l-2"
         style={{
-          backgroundColor: `${chroma(color).mix(chroma("white"), 0.65).hex()}`,
-          borderLeftColor: `${chroma(color).hex()}`,
-          color: `${chroma(color).darken(0.7).hex()}`,
+          backgroundColor: chroma(color).mix(chroma("white"), 0.65).hex(),
+          borderLeftColor: chroma(color).hex(),
+          color: chroma(color).darken(0.7).hex(),
         }}
       >
         <span className="mr-1 break-all">
@@ -32,7 +32,7 @@ export const CalendarEvent = ({
         <span
           className="font-mono text-white whitespace-normal rounded-sm md:whitespace-nowrap"
           style={{
-            color: `${chroma(color).darken(0.7).hex()}`,
+            color: chroma(color).darken(0.7).hex(),
           }}
         >
           {format(startDate, "HH:mm")} - {format(endDate, "HH:mm")}
