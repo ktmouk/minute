@@ -20,7 +20,7 @@ jobs:
         uses: pnpm/action-setup@a3252b78c470c02df07e9d59298aecedc3ccdd6d
 
       - name: Setup node.js
-        uses: actions/setup-node@64ed1c7eab4cce3362f8c340dee64e5eaeef8f7c
+        uses: actions/setup-node@eff380dfbcf941bf8832e4acb788cebe13dfd758
         with:
           node-version-file: ".nvmrc"
           cache: pnpm
