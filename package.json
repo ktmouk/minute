@@ -20,8 +20,8 @@
     "db:test:studio": "pnpm -F @minute/prisma db:test:studio",
     "db:test:push": "pnpm -F @minute/prisma db:test:push",
     "clean": "turbo run clean && rm -rf node_modules",
-    "format": "prettier --ignore-path .gitignore --check .",
-    "format:fix": "turbo run format:fix && prettier --ignore-path .gitignore -w .",
+    "format": "prettier --check .",
+    "format:fix": "turbo run format:fix && prettier -w .",
     "secretlint": "secretlint --secretlintignore .gitignore --maskSecrets '**/*'",
     "vercel-build": "pnpm run db:generate && pnpm run db:migrate:deploy && pnpm run build",
     "prepare": "husky"
