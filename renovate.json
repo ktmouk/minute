@@ -1,4 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:weekly", "group:allNonMajor"]
+  "extends": ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@tanstack/react-query",
+        "@tanstack/react-query-devtools"
+      ],
+      "allowedVersions": "<5"
+    }
+  ]
 }
