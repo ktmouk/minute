@@ -28,13 +28,13 @@ jobs:
           --health-retries 5
     steps:
       - name: Checkout
-        uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+        uses: actions/checkout@v4
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@23657c8550e9be4f7ee7e9d7fe8adda6d703bb4e
+        uses: pnpm/action-setup@v4
 
       - name: Setup node.js
-        uses: actions/setup-node@eff380dfbcf941bf8832e4acb788cebe13dfd758
+        uses: actions/setup-node@v4
         with:
           node-version-file: ".nvmrc"
           cache: pnpm
