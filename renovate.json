@@ -1,7 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:weekly", "group:allNonMajor"],
+  "extends": [
+    "config:recommended",
+    "schedule:weekly",
+    "group:allNonMajor",
+    "helpers:pinGitHubActionDigests"
+  ],
   "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "groupName": "dev dependencies"
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "github actions"
+    },
     {
       "matchPackageNames": [
         "@tanstack/react-query",
