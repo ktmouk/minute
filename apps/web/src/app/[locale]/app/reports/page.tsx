@@ -1,62 +1,36 @@
-import {
-  addDays,
-  endOfDay,
-  isBefore,
-  isSameDay,
-  isValid,
-  startOfDay,
-  toDate,
-} from "date-fns";
+import { isBefore, isSameDay, isValid, toDate } from "date-fns";
 import { z } from "zod";
-import { ChartList } from "./_components/ChartList";
-import { ReportHeader } from "./_components/ReportHeader";
+import { ReportContainer } from "./_components/ReportContainer";
 
 const Page = ({ searchParams }: { searchParams: unknown }) => {
-  const today = new Date();
-
-  const { datePart, startDate, endDate } = z
+  const { datePart, dateRange } = z
     .strictObject({
-      startDate: z.string(),
-      endDate: z.string(),
+      startDate: z.string().optional(),
+      endDate: z.string().optional(),
       datePart: z.enum(["day", "month"]),
     })
     .transform(({ startDate, endDate, datePart }) => ({
-      startDate: toDate(startDate),
-      endDate: toDate(endDate),
+      dateRange:
+        typeof startDate === "string" && typeof endDate === "string"
+          ? { start: toDate(startDate), end: toDate(endDate) }
+          : undefined,
       datePart,
     }))
     .refine(
-      ({ startDate, endDate }) =>
-        isValid(startDate) &&
-        isValid(endDate) &&
-        (isSameDay(startDate, endDate) || isBefore(startDate, endDate)),
+      ({ dateRange }) =>
+        dateRange !== undefined &&
+        isValid(dateRange.start) &&
+        isValid(dateRange.end) &&
+        (isSameDay(dateRange.start, dateRange.end) ||
+          isBefore(dateRange.start, dateRange.end)),
     )
     .catch(() => ({
-      startDate: addDays(today, -7),
-      endDate: today,
+      dateRange: undefined,
       datePart: "day" as const,
     }))
     .parse(searchParams);
 
-  return (
-    <div className="flex-1 h-full p-6 max-w-5xl">
-      <div className="border-b-gray-300 pb-4">
-        <ReportHeader
-          datePart={datePart}
-          startDate={startDate}
-          endDate={endDate}
-          today={today}
-        />
-      </div>
-      <div className="mt-4">
-        <ChartList
-          startDate={startOfDay(startDate)}
-          endDate={endOfDay(endDate)}
-          datePart={datePart}
-        />
-      </div>
-    </div>
-  );
+  return <ReportContainer datePart={datePart} dateRange={dateRange} />;
 };
 
 export default Page;
