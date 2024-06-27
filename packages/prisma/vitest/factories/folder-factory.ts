@@ -18,12 +18,11 @@ export const folderFactory = defineFolderFactory(db)
       vars: {
         parent: () => null,
       },
-      after: async (folder) => {
+      after: async (folder, { user }) => {
         await folderHierarchyFactory
           .props({ depth: () => 1 })
           .vars({
-            user: async () =>
-              await db.user.findUniqueOrThrow({ where: { id: folder.userId } }),
+            user: () => user,
             descendant: () => folder,
             ancestor: () => null,
           })
@@ -35,12 +34,9 @@ export const folderFactory = defineFolderFactory(db)
       vars: {
         parent: () => ancestor,
       },
-      after: async (folder) => {
-        const user = await db.user.findUniqueOrThrow({
-          where: { id: folder.userId },
-        });
+      after: async (folder, { user }) => {
         const hierarchies = await db.folderHierarchy.findMany({
-          where: { userId: user.id, descendantId: ancestor.id },
+          where: { userId: (await user).id, descendantId: ancestor.id },
           include: { ancestor: true },
         });
         await Promise.all(
