@@ -96,7 +96,9 @@
       "deleteTask": "削除する",
       "confirmDelete": "タスクを削除しますか？タスクに含まれる記録も同時に削除されます。この操作は取り消しできません",
       "taskUpdated": "タスクを更新しました",
-      "taskDeleted": "タスクを削除しました"
+      "taskDeleted": "タスクを削除しました",
+      "timerStarted": "計測を開始しました。さっそく作業を始めましょう！",
+      "startThisTask": "このタスクを開始"
     },
     "FolderTreeItem": {
       "openMenu": "編集、削除など",

@@ -86,7 +86,7 @@ export const CategoryTreeItem = ({
           <div className="relative">
             <Menu>
               <Tooltip sideOffset={3} side="top" content={t("openMenu")}>
-                <MenuButton className="px-3 focus:bg-gray-200 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
+                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
                   <PiDotsThreeBold />
                 </MenuButton>
               </Tooltip>
