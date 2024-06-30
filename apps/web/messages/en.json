@@ -95,7 +95,9 @@
       "deleteTask": "Delete task",
       "confirmDelete": "Do you want to delete the task? All time entries within it will also be deleted. This action cannot be undone.",
       "taskUpdated": "Task updated",
-      "taskDeleted": "Task deleted"
+      "taskDeleted": "Task deleted",
+      "timerStarted": "Timer started. Let's get to work!",
+      "startThisTask": "Start This Task"
     },
     "FolderTreeItem": {
       "openMenu": "Edit, delete, etc.",

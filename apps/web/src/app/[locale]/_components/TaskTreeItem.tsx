@@ -2,7 +2,14 @@ import { useDraggable } from "@dnd-kit/core";
 import { Menu, MenuButton, MenuItems, MenuItem } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { PiDotsThreeBold, PiFile, PiNotePencil, PiTrash } from "react-icons/pi";
+import {
+  PiDotsThreeBold,
+  PiFile,
+  PiNotePencil,
+  PiPlayBold,
+  PiTrash,
+} from "react-icons/pi";
+import * as R from "remeda";
 import { tv } from "tailwind-variants";
 import { TreeItemArrowIcon } from "../_components/TreeItemArrowIcon";
 import { trpc } from "../_components/TrpcProvider";
@@ -14,6 +21,7 @@ import { TreePath } from "./TreePath";
 
 type Props = {
   id: string;
+  folderId: string;
   description: string;
   depth: number;
   now: Date;
@@ -32,10 +40,21 @@ const listStyle = tv({
   },
 });
 
+const startButtonStyle = tv({
+  base: "text-green-500 px-2.5 focus:bg-gray-200 hover:bg-gray-300 opacity-0",
+  variants: {
+    isRunning: {
+      false:
+        "group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100",
+    },
+  },
+});
+
 export const TaskTreeItem = ({
   id,
   color,
   depth,
+  folderId,
   description,
   now,
   invisibleId,
@@ -50,6 +69,17 @@ export const TaskTreeItem = ({
     { taskId: id },
     { enabled: isOpen },
   );
+
+  const runningTimeEntry = trpc.runningTimeEntry.getRunningTimeEntry.useQuery();
+  const isRunning = !R.isNullish(runningTimeEntry.data);
+
+  const startRunningTimeEntry =
+    trpc.runningTimeEntry.startRunningTimeEntry.useMutation({
+      onSuccess: async () => {
+        notify(t("timerStarted"));
+        await utils.runningTimeEntry.getRunningTimeEntry.invalidate();
+      },
+    });
 
   const { setNodeRef, isDragging, listeners, attributes, transform } =
     useDraggable({
@@ -145,10 +175,27 @@ export const TaskTreeItem = ({
           </TreePath>
         </button>
         {!isDragging && (
-          <div className="relative">
+          <div className="flex relative">
+            <Tooltip sideOffset={3} side="top" content={t("startThisTask")}>
+              <button
+                type="button"
+                disabled={isRunning}
+                className={startButtonStyle({ isRunning })}
+                onClick={() =>
+                  void startRunningTimeEntry.mutateAsync({
+                    folderId,
+                    description,
+                    startedAt: new Date(),
+                  })
+                }
+              >
+                <PiPlayBold size={14} />
+              </button>
+            </Tooltip>
+
             <Menu>
               <Tooltip sideOffset={3} side="top" content={t("openMenu")}>
-                <MenuButton className="px-3 focus:bg-gray-200 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
+                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
                   <PiDotsThreeBold />
                 </MenuButton>
               </Tooltip>
