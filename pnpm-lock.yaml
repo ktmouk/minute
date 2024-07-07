@@ -42,11 +42,11 @@ importers:
         specifier: ^1.1.1
         version: 1.1.1(emoji-mart@5.6.0)(react@18.3.1)
       '@headlessui/react':
-        specifier: 2.1.1
-        version: 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 2.1.2
+        version: 2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers':
         specifier: ^3.6.0
-        version: 3.7.0(react-hook-form@7.52.1(react@18.3.1))
+        version: 3.9.0(react-hook-form@7.52.1(react@18.3.1))
       '@minute/prisma':
         specifier: workspace:*
         version: link:../../packages/prisma
@@ -133,7 +133,7 @@ importers:
         version: 2.12.7(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       remeda:
         specifier: ^2.0.8
-        version: 2.2.2
+        version: 2.3.0
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -346,7 +346,7 @@ importers:
         version: 3.6.0
       remeda:
         specifier: ^2.0.8
-        version: 2.2.2
+        version: 2.3.0
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -438,7 +438,7 @@ importers:
     dependencies:
       remeda:
         specifier: ^2.0.8
-        version: 2.2.2
+        version: 2.3.0
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -792,23 +792,11 @@ packages:
     resolution: {integrity: sha512-XQ3cU+Q8Uqmrbf2e0cIC/QN43sTBSC8KF12u29Mb47tWrt2hAgBXSgpZMj4Ao8Uk0iJcU99QsOCaIL8934obCg==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0, npm: '>=6.14.13'}
 
-  '@floating-ui/core@1.6.2':
-    resolution: {integrity: sha512-+2XpQV9LLZeanU4ZevzRnGFg2neDeKHgFLjP6YLW+tly0IvrhqT4u8enLGjLH3qeh85g19xY5rsAusfwTdn5lg==}
-
   '@floating-ui/core@1.6.3':
     resolution: {integrity: sha512-1ZpCvYf788/ZXOhRQGFxnYQOVgeU+pi0i+d0Ow34La7qjIXETi6RNswGVKkA6KcDO8/+Ysu2E/CeUmmeEBDvTg==}
 
-  '@floating-ui/dom@1.6.5':
-    resolution: {integrity: sha512-Nsdud2X65Dz+1RHjAIP0t8z5e2ff/IRbei6BqFrl1urT8sDVzM1HMQ+R0XcU5ceRfyO3I6ayeqIfh+6Wb8LGTw==}
-
   '@floating-ui/dom@1.6.6':
     resolution: {integrity: sha512-qiTYajAnh3P+38kECeffMSQgbvXty2VB6rS+42iWR4FPIlZjLK84E9qtLnMTLIpPz2znD/TaFqaiavMUrS+Hcw==}
-
-  '@floating-ui/react-dom@2.1.0':
-    resolution: {integrity: sha512-lNzj5EQmEKn5FFKc04+zasr09h/uX8RtJRNj5gUXsSQIXHVWTVh+hVAg1vOMCexkX8EgvemMvIFpQfkosnVNyA==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
 
   '@floating-ui/react-dom@2.1.1':
     resolution: {integrity: sha512-4h84MJt3CHrtG18mGsXuLCHMrug49d7DFkU0RMIyshRveBeyV2hmV/pDaF2Uxtu8kgq5r46llp5E5FQiR0K2Yg==}
@@ -821,9 +809,6 @@ packages:
     peerDependencies:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
-
-  '@floating-ui/utils@0.2.2':
-    resolution: {integrity: sha512-J4yDIIthosAsRZ5CPYP/jQvUAQtlZTTD/4suA08/FEnlxqW3sKS9iAhgsa9VYLZ6vDHn/ixJgIqRQPotoBjxIw==}
 
   '@floating-ui/utils@0.2.3':
     resolution: {integrity: sha512-XGndio0l5/Gvd6CLIABvsav9HHezgDFFhDfHk1bvLfr9ni8dojqLSvBbotJEjmIwNHL7vK4QzBJTdBRoB+c1ww==}
@@ -846,8 +831,8 @@ packages:
   '@formatjs/intl-localematcher@0.5.4':
     resolution: {integrity: sha512-zTwEpWOzZ2CiKcB93BLngUX59hQkuZjT2+SAQEscSm52peDW/getsawMcWF1rGRpMCX6D7nSJA3CzJ8gn13N/g==}
 
-  '@headlessui/react@2.1.1':
-    resolution: {integrity: sha512-808gVNUbRDbDR3GMNPHy+ON0uvR8b9H7IA+Q2UbhOsNCIjgwuwb2Iuv8VPT/1AW0UzLX8g10tN6LhF15GaUJCQ==}
+  '@headlessui/react@2.1.2':
+    resolution: {integrity: sha512-Kb3hgk9gRNRcTZktBrKdHhF3xFhYkca1Rk6e1/im2ENf83dgN54orMW0uSKTXFnUpZOUFZ+wcY05LlipwgZIFQ==}
     engines: {node: '>=10'}
     peerDependencies:
       react: ^18
@@ -859,8 +844,8 @@ packages:
     peerDependencies:
       tailwindcss: ^3.0
 
-  '@hookform/resolvers@3.7.0':
-    resolution: {integrity: sha512-42p5X18noBV3xqOpTlf2V5qJZwzNgO4eLzHzmKGh/w7z4+4XqRw5AsESVkqE+qwAuRRlg2QG12EVEjPkrRIbeg==}
+  '@hookform/resolvers@3.9.0':
+    resolution: {integrity: sha512-bU0Gr4EepJ/EQsH/IwEzYLsT/PEj5C0ynLQ4m+GSHS+xKH4TfSelhluTgOaoc4kA5s7eCsQbM4wvZLzELmWzUg==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -1468,14 +1453,14 @@ packages:
       react-native:
         optional: true
 
-  '@tanstack/react-virtual@3.5.0':
-    resolution: {integrity: sha512-rtvo7KwuIvqK9zb0VZ5IL7fiJAEnG+0EiFZz8FUOs+2mhGqdGmjKIaT1XU7Zq0eFqL0jonLlhbayJI/J2SA/Bw==}
+  '@tanstack/react-virtual@3.8.1':
+    resolution: {integrity: sha512-dP5a7giEM4BQWLJ7K07ToZv8rF51mzbrBMkf0scg1QNYuFx3utnPUBPUHdzaowZhIez1K2XS78amuzD+YGRA5Q==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
 
-  '@tanstack/virtual-core@3.5.0':
-    resolution: {integrity: sha512-KnPRCkQTyqhanNC0K63GBG3wA8I+D1fQuVnAvcBF8f13akOKeQp1gSbu6f77zCxhEk727iV5oQnbHLYzHrECLg==}
+  '@tanstack/virtual-core@3.8.1':
+    resolution: {integrity: sha512-uNtAwenT276M9QYCjTBoHZ8X3MUeCRoGK59zPi92hMIxdfS9AyHjkDWJ94WroDxnv48UE+hIeo21BU84jKc8aQ==}
 
   '@textlint/ast-node-types@12.6.1':
     resolution: {integrity: sha512-uzlJ+ZsCAyJm+lBi7j0UeBbj+Oy6w/VWoGJ3iHRHE5eZ8Z4iK66mq+PG/spupmbllLtz77OJbY89BYqgFyjXmA==}
@@ -3544,8 +3529,8 @@ packages:
     resolution: {integrity: sha512-NcDiDkTLuPR+++OCKB0nWafEmhg/Da8aUPLPMQbK+bxKKCm1/S5he+AqYa4PlMCVBalb4/yxIRub6qkEx5yJbw==}
     engines: {node: '>= 0.4'}
 
-  remeda@2.2.2:
-    resolution: {integrity: sha512-mPVhqJ39G+Yb6fljuNjdcUMY+leZ9Jz+3KUnvVTysIz4HSpKsBgoiEsNnYzmFPNjTRRNqL+Uhia0tCgKuRL6jw==}
+  remeda@2.3.0:
+    resolution: {integrity: sha512-J9djcCyFL9D1ZGnfiNJ6MMhcUT8BmNCT+dj2SApdrTNz+CxqW1dScPVaDCopivHTShiYXh4sRSPYKMzlGrgyQw==}
 
   remove-accents@0.5.0:
     resolution: {integrity: sha512-8g3/Otx1eJaVD12e31UbJj1YzdtVvzH85HV7t+9MJYk/u3XmkOUJ5Ys9wQrf9PCPK8+xn4ymzqYCiZl6QWKn+A==}
@@ -4548,29 +4533,14 @@ snapshots:
 
   '@faker-js/faker@8.4.1': {}
 
-  '@floating-ui/core@1.6.2':
-    dependencies:
-      '@floating-ui/utils': 0.2.2
-
   '@floating-ui/core@1.6.3':
     dependencies:
       '@floating-ui/utils': 0.2.3
-
-  '@floating-ui/dom@1.6.5':
-    dependencies:
-      '@floating-ui/core': 1.6.2
-      '@floating-ui/utils': 0.2.2
 
   '@floating-ui/dom@1.6.6':
     dependencies:
       '@floating-ui/core': 1.6.3
       '@floating-ui/utils': 0.2.3
-
-  '@floating-ui/react-dom@2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
-    dependencies:
-      '@floating-ui/dom': 1.6.5
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   '@floating-ui/react-dom@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -4580,13 +4550,11 @@ snapshots:
 
   '@floating-ui/react@0.26.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@floating-ui/utils': 0.2.2
+      '@floating-ui/react-dom': 2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@floating-ui/utils': 0.2.3
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
       tabbable: 6.2.0
-
-  '@floating-ui/utils@0.2.2': {}
 
   '@floating-ui/utils@0.2.3': {}
 
@@ -4618,12 +4586,12 @@ snapshots:
     dependencies:
       tslib: 2.6.3
 
-  '@headlessui/react@2.1.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@headlessui/react@2.1.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       '@floating-ui/react': 0.26.17(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@react-aria/focus': 3.17.1(react@18.3.1)
       '@react-aria/interactions': 3.21.3(react@18.3.1)
-      '@tanstack/react-virtual': 3.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@tanstack/react-virtual': 3.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
@@ -4631,7 +4599,7 @@ snapshots:
     dependencies:
       tailwindcss: 3.4.4
 
-  '@hookform/resolvers@3.7.0(react-hook-form@7.52.1(react@18.3.1))':
+  '@hookform/resolvers@3.9.0(react-hook-form@7.52.1(react@18.3.1))':
     dependencies:
       react-hook-form: 7.52.1(react@18.3.1)
 
@@ -5182,13 +5150,13 @@ snapshots:
     optionalDependencies:
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/react-virtual@3.5.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@tanstack/react-virtual@3.8.1(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@tanstack/virtual-core': 3.5.0
+      '@tanstack/virtual-core': 3.8.1
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
 
-  '@tanstack/virtual-core@3.5.0': {}
+  '@tanstack/virtual-core@3.8.1': {}
 
   '@textlint/ast-node-types@12.6.1': {}
 
@@ -7640,7 +7608,7 @@ snapshots:
       es-errors: 1.3.0
       set-function-name: 2.0.2
 
-  remeda@2.2.2:
+  remeda@2.3.0:
     dependencies:
       type-fest: 4.21.0
 
