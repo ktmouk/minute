@@ -32,15 +32,15 @@
       "cache": false
     },
     "test:e2e": {
-      "dependsOn": ["@minute/prisma#db:test:push", "build"],
+      "dependsOn": ["@minute/prisma#db:test:reset", "build"],
       "cache": false
     },
     "test:unit": {
-      "dependsOn": ["@minute/prisma#db:test:push"],
+      "dependsOn": ["@minute/prisma#db:test:reset"],
       "cache": false
     },
     "test:unit:coverage": {
-      "dependsOn": ["@minute/prisma#db:test:push"],
+      "dependsOn": ["@minute/prisma#db:test:reset"],
       "cache": false
     },
     "start": {
@@ -49,7 +49,7 @@
     "@minute/prisma#db:generate": {
       "cache": false
     },
-    "@minute/prisma#db:test:push": {
+    "@minute/prisma#db:test:reset": {
       "cache": false
     },
     "clean": {
