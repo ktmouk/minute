@@ -15,6 +15,7 @@
     "db:push": "prisma db push",
     "db:migrate:dev": "prisma migrate dev",
     "db:migrate:deploy": "prisma migrate deploy",
+    "db:test:reset": "dotenv -e .env.test -- prisma db push --force-reset",
     "db:test:push": "dotenv -e .env.test -- prisma db push",
     "db:test:studio": "dotenv -e .env.test -- prisma studio",
     "format:fix": "prisma format",
