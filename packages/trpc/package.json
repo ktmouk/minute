@@ -15,12 +15,12 @@
   "devDependencies": {
     "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^1.6.0",
+    "@vitest/coverage-v8": "^2.0.0",
     "date-fns": "^3.6.0",
     "dotenv-cli": "^7.4.2",
     "lint-staged": "^15.2.5",
     "typescript": "5.5.3",
-    "vitest": "^1.6.0"
+    "vitest": "^2.0.0"
   },
   "dependencies": {
     "@minute/prisma": "workspace:*",
