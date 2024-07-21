@@ -24,7 +24,7 @@
     "clean": "rm -rf node_modules .turbo"
   },
   "devDependencies": {
-    "@factory-js/factory": "^0.3.0",
+    "@factory-js/factory": "^0.4.0",
     "@factory-js/prisma-factory": "^0.2.0",
     "@faker-js/faker": "^8.4.1",
     "@minute/eslint-config": "workspace:*",
