@@ -1,3 +1,5 @@
+import "server-only";
+
 import { folderHierarchySchema } from "@minute/schemas";
 import { getFolderHierarchies } from "@minute/services";
 import { z } from "zod";

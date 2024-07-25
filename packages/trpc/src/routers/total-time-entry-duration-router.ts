@@ -1,3 +1,5 @@
+import "server-only";
+
 import { getTotalTimeEntryDuration } from "@minute/services";
 import { z } from "zod";
 import { protectedProcedure } from "../procedures";

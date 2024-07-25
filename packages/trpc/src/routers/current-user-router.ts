@@ -1,3 +1,5 @@
+import "server-only";
+
 import { userSchema } from "@minute/schemas";
 import { getUser } from "@minute/services";
 import { protectedProcedure } from "../procedures";

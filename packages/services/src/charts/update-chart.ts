@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PrismaClient } from "@minute/prisma";
 import { MAX_CHART_NAME, MIN_CHART_NAME } from "@minute/schemas";
 import { contract, omitUndefined } from "@minute/utils";

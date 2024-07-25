@@ -1,3 +1,5 @@
+import "server-only";
+
 import { timeEntrySummarySchema } from "@minute/schemas";
 import { getTimeEntrySummary } from "@minute/services";
 import { z } from "zod";

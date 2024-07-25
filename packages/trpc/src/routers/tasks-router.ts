@@ -1,3 +1,5 @@
+import "server-only";
+
 import { taskSchema } from "@minute/schemas";
 import {
   deleteTask,

@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PrismaClient } from "@minute/prisma";
 import { MAX_TASK_DESCRIPTION, MIN_TASK_DESCRIPTION } from "@minute/schemas";
 import { contract } from "@minute/utils";

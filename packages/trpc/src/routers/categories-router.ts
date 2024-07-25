@@ -1,3 +1,5 @@
+import "server-only";
+
 import { categoryFolderSchema, categorySchema } from "@minute/schemas";
 import {
   createCategory,

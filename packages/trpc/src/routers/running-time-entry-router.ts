@@ -1,3 +1,5 @@
+import "server-only";
+
 import { runningTimeEntrySchema } from "@minute/schemas";
 import {
   createRunningTimeEntry,

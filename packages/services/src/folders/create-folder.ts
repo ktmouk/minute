@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { Prisma, PrismaClient } from "@minute/prisma";
 import { MIN_FOLDER_NAME, MAX_FOLDER_NAME } from "@minute/schemas";
 import {
