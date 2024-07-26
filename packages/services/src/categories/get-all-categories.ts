@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PrismaClient } from "@minute/prisma";
 import { categoryFolderSchema, categorySchema } from "@minute/schemas";
 import { contract } from "@minute/utils";

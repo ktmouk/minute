@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PrismaClient } from "@minute/prisma";
 import { contract } from "@minute/utils";
 import { z } from "zod";

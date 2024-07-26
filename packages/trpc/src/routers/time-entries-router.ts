@@ -1,3 +1,5 @@
+import "server-only";
+
 import { folderSchema, taskSchema, timeEntrySchema } from "@minute/schemas";
 import {
   createTimeEntry,

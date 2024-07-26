@@ -1,3 +1,5 @@
+import "server-only";
+
 import type { PrismaClient } from "@minute/prisma";
 import {
   MIN_CATEGORY_NAME,

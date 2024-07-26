@@ -1,3 +1,5 @@
+import "server-only";
+
 import { folderSchema } from "@minute/schemas";
 import {
   createFolder,
