@@ -1,3 +1,4 @@
 {
+  "framework": "nextjs",
   "buildCommand": "cd ../.. && pnpm run vercel-build"
 }
