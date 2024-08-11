@@ -27,7 +27,7 @@ In contrast to other time tracking apps, Minute is mainly focused on individual 
 
 ## Built with
 
-[Next.js](https://nextjs.org/)・[Tailwind CSS](https://tailwindcss.com/)・[tRPC](https://trpc.io/)・[Prisma](https://www.prisma.io/)・[NextAuth](https://next-auth.js.org/)・[next-intl](https://next-intl-docs.vercel.app/)・[Turborepo](https://turbo.build/)・[factory-js](https://github.com/factory-js/factory-js)
+[Next.js](https://nextjs.org/)・[Tailwind CSS](https://tailwindcss.com/)・[tRPC](https://trpc.io/)・[Prisma](https://www.prisma.io/)・[NextAuth](https://next-auth.js.org/)・[next-intl](https://next-intl-docs.vercel.app/)・[Turborepo](https://turbo.build/)・[FactoryJS](https://github.com/factory-js/factory-js)
 
 ## Contributing
 
@@ -87,10 +87,6 @@ pnpm db:migrate:deploy && pnpm dev
 ```
 
 9. That’s all! 🎉 Try accessing http://localhost:4000/app.
-
-## Deploy with Vercel
-
-TODO
 
 ## License
 
