@@ -40,18 +40,27 @@ export const getTimeEntries = (db: PrismaClient) =>
     async (input) => {
       const items = await db.timeEntry.findMany({
         where: {
-          task: {
-            userId: input.userId,
-            folder: {
-              userId: input.userId,
+          AND: [
+            {
+              task: {
+                userId: input.userId,
+                folder: {
+                  userId: input.userId,
+                },
+              },
             },
-          },
-          ...(input.cursor === undefined
-            ? {}
-            : {
-                id: { lte: input.cursor.id },
-                startedAt: { lte: input.cursor.startedAt },
-              }),
+            input.cursor === undefined
+              ? {}
+              : {
+                  OR: [
+                    {
+                      id: { lte: input.cursor.id },
+                      startedAt: input.cursor.startedAt,
+                    },
+                    { startedAt: { lt: input.cursor.startedAt } },
+                  ],
+                },
+          ],
         },
         include: {
           task: {
@@ -63,6 +72,7 @@ export const getTimeEntries = (db: PrismaClient) =>
         orderBy: [{ startedAt: "desc" }, { id: "desc" }],
         take: LIMIT + 1,
       });
+
       if (items.length <= LIMIT) {
         return { nextCursor: undefined, items };
       }

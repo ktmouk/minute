@@ -1,3 +1,4 @@
+import { seq } from "@factory-js/factory";
 import {
   folderFactory,
   taskFactory,
@@ -5,6 +6,7 @@ import {
   userFactory,
 } from "@minute/prisma/vitest/factories";
 import { db } from "@minute/prisma/vitest/helpers";
+import { addDays } from "date-fns";
 import { it, describe, vi, expect } from "vitest";
 import { getTimeEntries } from "..";
 
@@ -80,12 +82,23 @@ describe("getTimeEntries", () => {
     it("returns the next cursor", async () => {
       const user = await userFactory.create();
       const task = await taskFactory.vars({ user: () => user }).create();
-      await timeEntryFactory.vars({ task: () => task }).createList(30);
-      const { items, nextCursor } = await getTimeEntries(db)({
+      const now = new Date();
+      const timeEntries = await timeEntryFactory
+        .vars({ task: () => task })
+        .props({ startedAt: seq(1, (i) => addDays(now, -i)) })
+        .createList(30);
+      const { nextCursor } = await getTimeEntries(db)({
         userId: user.id,
       });
-      expect(items).toHaveLength(25);
       expect(nextCursor).not.toBeUndefined();
+      expect(nextCursor?.id).toBe(timeEntries[25]?.id);
+      const { items } = await getTimeEntries(db)({
+        userId: user.id,
+        cursor: nextCursor,
+      });
+      expect(items.map(({ id }) => id)).toStrictEqual(
+        timeEntries.slice(25).map(({ id }) => id),
+      );
     });
   });
 
