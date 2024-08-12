@@ -13,6 +13,7 @@
     "clean": "rm -rf node_modules .turbo"
   },
   "devDependencies": {
+    "@factory-js/factory": "^0.4.0",
     "@faker-js/faker": "^8.4.1",
     "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
