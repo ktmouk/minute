@@ -212,6 +212,7 @@ export const TimeEntryModal = ({
                 )}
               </div>
               <input
+                type="text"
                 required
                 data-1p-ignore
                 data-lpignore

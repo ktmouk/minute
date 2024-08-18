@@ -65,6 +65,7 @@ export const DatePicker = ({
     <div className="inline-flex h-10 overflow-hidden border border-gray-300 rounded">
       <Tooltip sideOffset={5} content={t("prev")}>
         <button
+          type="button"
           className="px-2 group hover:bg-gray-200 border-gray-300"
           onClick={() => {
             onClickPrev();
@@ -101,6 +102,7 @@ export const DatePicker = ({
       </div>
       <Tooltip sideOffset={5} content={t("next")}>
         <button
+          type="button"
           className="px-2 hover:bg-gray-200 border-gray-300 group"
           onClick={() => {
             onClickNext();
