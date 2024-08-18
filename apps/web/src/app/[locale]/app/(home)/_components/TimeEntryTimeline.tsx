@@ -1,14 +1,18 @@
 "use client";
 
 import { format, toDate } from "date-fns";
+import { useTranslations } from "next-intl";
 import { useCallback, useMemo } from "react";
+import { PiTimer } from "react-icons/pi";
 import * as R from "remeda";
 import { trpc } from "../../../_components/TrpcProvider";
 import { useInfiniteScroll } from "../_hooks/useInfiniteScroll";
 import { TimeEntryList } from "./TimeEntryList";
 
 export const TimeEntryTimeline = () => {
-  const { fetchNextPage, ...timeEntryPages } =
+  const t = useTranslations("components.TimeEntryTimeline");
+
+  const { fetchNextPage, isLoading, ...timeEntryPages } =
     trpc.timeEntries.getTimeEntries.useInfiniteQuery(
       {},
       { getNextPageParam: ({ nextCursor }) => nextCursor },
@@ -29,16 +33,28 @@ export const TimeEntryTimeline = () => {
     );
   }, [timeEntryPages]);
 
+  const isEmpty = !isLoading && Object.keys(timeEntries).length === 0;
+
   return (
-    <>
-      {Object.keys(timeEntries).map((date) => (
-        <TimeEntryList
-          key={date}
-          date={toDate(date)}
-          timeEntries={timeEntries[date] ?? []}
-        />
-      ))}
-      <span ref={observerRef} />
-    </>
+    <section className="mt-10">
+      {isEmpty ? (
+        <div className="flex rounded flex-col items-center">
+          <PiTimer className="text-4xl text-gray-500" />
+          <h2 className="mt-2 text-center text-gray-600">{t("welcome")}</h2>
+          <p className="text-sm text-gray-500">{t("noTimeEntriesYet")}</p>
+        </div>
+      ) : (
+        <>
+          {Object.keys(timeEntries).map((date) => (
+            <TimeEntryList
+              key={date}
+              date={toDate(date)}
+              timeEntries={timeEntries[date] ?? []}
+            />
+          ))}
+          <span ref={observerRef} />
+        </>
+      )}
+    </section>
   );
 };

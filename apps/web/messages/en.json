@@ -27,6 +27,10 @@
       "categories": "Categories",
       "archives": "View archives"
     },
+    "TimeEntryTimeline": {
+      "welcome": "Welcome to Minute!",
+      "noTimeEntriesYet": "There are no entries yet. Let's start tracking time from the form above."
+    },
     "RunningTimeEntryForm": {
       "addTo": "Add To",
       "timerIsRunning": "Timer is running",
@@ -46,7 +50,7 @@
           "0": "For example, reading books, developing an app, creating a document, etc...",
           "1": "You can edit this description at any time 😀",
           "2": "I'm looking forward to seeing what work you begin!",
-          "3": "Remember to take regular breaks ☕"
+          "3": "Don't forget to take regular breaks! ☕"
         }
       }
     },

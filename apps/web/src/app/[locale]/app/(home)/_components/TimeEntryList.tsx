@@ -67,7 +67,7 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
   }, [date, locale]);
 
   return (
-    <section className="mt-10">
+    <>
       <header className="flex items-center justify-between">
         <div className="flex items-center">
           <h2 className="mr-2">{title}</h2>
@@ -139,6 +139,6 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
           />
         ))}
       </ul>
-    </section>
+    </>
   );
 };
