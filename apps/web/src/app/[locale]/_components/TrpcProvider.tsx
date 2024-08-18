@@ -15,7 +15,16 @@ type Props = {
 export const trpc = createTRPCReact<AppRouter>();
 
 export function TrpcProvider({ children }: Props) {
-  const [queryClient] = useState(() => new QueryClient());
+  const [queryClient] = useState(
+    () =>
+      new QueryClient({
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+          },
+        },
+      }),
+  );
 
   const [trpcClient] = useState(() =>
     trpc.createClient({
