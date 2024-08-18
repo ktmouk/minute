@@ -22,6 +22,7 @@ export const SignInForm = () => {
         <p className="text-gray-500">{t("description")}</p>
       </header>
       <button
+        type="button"
         disabled={isSigningIn}
         className="bg-gray-800 disabled:bg-gray-600 flex gap-2 rounded text-white p-2 px-4 text-sm"
         onClick={() => {

@@ -8,7 +8,6 @@ const FOCUSED_PLACEHODLERS = [
   "placeholder.focused.0",
   "placeholder.focused.1",
   "placeholder.focused.2",
-  "placeholder.focused.3",
 ] as const;
 
 type Props<Item> = {

@@ -39,9 +39,11 @@ export const TimeEntryTimeline = () => {
     <section className="mt-10">
       {isEmpty ? (
         <div className="flex rounded flex-col items-center">
-          <PiTimer className="text-4xl text-gray-500" />
-          <h2 className="mt-2 text-center text-gray-600">{t("welcome")}</h2>
-          <p className="text-sm text-gray-500">{t("noTimeEntriesYet")}</p>
+          <PiTimer className="text-4xl text-gray-300" />
+          <div className="mt-4">
+            <h2 className="text-center text-gray-600">{t("welcome")}</h2>
+            <p className="text-sm text-gray-500">{t("noTimeEntriesYet")}</p>
+          </div>
         </div>
       ) : (
         <>

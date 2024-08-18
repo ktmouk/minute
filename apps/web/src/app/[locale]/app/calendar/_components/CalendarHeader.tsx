@@ -49,6 +49,7 @@ export const CalendarHeader = ({ date, today }: Props) => {
       />
       {!isSameWeek(today, date) && (
         <button
+          type="button"
           onClick={() => {
             changeDate({ date: today, isHighlighted: false });
           }}

@@ -28,7 +28,7 @@
       "archives": "View archives"
     },
     "TimeEntryTimeline": {
-      "welcome": "Welcome to Minute!",
+      "welcome": "Welcome to Minute! 👋",
       "noTimeEntriesYet": "There are no entries yet. Let's start tracking time from the form above."
     },
     "RunningTimeEntryForm": {
@@ -49,8 +49,7 @@
         "focused": {
           "0": "For example, reading books, developing an app, creating a document, etc...",
           "1": "You can edit this description at any time 😀",
-          "2": "I'm looking forward to seeing what work you begin!",
-          "3": "Don't forget to take regular breaks! ☕"
+          "2": "Don't forget to take regular breaks! ☕"
         }
       }
     },
