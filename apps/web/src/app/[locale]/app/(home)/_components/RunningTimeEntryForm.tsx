@@ -6,7 +6,7 @@ import type { UseComboboxStateChange } from "downshift";
 import { useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import type { FormEvent } from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { PiPlayFill, PiStopFill } from "react-icons/pi";
 import * as R from "remeda";
 import { tv } from "tailwind-variants";
@@ -111,6 +111,19 @@ export const RunningTimeEntryForm = () => {
     }
   };
 
+  const debouncedHandleInputChange = useRef<{
+    call: (args: {
+      inputValue?: string;
+      isOpen?: boolean;
+    }) => Promise<void> | undefined;
+  } | null>(null);
+  if (debouncedHandleInputChange.current === null) {
+    debouncedHandleInputChange.current = R.debounce(handleInputChange, {
+      timing: "trailing",
+      waitMs: 500,
+    });
+  }
+
   const {
     isOpen,
     inputValue,
@@ -124,7 +137,8 @@ export const RunningTimeEntryForm = () => {
     itemToString: (task) => task?.description ?? "",
     onSelectedItemChange: (event) => void handleSelectedItemChange(event),
     onIsOpenChange: (event) => void handleInputChange(event),
-    onInputValueChange: (event) => void handleInputChange(event),
+    onInputValueChange: (event) =>
+      void debouncedHandleInputChange.current?.call(event),
   });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
