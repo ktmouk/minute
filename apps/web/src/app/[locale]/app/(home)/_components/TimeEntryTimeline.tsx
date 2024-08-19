@@ -46,7 +46,7 @@ export const TimeEntryTimeline = () => {
           </div>
         </div>
       ) : (
-        <>
+        <div className="flex flex-col gap-10">
           {Object.keys(timeEntries).map((date) => (
             <TimeEntryList
               key={date}
@@ -55,7 +55,7 @@ export const TimeEntryTimeline = () => {
             />
           ))}
           <span ref={observerRef} />
-        </>
+        </div>
       )}
     </section>
   );
