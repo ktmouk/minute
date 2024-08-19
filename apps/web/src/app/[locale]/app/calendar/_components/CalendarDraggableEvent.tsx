@@ -1,6 +1,6 @@
 import { useDraggable } from "@dnd-kit/core";
 import { tv } from "tailwind-variants";
-import { CalendarEvent } from "./CalendarEvent";
+import { CalendarEvent } from "../../../_components/CalendarEvent";
 
 export type Props = {
   id: string;

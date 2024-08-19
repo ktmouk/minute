@@ -149,8 +149,8 @@
     },
     "TimeEntryModal": {
       "addTo": "Add To",
-      "editTimeEntry": "Edit time entry",
-      "newTimeEntry": "Add time entry",
+      "editTimeEntry": "Edit Time Entry",
+      "newTimeEntry": "Add Time Entry",
       "confirmDelete": "Do you want to delete the record? This action cannot be undone.",
       "startedAt": "Start Date",
       "stoppedAt": "End Date",

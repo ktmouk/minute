@@ -1,5 +1,5 @@
 import { format, startOfDay } from "date-fns";
-import CalendarPosition from "./CalendarPosition";
+import { CalendarPosition } from "../../../_components/CalendarPosition";
 
 export type Props = {
   date: Date;

@@ -8,7 +8,7 @@ export const CalendarRowLines = () => {
         return (
           <span
             key={hour}
-            className="block h-full font-mono text-xs text-center text-gray-500 md:text-sm"
+            className="block h-full font-mono text-center text-gray-500"
             style={{
               minHeight: "2.7rem",
             }}

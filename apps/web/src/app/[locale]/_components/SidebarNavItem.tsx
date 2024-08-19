@@ -16,15 +16,13 @@ const barStyle = tv({
   },
 });
 
-export const SidebarNavItem = ({
-  href,
-  barColor,
-  children,
-}: {
+type Props = {
   href: string;
   barColor: "red" | "green" | "blue";
   children: ReactNode;
-}) => {
+};
+
+export const SidebarNavItem = ({ href, barColor, children }: Props) => {
   const pathname = usePathname();
   const isCurrent = pathname === href;
 

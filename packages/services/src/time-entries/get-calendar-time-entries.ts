@@ -3,7 +3,7 @@ import "server-only";
 import type { PrismaClient } from "@minute/prisma";
 import { folderSchema, taskSchema, timeEntrySchema } from "@minute/schemas";
 import { contract } from "@minute/utils";
-import { isBefore } from "date-fns";
+import { differenceInDays, isBefore } from "date-fns";
 import { z } from "zod";
 
 export const getCalendarTimeEntries = (db: PrismaClient) =>
@@ -27,6 +27,9 @@ export const getCalendarTimeEntries = (db: PrismaClient) =>
     async (input) => {
       if (isBefore(input.endDate, input.startDate)) {
         throw Error("The startDate must be earlier than startDate.");
+      }
+      if (differenceInDays(input.endDate, input.startDate) >= 7) {
+        throw Error("The date range must be within 7 day.");
       }
       return await db.timeEntry.findMany({
         where: {

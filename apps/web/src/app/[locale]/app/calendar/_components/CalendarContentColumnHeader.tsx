@@ -35,11 +35,11 @@ const weekdayStyle = tv({
   variants: {
     weekday: {
       0: "text-red-500",
-      1: "text-green-500",
-      2: "text-green-500",
-      3: "text-green-500",
-      4: "text-green-500",
-      5: "text-green-500",
+      1: "text-gray-600",
+      2: "text-gray-600",
+      3: "text-gray-600",
+      4: "text-gray-600",
+      5: "text-gray-600",
       6: "text-blue-500",
     },
   },

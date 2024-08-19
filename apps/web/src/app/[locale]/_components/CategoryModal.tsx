@@ -158,7 +158,7 @@ export const CategoryModal = ({
   return (
     <Modal onClose={onClose} isOpen>
       <form
-        className="w-full"
+        className="w-[36rem]"
         onSubmit={(event) => {
           void handleSubmit(handleSave)(event);
         }}
