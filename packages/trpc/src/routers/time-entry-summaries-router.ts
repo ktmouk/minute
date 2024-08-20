@@ -10,14 +10,16 @@ export const timeEntrySummariesRouter = router({
   getTimeEntrySummary: protectedProcedure
     .input(
       z.strictObject({
-        date: z.date(),
+        startDate: z.date(),
+        endDate: z.date(),
       }),
     )
     .output(z.array(timeEntrySummarySchema))
     .query(async ({ input, ctx }) => {
       return await getTimeEntrySummary(ctx.db)({
         userId: ctx.currentUserId,
-        date: input.date,
+        startDate: input.startDate,
+        endDate: input.endDate,
       });
     }),
 });

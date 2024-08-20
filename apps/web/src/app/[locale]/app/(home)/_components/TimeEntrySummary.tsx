@@ -1,3 +1,4 @@
+import { endOfDay, startOfDay } from "date-fns";
 import { fromS } from "hh-mm-ss";
 import { useMemo } from "react";
 import * as R from "remeda";
@@ -21,7 +22,7 @@ const durationStyle = tv({
 export const TimeEntrySummary = ({ date }: Props) => {
   const allFolders = trpc.folders.getAllFolders.useQuery();
   const timeEntrySummary = trpc.timeEntrySummaries.getTimeEntrySummary.useQuery(
-    { date },
+    { startDate: startOfDay(date), endDate: endOfDay(date) },
   );
 
   const totalDuration = R.sumBy(timeEntrySummary.data ?? [], ({ duration }) =>
