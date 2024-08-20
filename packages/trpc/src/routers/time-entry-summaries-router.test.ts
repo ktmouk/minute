@@ -20,7 +20,10 @@ describe("timeEntrySummariesRouter", () => {
           createInnerContext({ db, currentUserId: undefined }),
         );
         await expect(
-          caller.timeEntrySummaries.getTimeEntrySummary({ date: new Date() }),
+          caller.timeEntrySummaries.getTimeEntrySummary({
+            startDate: parseISO("2024-01-01T00:00:00"),
+            endDate: parseISO("2024-01-01T23:59:59"),
+          }),
         ).rejects.toThrow(new TRPCError({ code: "UNAUTHORIZED" }));
       });
     });
@@ -49,7 +52,8 @@ describe("timeEntrySummariesRouter", () => {
         );
         await expect(
           caller.timeEntrySummaries.getTimeEntrySummary({
-            date: parseISO("2024-01-01T01:00:00"),
+            startDate: parseISO("2024-01-01T00:00:00"),
+            endDate: parseISO("2024-01-01T23:59:59"),
           }),
         ).resolves.toStrictEqual(
           expect.arrayContaining([
@@ -83,7 +87,8 @@ describe("timeEntrySummariesRouter", () => {
           .createList(3);
         await expect(
           caller.timeEntrySummaries.getTimeEntrySummary({
-            date: parseISO("2024-01-01T01:00:00"),
+            startDate: parseISO("2024-01-01T00:00:00"),
+            endDate: parseISO("2024-01-01T23:59:59"),
           }),
         ).resolves.toStrictEqual([]);
       });
