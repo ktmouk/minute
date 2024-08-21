@@ -60,7 +60,8 @@
       "taskMoved": "Task moved"
     },
     "SidebarCategoryPanel": {
-      "addNewCategory": "Add New Category"
+      "addNewCategory": "Add New Category",
+      "categoryDescription": "Categories are a feature that allows you to aggregate and analyze multiple folders. The categories you create can be used in charts on the <reportsLink>Reports page</reportsLink>."
     },
     "CategoryTreeItem": {
       "openMenu": "Edit, delete, etc.",

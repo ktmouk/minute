@@ -3,10 +3,12 @@
 import { TabPanel } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
-import { PiPlus } from "react-icons/pi";
+import { PiPlus, PiQuestion } from "react-icons/pi";
+import { Link } from "../../../navigation";
 import { trpc } from "../_components/TrpcProvider";
 import { CategoryModal } from "./CategoryModal";
 import { CategoryTreeItem } from "./CategoryTreeItem";
+import { Tooltip } from "./Tooltip";
 
 export const SidebarCategoryPanel = () => {
   const t = useTranslations("components.SidebarCategoryPanel");
@@ -28,16 +30,43 @@ export const SidebarCategoryPanel = () => {
           />
         ))}
       </ul>
-      <button
-        type="button"
-        onClick={() => {
-          setIsModalOpen(true);
-        }}
-        className="flex items-center w-full my-2.5 px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
-      >
-        <PiPlus className="text-base" />
-        {t("addNewCategory")}
-      </button>
+      <div className="flex mt-2.5 items-center">
+        <button
+          type="button"
+          onClick={() => {
+            setIsModalOpen(true);
+          }}
+          className="flex items-center w-full px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
+        >
+          <PiPlus className="text-base" />
+          {t("addNewCategory")}
+        </button>
+        <Tooltip
+          variant="coach"
+          disableHoverableContent={false}
+          delayDuration={0}
+          sideOffset={3}
+          side="bottom"
+          content={
+            <p className="w-72 p-2">
+              {t.rich("categoryDescription", {
+                reportsLink: (chunk) => (
+                  <Link
+                    className="text-green-500 underline"
+                    href="/app/reports"
+                  >
+                    {chunk}
+                  </Link>
+                ),
+              })}
+            </p>
+          }
+        >
+          <span className="py-1.5 px-4 text-gray-600 hover:bg-gray-200">
+            <PiQuestion className="text-lg" />
+          </span>
+        </Tooltip>
+      </div>
       {isModalOpen && (
         <CategoryModal
           onClose={() => {
