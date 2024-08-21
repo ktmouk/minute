@@ -143,7 +143,7 @@ describe("getCalendarTimeEntries", () => {
     });
   });
 
-  describe("when startDate and endDate are invalid", () => {
+  describe("when the stoppedAt is less than the startedAt", () => {
     it("throws an error", async () => {
       const user = await userFactory.create();
       const task = await taskFactory.create();
@@ -155,6 +155,21 @@ describe("getCalendarTimeEntries", () => {
           endDate: parseISO("2024-01-01T00:00:00"),
         }),
       ).rejects.toThrow("The startDate must be earlier than startDate.");
+    });
+  });
+
+  describe("when the date range is over 7 days", () => {
+    it("throws an error", async () => {
+      const user = await userFactory.create();
+      const task = await taskFactory.create();
+      await timeEntryFactory.vars({ task: () => task }).createList(3);
+      await expect(
+        getCalendarTimeEntries(db)({
+          userId: user.id,
+          startDate: parseISO("2024-01-01T00:00:00"),
+          endDate: parseISO("2024-01-08T00:00:00"),
+        }),
+      ).rejects.toThrow("The date range must be within 7 day.");
     });
   });
 });

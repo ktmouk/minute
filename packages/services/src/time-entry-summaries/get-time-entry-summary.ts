@@ -20,8 +20,8 @@ export const getTimeEntrySummary = (db: PrismaClient) =>
       if (isBefore(input.endDate, input.startDate)) {
         throw Error("The start date must be earlier than end date.");
       }
-      if (differenceInDays(input.endDate, input.startDate) >= 2) {
-        throw Error("The date range must be within 2 day.");
+      if (differenceInDays(input.endDate, input.startDate) >= 1) {
+        throw Error("The date range must be within 1 day.");
       }
       return z
         .promise(

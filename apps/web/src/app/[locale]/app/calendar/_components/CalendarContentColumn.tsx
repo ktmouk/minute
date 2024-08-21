@@ -10,11 +10,11 @@ import {
   startOfDay,
 } from "date-fns";
 import { useState } from "react";
+import { CalendarEvent } from "../../../_components/CalendarEvent";
+import { CalendarPosition } from "../../../_components/CalendarPosition";
 import { TimeEntryModal } from "../../../_components/TimeEntryModal";
-import { useEventElevations } from "../_hooks/useEventElevations";
+import { useEventElevations } from "../../../_hooks/useEventElevations";
 import { CalendarDraggableEvent } from "./CalendarDraggableEvent";
-import { CalendarEvent } from "./CalendarEvent";
-import CalendarPosition from "./CalendarPosition";
 
 type Props = {
   baseDate: Date;

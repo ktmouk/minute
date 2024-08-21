@@ -24,11 +24,11 @@ import { useTranslations } from "next-intl";
 import { useMemo, useRef, useState } from "react";
 import * as R from "remeda";
 import { z } from "zod";
+import { CalendarRowLines } from "../../../_components/CalendarRowLines";
 import { trpc } from "../../../_components/TrpcProvider";
 import { useToast } from "../../../_hooks/useToast";
 import { CalendarContentColumn } from "./CalendarContentColumn";
 import { CalendarContentColumnHeader } from "./CalendarContentColumnHeader";
-import { CalendarRowLines } from "./CalendarRowLines";
 import { CalendarRuler } from "./CalendarRuler";
 
 const ghostEventSchema = z.strictObject({
@@ -160,7 +160,9 @@ export const CalendarContent = ({
             <CalendarRuler date={ghostEvent.startDate} />
           </>
         )}
-        <CalendarRowLines />
+        <div aria-hidden className="flex flex-col flex-1 text-sm h-full w-14">
+          <CalendarRowLines />
+        </div>
       </div>
       <div className="flex flex-1 divide-x divide-gray-300">
         <DndContext

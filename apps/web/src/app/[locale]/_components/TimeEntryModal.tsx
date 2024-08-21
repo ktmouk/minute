@@ -13,6 +13,7 @@ import { Tooltip } from "../_components/Tooltip";
 import { trpc } from "../_components/TrpcProvider";
 import { useToast } from "../_hooks/useToast";
 import { FolderSelect } from "../app/(home)/_components/FolderSelect";
+import { TimeEntryModalCalendar } from "./TimeEntryModalCalendar";
 
 type Props = {
   onClose: () => void;
@@ -182,138 +183,152 @@ export const TimeEntryModal = ({
 
   return (
     <Modal onClose={onClose} isOpen>
-      <form
-        className="w-full"
-        onSubmit={(event) => {
-          void handleSubmit(handleSave)(event);
-        }}
-      >
-        <header className="p-4 border-b border-gray-300">
-          <DialogTitle>
-            {t(id === undefined ? "newTimeEntry" : "editTimeEntry")}
-          </DialogTitle>
-        </header>
-        <div className="m-4 flex flex-col">
-          <div className="mb-4">
-            <div className="border text-sm border-gray-300 rounded">
-              <div className="mx-2 flex items-center border-b border-gray-300 py-1">
-                <div className="mr-2 shrink-0 border-r border-r-gray-300 px-2 pr-4">
-                  {t("addTo")}
+      <div className="flex items-stretch h-[30rem]">
+        <form
+          className="w-full"
+          onSubmit={(event) => {
+            void handleSubmit(handleSave)(event);
+          }}
+        >
+          <header className="h-14 px-4 flex items-center border-b border-gray-300">
+            <DialogTitle>
+              {t(id === undefined ? "newTimeEntry" : "editTimeEntry")}
+            </DialogTitle>
+          </header>
+          <div className="m-4 flex flex-col">
+            <div className="mb-4">
+              <div className="border text-sm border-gray-300 rounded">
+                <div className="mx-2 flex items-center border-b border-gray-300 py-1">
+                  <div className="mr-2 shrink-0 border-r border-r-gray-300 px-2 pr-4">
+                    {t("addTo")}
+                  </div>
+                  {runningTimeEntry.isLoading ? (
+                    <div className="animate-pulse w-32 my-2 h-4 bg-gray-300 rounded-full" />
+                  ) : (
+                    <FolderSelect
+                      folderId={watch("folderId")}
+                      onSelect={(folderId) => {
+                        setValue("folderId", folderId);
+                      }}
+                    />
+                  )}
                 </div>
-                {runningTimeEntry.isLoading ? (
-                  <div className="animate-pulse w-32 my-2 h-4 bg-gray-300 rounded-full" />
-                ) : (
-                  <FolderSelect
-                    folderId={watch("folderId")}
-                    onSelect={(folderId) => {
-                      setValue("folderId", folderId);
-                    }}
+                <input
+                  type="text"
+                  required
+                  data-1p-ignore
+                  data-lpignore
+                  className="w-full text-sm rounded bg-transparent py-5 px-6 outline-none placeholder:text-gray-400"
+                  {...register("description")}
+                  placeholder={t("descriptionPlaceholder")}
+                />
+              </div>
+              {errors.description?.message !== undefined && (
+                <p role="alert" className="mt-2 text-red-500 text-sm">
+                  {errors.description.message}
+                </p>
+              )}
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <div>
+                <label className="text-sm flex items-center">
+                  <span className="flex-shrink-0 mr-6 w-20">
+                    {t("startedAt")}
+                  </span>
+                  <input
+                    className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    type="date"
+                    required
+                    {...register("startDate")}
                   />
+                  <input
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    type="time"
+                    step="1"
+                    required
+                    {...register("startTime")}
+                  />
+                </label>
+                {errors.startDate?.message !== undefined && (
+                  <p role="alert" className="mt-2 text-red-500 text-sm">
+                    {errors.startDate.message}
+                  </p>
+                )}
+                {errors.startTime?.message !== undefined && (
+                  <p role="alert" className="mt-2 text-red-500 text-sm">
+                    {errors.startTime.message}
+                  </p>
                 )}
               </div>
-              <input
-                type="text"
-                required
-                data-1p-ignore
-                data-lpignore
-                className="w-full text-sm rounded bg-transparent py-5 px-6 outline-none placeholder:text-gray-400"
-                {...register("description")}
-                placeholder={t("descriptionPlaceholder")}
-              />
+              <div>
+                <label className="text-sm flex items-center">
+                  <span className="flex-shrink-0 mr-6 w-20">
+                    {t("stoppedAt")}
+                  </span>
+                  <input
+                    className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    type="date"
+                    required
+                    {...register("endDate")}
+                  />
+                  <input
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    type="time"
+                    required
+                    step="1"
+                    {...register("endTime")}
+                  />
+                </label>
+                {errors.endDate?.message !== undefined && (
+                  <p role="alert" className="mt-2 text-red-500 text-sm">
+                    {errors.endDate.message}
+                  </p>
+                )}
+                {errors.endTime?.message !== undefined && (
+                  <p role="alert" className="mt-2 text-red-500 text-sm">
+                    {errors.endTime.message}
+                  </p>
+                )}
+              </div>
             </div>
-            {errors.description?.message !== undefined && (
-              <p role="alert" className="mt-2 text-red-500 text-sm">
-                {errors.description.message}
-              </p>
+            <div className="flex mt-4 justify-between w-full">
+              <button
+                type="submit"
+                disabled={!isFormValid}
+                className={submitButtonStyle({ disabled: !isFormValid })}
+              >
+                {t("save")}
+              </button>
+              {id !== undefined && (
+                <Tooltip sideOffset={5} content={t("delete")}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void handleDeleteButtonClick();
+                    }}
+                    className="p-2.5 hover:bg-gray-200 text-red-400 rounded inline-block"
+                  >
+                    <PiTrash className="text-xl" />
+                  </button>
+                </Tooltip>
+              )}
+            </div>
+          </div>
+        </form>
+        <div className="w-96 flex-col flex h-full">
+          <TimeEntryModalCalendar
+            id={id}
+            folderId={watch("folderId")}
+            description={watch("description")}
+            startedAt={parseDateFromInput(
+              watch("startDate"),
+              watch("startTime"),
             )}
-          </div>
-
-          <div className="flex flex-col gap-4">
-            <div>
-              <label className="text-sm flex items-center">
-                <span className="flex-shrink-0 mr-6 w-20">
-                  {t("startedAt")}
-                </span>
-                <input
-                  className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
-                  type="date"
-                  required
-                  {...register("startDate")}
-                />
-                <input
-                  className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
-                  type="time"
-                  step="1"
-                  required
-                  {...register("startTime")}
-                />
-              </label>
-              {errors.startDate?.message !== undefined && (
-                <p role="alert" className="mt-2 text-red-500 text-sm">
-                  {errors.startDate.message}
-                </p>
-              )}
-              {errors.startTime?.message !== undefined && (
-                <p role="alert" className="mt-2 text-red-500 text-sm">
-                  {errors.startTime.message}
-                </p>
-              )}
-            </div>
-            <div>
-              <label className="text-sm flex items-center">
-                <span className="flex-shrink-0 mr-6 w-20">
-                  {t("stoppedAt")}
-                </span>
-                <input
-                  className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
-                  type="date"
-                  required
-                  {...register("endDate")}
-                />
-                <input
-                  className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
-                  type="time"
-                  required
-                  step="1"
-                  {...register("endTime")}
-                />
-              </label>
-              {errors.endDate?.message !== undefined && (
-                <p role="alert" className="mt-2 text-red-500 text-sm">
-                  {errors.endDate.message}
-                </p>
-              )}
-              {errors.endTime?.message !== undefined && (
-                <p role="alert" className="mt-2 text-red-500 text-sm">
-                  {errors.endTime.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="flex mt-4 justify-between w-full">
-            <button
-              type="submit"
-              disabled={!isFormValid}
-              className={submitButtonStyle({ disabled: !isFormValid })}
-            >
-              {t("save")}
-            </button>
-            {id !== undefined && (
-              <Tooltip sideOffset={5} content={t("delete")}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    void handleDeleteButtonClick();
-                  }}
-                  className="p-2.5 hover:bg-gray-200 text-red-400 rounded inline-block"
-                >
-                  <PiTrash className="text-xl" />
-                </button>
-              </Tooltip>
-            )}
-          </div>
+            stoppedAt={parseDateFromInput(watch("endDate"), watch("endTime"))}
+          />
         </div>
-      </form>
+      </div>
     </Modal>
   );
 };

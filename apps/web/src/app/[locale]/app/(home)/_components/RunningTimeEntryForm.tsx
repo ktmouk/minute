@@ -6,10 +6,12 @@ import type { UseComboboxStateChange } from "downshift";
 import { useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import type { FormEvent } from "react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback } from "react";
+import { useEffect, useState } from "react";
 import { PiPlayFill, PiStopFill } from "react-icons/pi";
 import * as R from "remeda";
 import { tv } from "tailwind-variants";
+import { useDebounceCallback } from "usehooks-ts";
 import { totalDurationVisibleAtom } from "../../../../store";
 import { Duration } from "../../../_components/Duration";
 import { Tooltip } from "../../../_components/Tooltip";
@@ -95,34 +97,29 @@ export const RunningTimeEntryForm = () => {
     });
   };
 
-  const handleInputChange = async ({
-    inputValue = "",
-    isOpen = false,
-  }: {
-    inputValue?: string;
-    isOpen?: boolean;
-  }) => {
-    if (isOpen) {
-      setSuggestionTasks(
-        await utils.tasks.getSuggestionTasks.fetch({
-          description: inputValue,
-        }),
-      );
-    }
-  };
-
-  const debouncedHandleInputChange = useRef<{
-    call: (args: {
+  const handleInputChange = useCallback(
+    async ({
+      inputValue = "",
+      isOpen = false,
+    }: {
       inputValue?: string;
       isOpen?: boolean;
-    }) => Promise<void> | undefined;
-  } | null>(null);
-  if (debouncedHandleInputChange.current === null) {
-    debouncedHandleInputChange.current = R.debounce(handleInputChange, {
-      timing: "trailing",
-      waitMs: 500,
-    });
-  }
+    }) => {
+      if (isOpen) {
+        setSuggestionTasks(
+          await utils.tasks.getSuggestionTasks.fetch({
+            description: inputValue,
+          }),
+        );
+      }
+    },
+    [utils],
+  );
+
+  const debouncedHandleInputChange = useDebounceCallback(
+    handleInputChange,
+    500,
+  );
 
   const {
     isOpen,
@@ -137,8 +134,7 @@ export const RunningTimeEntryForm = () => {
     itemToString: (task) => task?.description ?? "",
     onSelectedItemChange: (event) => void handleSelectedItemChange(event),
     onIsOpenChange: (event) => void handleInputChange(event),
-    onInputValueChange: (event) =>
-      void debouncedHandleInputChange.current?.call(event),
+    onInputValueChange: (event) => void debouncedHandleInputChange(event),
   });
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {

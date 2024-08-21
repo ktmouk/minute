@@ -90,16 +90,16 @@ describe("getTimeEntrySummary", () => {
     });
   });
 
-  describe("when the date range is over 2 days", () => {
+  describe("when the date range is over a day", () => {
     it("throws an error", async () => {
       const user = await userFactory.create();
       await expect(
         getTimeEntrySummary(db)({
           userId: user.id,
           startDate: parseISO("2024-01-01T00:00:00"),
-          endDate: parseISO("2024-01-03T00:00:00"),
+          endDate: parseISO("2024-01-02T00:00:00"),
         }),
-      ).rejects.toThrow("The date range must be within 2 day.");
+      ).rejects.toThrow("The date range must be within 1 day.");
     });
   });
 

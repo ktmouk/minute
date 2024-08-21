@@ -14,7 +14,7 @@ const getPercent = (dateLeft: Date, dateRight: Date) => {
   return (differenceInSeconds(dateLeft, dateRight) / (60 * 60 * 24)) * 100;
 };
 
-const CalendarPosition = ({
+export const CalendarPosition = ({
   baseDate,
   startDate,
   endDate,
@@ -44,5 +44,3 @@ const CalendarPosition = ({
     </>
   );
 };
-
-export default CalendarPosition;
