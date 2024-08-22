@@ -6,6 +6,7 @@ import {
   areIntervalsOverlapping,
   endOfDay,
   formatISO,
+  isSameDay,
   min,
   startOfDay,
 } from "date-fns";
@@ -15,6 +16,7 @@ import { CalendarPosition } from "../../../_components/CalendarPosition";
 import { TimeEntryModal } from "../../../_components/TimeEntryModal";
 import { useEventElevations } from "../../../_hooks/useEventElevations";
 import { CalendarDraggableEvent } from "./CalendarDraggableEvent";
+import { CalendarTodayLine } from "./CalendarTodayLine";
 
 type Props = {
   baseDate: Date;
@@ -50,6 +52,7 @@ export const CalendarContentColumn = ({
     (TimeEntry & { task: Task & { folder: Folder } }) | undefined
   >(undefined);
 
+  const now = new Date();
   const evelations = useEventElevations(timeEntries);
 
   const { setNodeRef } = useDroppable({
@@ -65,6 +68,17 @@ export const CalendarContentColumn = ({
 
   return (
     <div ref={setNodeRef}>
+      {isSameDay(now, baseDate) && (
+        <CalendarPosition startDate={now} baseDate={baseDate}>
+          {(style) => {
+            return (
+              <div className="absolute z-30" style={style}>
+                <CalendarTodayLine />
+              </div>
+            );
+          }}
+        </CalendarPosition>
+      )}
       {ghostEvent && isOverlapped(ghostEvent, baseDate) && (
         <CalendarPosition
           startDate={ghostEvent.startDate}
