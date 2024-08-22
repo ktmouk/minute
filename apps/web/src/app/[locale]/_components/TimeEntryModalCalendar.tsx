@@ -1,6 +1,13 @@
-import { endOfDay, getDay, isAfter, min, startOfDay } from "date-fns";
+import {
+  endOfDay,
+  getDay,
+  getUnixTime,
+  isAfter,
+  min,
+  startOfDay,
+} from "date-fns";
 import { useFormatter } from "next-intl";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { tv } from "tailwind-variants";
 import { useDebounceValue } from "usehooks-ts";
 import { useEventElevations } from "../_hooks/useEventElevations";
@@ -49,7 +56,7 @@ export const TimeEntryModalCalendar = ({
     (folder) => folder.id === folderId,
   );
 
-  const [debouncedStartedAt] = useDebounceValue(startedAt, 800);
+  const [debouncedStartedAt] = useDebounceValue(startedAt, 500);
 
   const timeEntries = trpc.timeEntries.getCalendarTimeEntries.useQuery({
     startDate: startOfDay(debouncedStartedAt),
@@ -61,13 +68,14 @@ export const TimeEntryModalCalendar = ({
   );
 
   const scrollPositionRef = useRef<HTMLDivElement>(null);
+  const unixStartedAt = getUnixTime(startedAt);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     scrollPositionRef.current?.scrollIntoView({
       block: "start",
       behavior: "smooth",
     });
-  }, [debouncedStartedAt]);
+  }, [unixStartedAt]);
 
   return (
     <div className="w-full flex-col flex h-full">
