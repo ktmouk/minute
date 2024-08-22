@@ -44,6 +44,22 @@ export const TimeEntryModalCalendar = ({
   const formatDate = useFormatter();
   const baseDate = startOfDay(startedAt);
 
+  const allFolders = trpc.folders.getAllFolders.useQuery();
+  const currentFolder = allFolders.data?.find(
+    (folder) => folder.id === folderId,
+  );
+
+  const [debouncedStartedAt] = useDebounceValue(startedAt, 800);
+
+  const timeEntries = trpc.timeEntries.getCalendarTimeEntries.useQuery({
+    startDate: startOfDay(debouncedStartedAt),
+    endDate: endOfDay(debouncedStartedAt),
+  });
+
+  const evelations = useEventElevations(
+    (timeEntries.data ?? []).filter((timeEntry) => timeEntry.id !== id),
+  );
+
   const scrollPositionRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
@@ -51,27 +67,7 @@ export const TimeEntryModalCalendar = ({
       block: "start",
       behavior: "smooth",
     });
-  }, [startedAt]);
-
-  const allFolders = trpc.folders.getAllFolders.useQuery();
-  const currentFolder = allFolders.data?.find(
-    (folder) => folder.id === folderId,
-  );
-
-  const [debouncedTimeRange] = useDebounceValue(
-    {
-      startDate: startOfDay(startedAt),
-      endDate: endOfDay(startedAt),
-    },
-    500,
-  );
-
-  const timeEntries =
-    trpc.timeEntries.getCalendarTimeEntries.useQuery(debouncedTimeRange);
-
-  const evelations = useEventElevations(
-    (timeEntries.data ?? []).filter((timeEntry) => timeEntry.id !== id),
-  );
+  }, [debouncedStartedAt]);
 
   return (
     <div className="w-full flex-col flex h-full">
@@ -118,7 +114,7 @@ export const TimeEntryModalCalendar = ({
                 }}
               </CalendarPosition>
             )}
-            <div className="opacity-50">
+            <div className="opacity-30">
               {evelations.map(({ event, elevation, maxElevation }) => (
                 <CalendarPosition
                   key={event.id}
