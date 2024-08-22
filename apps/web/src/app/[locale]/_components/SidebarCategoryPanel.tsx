@@ -48,18 +48,23 @@ export const SidebarCategoryPanel = () => {
           sideOffset={3}
           side="bottom"
           content={
-            <p className="w-72 p-2">
-              {t.rich("categoryDescription", {
-                reportsLink: (chunk) => (
-                  <Link
-                    className="text-green-500 underline"
-                    href="/app/reports"
-                  >
-                    {chunk}
-                  </Link>
-                ),
-              })}
-            </p>
+            <section className="w-72 p-2">
+              <h3 className="font-semibold text-xs mb-2">
+                {t("whatIsCategory")}
+              </h3>
+              <p>
+                {t.rich("categoryDescription", {
+                  reportsLink: (chunk) => (
+                    <Link
+                      className="text-green-500 underline"
+                      href="/app/reports"
+                    >
+                      {chunk}
+                    </Link>
+                  ),
+                })}
+              </p>
+            </section>
           }
         >
           <span className="py-1.5 px-4 text-gray-600 hover:bg-gray-200">
