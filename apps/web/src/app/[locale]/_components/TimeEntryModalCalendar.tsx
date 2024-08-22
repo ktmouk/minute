@@ -72,7 +72,7 @@ export const TimeEntryModalCalendar = ({
 
   useEffect(() => {
     scrollPositionRef.current?.scrollIntoView({
-      block: "start",
+      block: "center",
       behavior: "smooth",
     });
   }, [unixStartedAt]);
@@ -106,10 +106,7 @@ export const TimeEntryModalCalendar = ({
                 {(style) => {
                   return (
                     <div className="absolute z-20 min-h-[1.7rem]" style={style}>
-                      <span
-                        ref={scrollPositionRef}
-                        className="absolute -top-6"
-                      ></span>
+                      <span ref={scrollPositionRef} className="absolute"></span>
                       <CalendarEvent
                         emoji={currentFolder.emoji}
                         title={description}
