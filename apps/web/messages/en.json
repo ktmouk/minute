@@ -61,7 +61,8 @@
     },
     "SidebarCategoryPanel": {
       "addNewCategory": "Add New Category",
-      "categoryDescription": "Categories are a feature that allows you to aggregate and analyze multiple folders. The categories you create can be used in charts on the <reportsLink>Reports page</reportsLink>."
+      "whatIsCategory": "What is Category?",
+      "categoryDescription": "This feature allows you to aggregate and analyze time across multiple folders. The categories you create can be used in charts on the <reportsLink>Reports</reportsLink> page."
     },
     "CategoryTreeItem": {
       "openMenu": "Edit, delete, etc.",

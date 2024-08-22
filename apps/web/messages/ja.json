@@ -61,7 +61,8 @@
     },
     "SidebarCategoryPanel": {
       "addNewCategory": "新しいカテゴリを追加",
-      "categoryDescription": "カテゴリは、複数のフォルダをまとめて集計・分析できる機能です。作成したカテゴリは<reportsLink>レポート画面</reportsLink>のチャートで利用することができます。"
+      "whatIsCategory": "カテゴリとは？",
+      "categoryDescription": "複数のフォルダの時間をまとめて集計・分析できる機能です。作成したカテゴリは<reportsLink>レポート画面</reportsLink>のチャートで利用することができます。"
     },
     "CategoryTreeItem": {
       "openMenu": "編集、削除など",
