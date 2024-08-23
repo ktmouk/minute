@@ -1,4 +1,4 @@
-<h3 align="center">⏰<br>minute</h3>
+<h3 align="center"><img src="./logo.svg" width="32"><br>minute</h3>
 <p align="center">The open-source time tracking app for individuals. </p>
 
 ## About
