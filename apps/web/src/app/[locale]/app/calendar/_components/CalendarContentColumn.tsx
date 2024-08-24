@@ -72,7 +72,7 @@ export const CalendarContentColumn = ({
         <CalendarPosition startDate={now} baseDate={baseDate}>
           {(style) => {
             return (
-              <div className="absolute z-30" style={style}>
+              <div className="absolute pointer-events-none z-30" style={style}>
                 <CalendarTodayLine />
               </div>
             );
