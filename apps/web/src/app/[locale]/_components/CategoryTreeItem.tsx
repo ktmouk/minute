@@ -129,6 +129,7 @@ export const CategoryTreeItem = ({
           name={name}
           folderIds={folderIds}
           emoji={emoji}
+          color={color}
           onClose={() => {
             setIsModalOpen(false);
           }}
