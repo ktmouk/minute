@@ -200,7 +200,7 @@ importers:
         version: 4.3.1(vite@5.4.0(@types/node@20.16.1))
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0))
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.41)
@@ -214,8 +214,8 @@ importers:
         specifier: ^9.0.0
         version: 9.0.0
       jsdom:
-        specifier: ^24.1.0
-        version: 24.1.3
+        specifier: ^25.0.0
+        version: 25.0.0
       lint-staged:
         specifier: ^15.2.5
         version: 15.2.9
@@ -230,7 +230,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(jsdom@24.1.3)
+        version: 2.0.5(@types/node@20.16.1)(jsdom@25.0.0)
 
   packages/eslint-config:
     devDependencies:
@@ -368,7 +368,7 @@ importers:
         version: link:../tsconfig
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0))
       dotenv-cli:
         specifier: ^7.4.2
         version: 7.4.2
@@ -380,7 +380,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(jsdom@24.1.3)
+        version: 2.0.5(@types/node@20.16.1)(jsdom@25.0.0)
 
   packages/trpc:
     dependencies:
@@ -414,7 +414,7 @@ importers:
         version: link:../tsconfig
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0))
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
@@ -429,7 +429,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(jsdom@24.1.3)
+        version: 2.0.5(@types/node@20.16.1)(jsdom@25.0.0)
 
   packages/tsconfig:
     devDependencies:
@@ -454,7 +454,7 @@ importers:
         version: link:../tsconfig
       '@vitest/coverage-v8':
         specifier: ^2.0.0
-        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3))
+        version: 2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0))
       lint-staged:
         specifier: ^15.2.5
         version: 15.2.9
@@ -463,7 +463,7 @@ importers:
         version: 5.5.4
       vitest:
         specifier: ^2.0.0
-        version: 2.0.5(@types/node@20.16.1)(jsdom@24.1.3)
+        version: 2.0.5(@types/node@20.16.1)(jsdom@25.0.0)
 
 packages:
 
@@ -2924,8 +2924,8 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@24.1.3:
-    resolution: {integrity: sha512-MyL55p3Ut3cXbeBEG7Hcv0mVM8pp8PBNWxRqchZnSfAiES1v1mRnMeFfaHWIPULpwsYfvO+ZmMZz5tGCnjzDUQ==}
+  jsdom@25.0.0:
+    resolution: {integrity: sha512-OhoFVT59T7aEq75TVw9xxEfkXgacpqAhQaYgP9y/fDqWQCMB/b1H66RfmPm/MaeaAIU9nDwMOVTlPN51+ao6CQ==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -5082,7 +5082,7 @@ snapshots:
       '@secretlint/profiler': 8.2.4
       '@secretlint/types': 8.2.4
       ajv: 8.16.0
-      debug: 4.3.5
+      debug: 4.3.6
       rc-config-loader: 4.1.3
       try-resolve: 1.0.1
     transitivePeerDependencies:
@@ -5092,7 +5092,7 @@ snapshots:
     dependencies:
       '@secretlint/profiler': 8.2.4
       '@secretlint/types': 8.2.4
-      debug: 4.3.5
+      debug: 4.3.6
       structured-source: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -5206,7 +5206,7 @@ snapshots:
       '@textlint/module-interop': 12.6.1
       '@textlint/types': 12.6.1
       chalk: 4.1.2
-      debug: 4.3.5
+      debug: 4.3.6
       is-file: 1.0.0
       js-yaml: 3.14.1
       lodash: 4.17.21
@@ -5493,7 +5493,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3))':
+  '@vitest/coverage-v8@2.0.5(vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -5507,7 +5507,7 @@ snapshots:
       std-env: 3.7.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.5(@types/node@20.16.1)(jsdom@24.1.3)
+      vitest: 2.0.5(@types/node@20.16.1)(jsdom@25.0.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -6998,7 +6998,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@24.1.3:
+  jsdom@25.0.0:
     dependencies:
       cssstyle: 4.0.1
       data-urls: 5.0.0
@@ -7529,7 +7529,7 @@ snapshots:
 
   rc-config-loader@4.1.3:
     dependencies:
-      debug: 4.3.5
+      debug: 4.3.6
       js-yaml: 4.1.0
       json5: 2.2.3
       require-from-string: 2.0.2
@@ -8255,7 +8255,7 @@ snapshots:
       '@types/node': 20.16.1
       fsevents: 2.3.3
 
-  vitest@2.0.5(@types/node@20.16.1)(jsdom@24.1.3):
+  vitest@2.0.5(@types/node@20.16.1)(jsdom@25.0.0):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.5
@@ -8278,7 +8278,7 @@ snapshots:
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 20.16.1
-      jsdom: 24.1.3
+      jsdom: 25.0.0
     transitivePeerDependencies:
       - less
       - lightningcss
