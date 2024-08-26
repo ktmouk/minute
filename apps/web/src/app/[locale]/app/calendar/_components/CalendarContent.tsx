@@ -177,7 +177,7 @@ export const CalendarContent = ({
                 key={formatISO(date)}
                 className="flex h-full flex-1 flex-col"
               >
-                <div className="sticky top-0 z-30 bg-white">
+                <div className="sticky top-0 z-20 bg-white">
                   <CalendarContentColumnHeader
                     date={date}
                     isToday={isSameDay(today, date)}

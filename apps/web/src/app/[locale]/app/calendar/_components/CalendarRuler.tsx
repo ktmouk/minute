@@ -13,7 +13,7 @@ export const CalendarRuler = ({ date }: Props) => {
           {(style) => (
             <span
               style={style}
-              className="block absolute z-10 font-mono text-xs text-center text-white bg-green-500 border-y border-y-white md:text-sm"
+              className="block absolute font-mono text-xs text-center text-white bg-green-500 border-y border-y-white md:text-sm"
             >
               {format(date, "HH:mm")}
             </span>

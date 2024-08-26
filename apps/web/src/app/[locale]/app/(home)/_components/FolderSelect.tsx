@@ -22,7 +22,7 @@ export const FolderSelect = ({ folderId, onSelect }: Props) => {
             fallback={<p className="text-gray-500 py-0.5">{t("noFolder")}</p>}
           />
         </ListboxButton>
-        <ListboxOptions className="absolute cursor-pointer w-full outline-none z-10 mt-1 animate-fade-down">
+        <ListboxOptions className="absolute z-10 cursor-pointer w-full outline-none mt-1 animate-fade-down">
           <div className="w-72 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
             <h3 className="border-b border-gray-300 px-4 py-2">
               {t("selectFolder")}

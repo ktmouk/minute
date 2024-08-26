@@ -70,7 +70,7 @@ export const AccountMenu = () => {
             >
               <MenuItems
                 static
-                className="absolute bottom-16 left-4 w-full outline-none z-10 mt-1"
+                className="absolute bottom-16 left-4 w-full outline-none mt-1"
               >
                 <div className="w-56 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
                   <div className="p-4 py-5">
