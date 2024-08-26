@@ -3,6 +3,7 @@ import {
   getDay,
   getUnixTime,
   isAfter,
+  isValid,
   min,
   startOfDay,
 } from "date-fns";
@@ -58,10 +59,13 @@ export const TimeEntryModalCalendar = ({
 
   const [debouncedStartedAt] = useDebounceValue(startedAt, 500);
 
-  const timeEntries = trpc.timeEntries.getCalendarTimeEntries.useQuery({
-    startDate: startOfDay(debouncedStartedAt),
-    endDate: endOfDay(debouncedStartedAt),
-  });
+  const timeEntries = trpc.timeEntries.getCalendarTimeEntries.useQuery(
+    {
+      startDate: startOfDay(debouncedStartedAt),
+      endDate: endOfDay(debouncedStartedAt),
+    },
+    { enabled: isValid(debouncedStartedAt) },
+  );
 
   const evelations = useEventElevations(
     (timeEntries.data ?? []).filter((timeEntry) => timeEntry.id !== id),
@@ -77,73 +81,88 @@ export const TimeEntryModalCalendar = ({
     });
   }, [unixStartedAt]);
 
+  const isValidDataRange =
+    isValid(startedAt) && isValid(stoppedAt) && !isAfter(startedAt, stoppedAt);
+
   return (
     <div className="w-full flex-col flex h-full">
       <header className="min-h-14 flex justify-center items-center px-4 border-l border-b border-gray-300">
-        {formatDate.dateTime(baseDate, "short")}
-        <span
-          className={weekdayStyle({
-            weekday: getDay(baseDate) as Weekday,
-          })}
-        >
-          {formatDate.dateTime(baseDate, {
-            weekday: "short",
-          })}
-        </span>
+        {isValid(baseDate) && (
+          <>
+            {formatDate.dateTime(baseDate, "short")}
+            <span
+              className={weekdayStyle({
+                weekday: getDay(baseDate) as Weekday,
+              })}
+            >
+              {formatDate.dateTime(baseDate, {
+                weekday: "short",
+              })}
+            </span>
+          </>
+        )}
       </header>
       <div className="overflow-auto">
         <div className="relative flex border-l border-gray-300">
           <div className="flex flex-col text-xs h-full">
             <CalendarRowLines />
           </div>
-          <div className="relative overflow-hidden flex-1">
-            {currentFolder && !isAfter(startedAt, stoppedAt) && (
-              <CalendarPosition
-                startDate={startedAt}
-                endDate={stoppedAt}
-                baseDate={baseDate}
-              >
-                {(style) => {
-                  return (
-                    <div className="absolute z-20 min-h-[1.7rem]" style={style}>
-                      <span ref={scrollPositionRef} className="absolute"></span>
-                      <CalendarEvent
-                        emoji={currentFolder.emoji}
-                        title={description}
-                        color={currentFolder.color}
-                        startDate={startedAt}
-                        endDate={min([stoppedAt, endOfDay(baseDate)])}
-                      />
-                    </div>
-                  );
-                }}
-              </CalendarPosition>
-            )}
-            <div className="opacity-30">
-              {evelations.map(({ event, elevation, maxElevation }) => (
+          {isValid(baseDate) && (
+            <div className="relative overflow-hidden flex-1">
+              {currentFolder && isValidDataRange && (
                 <CalendarPosition
-                  key={event.id}
+                  startDate={startedAt}
+                  endDate={stoppedAt}
                   baseDate={baseDate}
-                  startDate={event.startedAt}
-                  endDate={event.stoppedAt}
-                  elevation={elevation}
-                  maxElevation={maxElevation}
                 >
-                  {(style) => (
-                    <div className="absolute min-h-[1.7rem]" style={style}>
-                      <CalendarEvent
-                        emoji={event.task.folder.emoji}
-                        title={event.task.description}
-                        color={event.task.folder.color}
-                        startDate={event.startedAt}
-                        endDate={min([event.stoppedAt, endOfDay(baseDate)])}
-                      />
-                    </div>
-                  )}
+                  {(style) => {
+                    return (
+                      <div
+                        className="absolute z-20 min-h-[1.7rem]"
+                        style={style}
+                      >
+                        <span
+                          ref={scrollPositionRef}
+                          className="absolute"
+                        ></span>
+                        <CalendarEvent
+                          emoji={currentFolder.emoji}
+                          title={description}
+                          color={currentFolder.color}
+                          startDate={startedAt}
+                          endDate={min([stoppedAt, endOfDay(baseDate)])}
+                        />
+                      </div>
+                    );
+                  }}
                 </CalendarPosition>
-              ))}
+              )}
+              <div className="opacity-30">
+                {evelations.map(({ event, elevation, maxElevation }) => (
+                  <CalendarPosition
+                    key={event.id}
+                    baseDate={baseDate}
+                    startDate={event.startedAt}
+                    endDate={event.stoppedAt}
+                    elevation={elevation}
+                    maxElevation={maxElevation}
+                  >
+                    {(style) => (
+                      <div className="absolute min-h-[1.7rem]" style={style}>
+                        <CalendarEvent
+                          emoji={event.task.folder.emoji}
+                          title={event.task.description}
+                          color={event.task.folder.color}
+                          startDate={event.startedAt}
+                          endDate={min([event.stoppedAt, endOfDay(baseDate)])}
+                        />
+                      </div>
+                    )}
+                  </CalendarPosition>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
