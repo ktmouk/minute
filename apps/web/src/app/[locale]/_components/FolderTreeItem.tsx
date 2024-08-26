@@ -209,7 +209,7 @@ export const FolderTreeItem = ({
                   </Tooltip>
                   <MenuItems
                     anchor="bottom start"
-                    className="bg-white z-10 drop-shadow-sm border border-gray-300 text-sm rounded overflow-hidden"
+                    className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded overflow-hidden"
                   >
                     <MenuItem>
                       <button

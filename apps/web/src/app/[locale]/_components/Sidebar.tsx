@@ -9,7 +9,7 @@ import { SidebarFolderPanel } from "./SidebarFolderPanel";
 
 export const Sidebar = () => {
   return (
-    <TabGroup className="sticky z-10 left-0 top-0 w-80 max-h-screen h-screen flex justify-between border-r border-gray-300 bg-gray-100 pt-6 flex-col">
+    <TabGroup className="sticky left-0 top-0 w-80 max-h-screen h-screen flex justify-between border-r border-gray-300 bg-gray-100 pt-6 flex-col">
       <div className="mb-5">
         <SidebarNav />
       </div>

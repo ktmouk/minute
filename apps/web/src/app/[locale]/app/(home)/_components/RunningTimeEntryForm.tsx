@@ -239,7 +239,7 @@ export const RunningTimeEntryForm = () => {
       </div>
       <div {...getMenuProps()} className="relative">
         {isOpen && !isRunning && suggestionTasks.length > 0 && (
-          <div className="absolute w-full top-0 z-10 mt-2 animate-fade-down">
+          <div className="absolute w-full top-0 mt-2 animate-fade-down">
             <TaskSuggestionList
               tasks={suggestionTasks}
               highlightedIndex={highlightedIndex}

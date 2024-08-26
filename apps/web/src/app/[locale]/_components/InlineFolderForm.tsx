@@ -96,7 +96,7 @@ export const InlineFolderForm = ({
           </button>
         </Tooltip>
         {isEmojiPickerOpen && (
-          <div className="absolute mt-2 z-20">
+          <div className="absolute mt-2 z-10">
             <Picker
               data={data}
               theme="light"

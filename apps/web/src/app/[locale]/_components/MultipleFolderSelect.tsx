@@ -30,7 +30,7 @@ export const MultipleFolderSelect = ({ folderIds, onSelect }: Props) => {
             <p className="p-0.5 px-2 text-gray-500">{t("selectFolder")}</p>
           )}
         </ListboxButton>
-        <ListboxOptions className="absolute w-full outline-none z-10 mt-1 animate-fade-down">
+        <ListboxOptions className="absolute z-10 w-full outline-none mt-1 animate-fade-down">
           <div className="w-72 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
             <h3 className="border-b border-gray-300 px-4 py-2">
               {t("selectFolder")}

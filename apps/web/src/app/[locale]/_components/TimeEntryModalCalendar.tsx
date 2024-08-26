@@ -118,7 +118,7 @@ export const TimeEntryModalCalendar = ({
                   {(style) => {
                     return (
                       <div
-                        className="absolute z-20 min-h-[1.7rem]"
+                        className="absolute z-10 min-h-[1.7rem]"
                         style={style}
                       >
                         <span
