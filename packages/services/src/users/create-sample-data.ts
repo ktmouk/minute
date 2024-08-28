@@ -51,7 +51,7 @@ export const createSampleData = (db: PrismaClient) =>
       const meaninglessCategory = await createCategory(db)({
         userId: input.userId,
         color: "#026773",
-        name: "Meaningless",
+        name: "LessMeaningful",
         emoji: "💩",
         folderIds: [workFolder.id, gameFolder.id],
       });
@@ -64,7 +64,7 @@ export const createSampleData = (db: PrismaClient) =>
       });
       await createChart(db)({
         userId: input.userId,
-        name: "Meaningful vs Meaningless",
+        name: "Meaningful vs LessMeaningful",
         folderIds: [],
         categoryIds: [meaninglessCategory.id, meaningfulCategory.id],
       });
