@@ -159,7 +159,7 @@ describe("createSampleData", () => {
       expect(categories).toStrictEqual(
         expect.arrayContaining([
           {
-            name: "Meaningless",
+            name: "LessMeaningful",
             userId: user.id,
             id: expect.any(String) as unknown,
             categoryFolders: expect.arrayContaining([
@@ -221,7 +221,7 @@ describe("createSampleData", () => {
       expect(chart?.chartCategories).toHaveLength(2);
       expect(chart).toStrictEqual({
         userId: user.id,
-        name: "Meaningful vs Meaningless",
+        name: "Meaningful vs LessMeaningful",
         chartFolders: [],
         chartCategories: expect.arrayContaining(
           categories.map(({ id }) => ({ categoryId: id })),
