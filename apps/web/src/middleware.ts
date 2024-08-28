@@ -30,7 +30,11 @@ const generateCsp = (nonce: string) => {
     "object-src": ["none"],
     "prefetch-src": ["none"],
     "worker-src": ["none"],
-    "script-src": ["self", `nonce-${nonce}`, ...(isDev ? ["unsafe-eval"] : [])],
+    "script-src": [
+      `nonce-${nonce}`,
+      "strict-dynamic",
+      ...(isDev ? ["unsafe-eval"] : []),
+    ],
     "style-src": [
       "self",
       ...(isDev
