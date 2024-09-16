@@ -44,12 +44,16 @@ Give Minute a try at the demo site! — no account registration required:
 We always welcome to contributions!  
 If you want to add new features or fix something, feel free to open a PR or issue.
 
-## Running Locally
+- 🐛 Have a feature request or found any bugs? Let us know by creating a [New Issue](https://github.com/ktmouk/minute/issues/new).
+- ✨ Looking for good issues to start contributing? Good issues are labeled with [contributors welcome](https://github.com/ktmouk/minute/issues?q=is%3Aissue+is%3Aopen+label%3A%22contributors+welcome%22).
+- 💭 Have a question or something to ask? Let us know in [Discussions](https://github.com/ktmouk/minute/discussions/new/choose).
+
+## Try Minute locally
 
 1. Clone this repository.
 
 ```sh
-git clone git@github.com:ktmouk/minute.git
+git clone https://github.com/ktmouk/minute.git
 cd minute
 ```
 
