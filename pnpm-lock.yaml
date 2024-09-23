@@ -100,7 +100,7 @@ importers:
         version: 1.2.0
       jotai:
         specifier: ^2.8.3
-        version: 2.9.3(@types/react@18.3.7)(react@18.3.1)
+        version: 2.10.0(@types/react@18.3.7)(react@18.3.1)
       next:
         specifier: 14.2.9
         version: 14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -109,7 +109,7 @@ importers:
         version: 4.24.7(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       next-intl:
         specifier: ^3.15.0
-        version: 3.19.3(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
+        version: 3.19.4(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
       next-safe:
         specifier: ^3.5.0
         version: 3.5.0(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))
@@ -2934,8 +2934,8 @@ packages:
   jose@4.15.7:
     resolution: {integrity: sha512-L7ioP+JAuZe8v+T5+zVI9Tx8LtU8BL7NxkyDFVMv+Qr3JW0jSoYDedLtodaXwfqMpeCyx4WXFNyu9tJt4WvC1A==}
 
-  jotai@2.9.3:
-    resolution: {integrity: sha512-IqMWKoXuEzWSShjd9UhalNsRGbdju5G2FrqNLQJT+Ih6p41VNYe2sav5hnwQx4HJr25jq9wRqvGSWGviGG6Gjw==}
+  jotai@2.10.0:
+    resolution: {integrity: sha512-8W4u0aRlOIwGlLQ0sqfl/c6+eExl5D8lZgAUolirZLktyaj4WnxO/8a0HEPmtriQAB6X5LMhXzZVmw02X0P0qQ==}
     engines: {node: '>=12.20.0'}
     peerDependencies:
       '@types/react': '>=17.0.0'
@@ -3170,8 +3170,8 @@ packages:
       nodemailer:
         optional: true
 
-  next-intl@3.19.3:
-    resolution: {integrity: sha512-BcZmxvsFosuTlju4dc7fVQmM75VNSP2HCTIDB6dXCCi1wNRLJUbdBzDGB7ocWyXodhnLLEIrvji5NU8kxXEAdA==}
+  next-intl@3.19.4:
+    resolution: {integrity: sha512-ywJZS+i+CEBYrZq5RXhoBLpjIQBzcVGWclb/CLUO6Lua+ECPM+uJVTb9WascBDT44bSaPcJT11+ZyaEuWEtlOA==}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -4102,8 +4102,8 @@ packages:
   url-parse@1.5.10:
     resolution: {integrity: sha512-WypcfiRhfeUP9vvF0j6rw0J3hrWrw6iZv3+22h6iRMJ/8z1Tj6XfLP4DsUix5MhMPnXpiHDoKyoZ/bdCkwBCiQ==}
 
-  use-intl@3.19.3:
-    resolution: {integrity: sha512-byEeorqdMlZYfTxkPiDzlF22wtcWsAjQYCSWdYhc8E95+bHQi3r/7FJOd8KfkSvm3a5xjoIySlnr5ndhiphCtQ==}
+  use-intl@3.19.4:
+    resolution: {integrity: sha512-mMUlie/zWiKfO8erR+17dCBL8tBsMWCadqfu/3fipzxVJ8XzZV477k6EBllXR/WfbamwwDFmb6RgYKhHDxGzYw==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
@@ -6953,7 +6953,7 @@ snapshots:
 
   jose@4.15.7: {}
 
-  jotai@2.9.3(@types/react@18.3.7)(react@18.3.1):
+  jotai@2.10.0(@types/react@18.3.7)(react@18.3.1):
     optionalDependencies:
       '@types/react': 18.3.7
       react: 18.3.1
@@ -7189,13 +7189,13 @@ snapshots:
       react-dom: 18.3.1(react@18.3.1)
       uuid: 8.3.2
 
-  next-intl@3.19.3(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
+  next-intl@3.19.4(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1):
     dependencies:
       '@formatjs/intl-localematcher': 0.5.4
       negotiator: 0.6.3
       next: 14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
-      use-intl: 3.19.3(react@18.3.1)
+      use-intl: 3.19.4(react@18.3.1)
 
   next-safe@3.5.0(next@14.2.9(@babel/core@7.24.7)(@playwright/test@1.47.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)):
     dependencies:
@@ -8162,7 +8162,7 @@ snapshots:
       querystringify: 2.2.0
       requires-port: 1.0.0
 
-  use-intl@3.19.3(react@18.3.1):
+  use-intl@3.19.4(react@18.3.1):
     dependencies:
       '@formatjs/fast-memoize': 2.2.0
       intl-messageformat: 10.5.14
