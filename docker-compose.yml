@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   db:
-    image: postgres:16.4
+    image: postgres:17.0
     ports:
       - 5432:5432
     environment:
@@ -10,7 +10,7 @@ services:
       POSTGRES_DB: minute
 
   db_test:
-    image: postgres:16.4
+    image: postgres:17.0
     ports:
       - 5433:5432
     environment:
