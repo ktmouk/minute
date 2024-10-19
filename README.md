@@ -6,15 +6,7 @@
 Minute is an open-source time tracking app.  
 In contrast to other time tracking apps, Minute is mainly focused on individual use and is designed to help users review how they spend their time and use it more meaningfully.
 
-<a href="https://www.producthunt.com/posts/minute-3?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-minute&#0045;3" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=485650&theme=light" alt="Minute - Open&#0032;source&#0032;time&#0032;tracking&#0032;app&#0032;for&#0032;individuals | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-
-## Demo
-
-Give Minute a try at the demo site! — no account registration required:
-
-👉 [Visit Demo](https://minute-demo-ph.vercel.app/en/app)
-
-> Please note that the demo site may be closed without notice.
+<a href="https://www.producthunt.com/posts/minute-3?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-minute&#0045;3" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=485650&theme=light&period=daily" alt="Minute - Open&#0032;source&#0032;time&#0032;tracking&#0032;app&#0032;for&#0032;individuals | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 ## Screenshots
 
