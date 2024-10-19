@@ -9,6 +9,7 @@ export const folderFactory = defineFolderFactory(db)
   .props({
     id: () => faker.string.uuid(),
     color: () => faker.internet.color(),
+    parentId: async ({ vars }) => (await vars.parent)?.id ?? null,
   })
   .vars({
     user: async () => await userFactory.create(),

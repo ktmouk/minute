@@ -8,6 +8,7 @@ import { db } from "@minute/prisma/vitest/helpers";
 export const folderHierarchyFactory = defineFolderHierarchyFactory(db)
   .props({
     id: () => faker.string.uuid(),
+    ancestorId: async ({ vars }) => (await vars.ancestor)?.id ?? null,
   })
   .vars({
     user: async () => await userFactory.create(),
