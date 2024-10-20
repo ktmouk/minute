@@ -27,11 +27,11 @@
     "prepare": "husky"
   },
   "devDependencies": {
-    "@secretlint/secretlint-rule-preset-recommend": "^8.2.4",
+    "@secretlint/secretlint-rule-preset-recommend": "^9.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.5",
     "prettier": "^3.3.1",
-    "secretlint": "^8.2.4",
+    "secretlint": "^9.0.0",
     "turbo": "^2.0.3"
   },
   "packageManager": "pnpm@9.12.1"
