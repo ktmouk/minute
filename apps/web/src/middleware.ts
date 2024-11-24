@@ -5,9 +5,10 @@ import type { NextRequestWithAuth } from "next-auth/middleware";
 import withAuth from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
 import * as R from "remeda";
-import { defaultLocale, locales } from "../config/locale";
+import { locales } from "../config/locale";
 import { pageOptions } from "../config/next-auth";
 import { serverEnv } from "../env/server.mjs";
+import { routing } from "./i18n/routing";
 
 const PUBLIC_PAGES = ["/auth/sign-in"];
 const PUBLIC_FILES = ["/favicon.ico", "/robots.txt"];
@@ -66,10 +67,7 @@ const isAllowedIp = (ip: string | undefined) => {
   return serverEnv.ALLOWED_IPS.split(",").includes(ip);
 };
 
-const intlMiddleware = createIntlMiddleware({
-  locales: [...locales],
-  defaultLocale,
-});
+const intlMiddleware = createIntlMiddleware(routing);
 
 const authMiddleware = withAuth(
   function onSuccess(req) {
