@@ -11,7 +11,7 @@ import { useMemo, useState } from "react";
 import { PiCalendarBlank, PiTimer } from "react-icons/pi";
 import * as R from "remeda";
 import { tv } from "tailwind-variants";
-import { useRouter } from "../../../../../navigation";
+import { useRouter } from "../../../../../i18n/routing";
 import { TimeEntryModal } from "../../../_components/TimeEntryModal";
 import { Tooltip } from "../../../_components/Tooltip";
 import { trpc } from "../../../_components/TrpcProvider";

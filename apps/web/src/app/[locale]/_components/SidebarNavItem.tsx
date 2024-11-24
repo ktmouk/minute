@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import { tv } from "tailwind-variants";
-import { Link, usePathname } from "../../../navigation";
+import { Link, usePathname } from "../../../i18n/routing";
 
 const barStyle = tv({
   base: "my-2 mr-4 block h-6 w-1 rounded-r-sm",

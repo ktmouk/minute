@@ -1,10 +1,12 @@
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider } from "jotai";
+import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { ReactNode } from "react";
 import { roboto, inter } from "../../../config/fonts";
-import { type Locale, formats } from "../../../config/locale";
+import { formats } from "../../../config/locale";
+import { routing } from "../../i18n/routing";
 import { Toast } from "./_components/Toast";
 import { TrpcProvider } from "./_components/TrpcProvider";
 
@@ -13,11 +15,19 @@ export const fetchCache = "only-no-store";
 type Props = {
   children: ReactNode;
   params: {
-    locale: Locale;
+    locale: string;
   };
 };
 
 const Layout = async ({ children, params: { locale } }: Props) => {
+  // https://next-intl-docs.vercel.app/docs/getting-started/app-router/with-i18n-routing#layout
+  if (
+    typeof locale !== "string" ||
+    !routing.locales.includes(locale as (typeof routing.locales)[number])
+  ) {
+    notFound();
+  }
+
   const messages = await getMessages();
 
   return (
