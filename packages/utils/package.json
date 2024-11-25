@@ -17,7 +17,7 @@
     "@minute/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^2.0.0",
     "lint-staged": "^15.2.5",
-    "typescript": "5.6.3",
+    "typescript": "5.7.2",
     "vitest": "^2.0.0"
   },
   "dependencies": {
