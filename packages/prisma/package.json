@@ -36,7 +36,7 @@
     "typescript": "5.7.2"
   },
   "dependencies": {
-    "@prisma/client": "5.22.0",
+    "@prisma/client": "6.1.0",
     "server-only": "^0.0.1"
   }
 }
