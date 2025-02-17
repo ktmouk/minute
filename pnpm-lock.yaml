@@ -45,8 +45,8 @@ importers:
         specifier: 2.2.0
         version: 2.2.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers':
-        specifier: ^3.6.0
-        version: 3.10.0(react-hook-form@7.54.2(react@18.3.1))
+        specifier: ^4.0.0
+        version: 4.1.0(react-hook-form@7.54.2(react@18.3.1))
       '@minute/prisma':
         specifier: workspace:*
         version: link:../../packages/prisma
@@ -845,8 +845,8 @@ packages:
     peerDependencies:
       tailwindcss: ^3.0
 
-  '@hookform/resolvers@3.10.0':
-    resolution: {integrity: sha512-79Dv+3mDF7i+2ajj7SkypSKHhl1cbln1OGavqrsF7p6mbUv11xpqpacPsGDCTRvCSjEEIez2ef1NveSVL3b0Ag==}
+  '@hookform/resolvers@4.1.0':
+    resolution: {integrity: sha512-fX/uHKb+OOCpACLc6enuTQsf0ZpRrKbeBBPETg5PCPLCIYV6osP2Bw6ezuclM61lH+wBF9eXcuC0+BFh9XOEnQ==}
     peerDependencies:
       react-hook-form: ^7.0.0
 
@@ -1947,6 +1947,9 @@ packages:
 
   caniuse-lite@1.0.30001686:
     resolution: {integrity: sha512-Y7deg0Aergpa24M3qLC5xjNklnKnhsmSyR/V89dLZ1n0ucJIFNs7PgR2Yfa/Zf6W79SbBicgtGxZr2juHkEUIA==}
+
+  caniuse-lite@1.0.30001700:
+    resolution: {integrity: sha512-2S6XIXwaE7K7erT8dY+kLQcpa5ms63XlRkMkReXjle+kf6c5g38vyMl+Z5y8dSxOFDhcFe+nxnn261PLxBSQsQ==}
 
   chai@5.1.2:
     resolution: {integrity: sha512-aGtmf24DW6MLHHG5gCx4zaI3uBq3KRtxeVs0DjFH6Z0rDNbsvTxFASFvdj79pxjxZ8/5u3PIiN3IwEIQkiiuPw==}
@@ -4604,8 +4607,9 @@ snapshots:
     dependencies:
       tailwindcss: 3.4.17
 
-  '@hookform/resolvers@3.10.0(react-hook-form@7.54.2(react@18.3.1))':
+  '@hookform/resolvers@4.1.0(react-hook-form@7.54.2(react@18.3.1))':
     dependencies:
+      caniuse-lite: 1.0.30001700
       react-hook-form: 7.54.2(react@18.3.1)
 
   '@humanwhocodes/config-array@0.13.0':
@@ -5719,6 +5723,8 @@ snapshots:
   caniuse-lite@1.0.30001651: {}
 
   caniuse-lite@1.0.30001686: {}
+
+  caniuse-lite@1.0.30001700: {}
 
   chai@5.1.2:
     dependencies:
