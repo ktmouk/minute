@@ -20,7 +20,7 @@
     "@emoji-mart/data": "^1.2.1",
     "@emoji-mart/react": "^1.1.1",
     "@headlessui/react": "2.2.0",
-    "@hookform/resolvers": "^3.6.0",
+    "@hookform/resolvers": "^4.0.0",
     "@minute/prisma": "workspace:*",
     "@minute/services": "workspace:*",
     "@minute/trpc": "workspace:*",
