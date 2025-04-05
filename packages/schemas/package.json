@@ -14,7 +14,7 @@
     "@minute/prisma": "workspace:*",
     "@minute/tsconfig": "workspace:*",
     "lint-staged": "^15.2.5",
-    "typescript": "5.7.2"
+    "typescript": "5.8.3"
   },
   "dependencies": {
     "server-only": "^0.0.1",

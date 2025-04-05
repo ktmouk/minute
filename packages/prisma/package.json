@@ -33,7 +33,7 @@
     "dotenv-cli": "^7.4.2",
     "lint-staged": "^15.2.5",
     "prisma": "5.22.0",
-    "typescript": "5.7.2"
+    "typescript": "5.8.3"
   },
   "dependencies": {
     "@prisma/client": "6.3.1",
