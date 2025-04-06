@@ -80,7 +80,7 @@ const presets = [
 ] as const;
 
 const datePartList = tv({
-  base: "px-4 text-sm py-2 border-gray-300",
+  base: "px-4 text-sm py-2 cursor-pointer border-gray-300",
   variants: {
     isSelected: {
       true: "text-white bg-green-500",

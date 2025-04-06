@@ -33,7 +33,7 @@ type Props = {
 };
 
 const submitButtonStyle = tv({
-  base: "py-2.5 px-4 bg-green-500 text-white text-sm rounded-sm inline-block",
+  base: "py-2.5 px-4 cursor-pointer bg-green-500 text-white text-sm rounded-sm inline-block",
   variants: {
     disabled: {
       true: "bg-gray-400",
@@ -202,7 +202,7 @@ export const CategoryModal = ({
             <div className="border border-gray-300 rounded-sm overflow-hidden p-1">
               <button
                 type="button"
-                className="py-1 rounded-sm text-left px-3 h-full w-full text-base hover:bg-gray-200 border-gray-300"
+                className="py-1 cursor-pointer rounded-sm text-left px-3 h-full w-full text-base hover:bg-gray-200 border-gray-300"
                 onClick={() => {
                   setIsEmojiPickerOpen(true);
                 }}
@@ -278,7 +278,7 @@ export const CategoryModal = ({
               <Tooltip sideOffset={5} content={t("delete")}>
                 <button
                   type="button"
-                  className="p-2.5 hover:bg-gray-200 text-red-400 rounded-sm inline-block"
+                  className="p-2.5 cursor-pointer hover:bg-gray-200 text-red-400 rounded-sm inline-block"
                   onClick={() => {
                     void handleDeleteButtonClick();
                   }}

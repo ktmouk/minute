@@ -12,7 +12,7 @@ export const NewChartButton = ({ onClick }: Props) => {
     <button
       type="button"
       onClick={onClick}
-      className="flex items-center p-2 pr-4 rounded-sm text-sm gap-2 hover:bg-gray-200"
+      className="flex items-center p-2 cursor-pointer pr-4 rounded-sm text-sm gap-2 hover:bg-gray-200"
     >
       <PiPlus className="text-base" />
       {t("addNewChart")}

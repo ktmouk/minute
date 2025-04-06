@@ -88,7 +88,7 @@ export const InlineFolderForm = ({
         >
           <button
             type="button"
-            className="py-1 px-2 h-full text-base hover:bg-gray-200 border-r border-gray-300"
+            className="py-1 cursor-pointer px-2 h-full text-base hover:bg-gray-200 border-r border-gray-300"
             onClick={() => {
               setIsEmojiPickerOpen(true);
             }}

@@ -43,7 +43,7 @@ export const CalendarDraggableEvent = ({
       {...attributes}
       className={containerStyle({ isDragging })}
     >
-      <button type="button" className="block" onClick={onClick}>
+      <button type="button" className="block cursor-pointer" onClick={onClick}>
         <CalendarEvent
           emoji={emoji}
           title={title}

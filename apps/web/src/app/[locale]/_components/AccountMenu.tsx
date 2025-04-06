@@ -93,7 +93,7 @@ export const AccountMenu = () => {
                     <MenuItem>
                       <button
                         type="button"
-                        className="px-4 py-2 flex items-center w-full text-left gap-2 hover:bg-gray-200"
+                        className="px-4 cursor-pointer py-2 flex items-center w-full text-left gap-2 hover:bg-gray-200"
                         onClick={() => {
                           void handleSignOutButtonClick();
                         }}

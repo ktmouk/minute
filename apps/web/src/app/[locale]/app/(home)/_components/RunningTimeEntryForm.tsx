@@ -22,7 +22,7 @@ import { RunningTimeEntryDescription } from "./RunningTimeEntryDescription";
 import { TaskSuggestionList } from "./TaskSuggestionList";
 
 const submitButtonStyle = tv({
-  base: "mr-4 flex h-11 w-11 shrink-0 items-center justify-center rounded-[100%] bg-green-500 text-3xl text-white",
+  base: "mr-4 flex size-11 cursor-pointer shrink-0 items-center justify-center rounded-[100%] bg-green-500 text-3xl text-white",
   variants: {
     isLoading: {
       true: "animate-pulse bg-gray-300",

@@ -41,7 +41,7 @@ const listStyle = tv({
 });
 
 const startButtonStyle = tv({
-  base: "text-green-500 px-2.5 focus:bg-gray-200 hover:bg-gray-300 opacity-0",
+  base: "text-green-500 px-2.5 cursor-pointer focus:bg-gray-200 hover:bg-gray-300 opacity-0",
   variants: {
     isRunning: {
       false:
@@ -158,7 +158,7 @@ export const TaskTreeItem = ({
       <div className="group flex hover:bg-gray-200">
         <button
           type="button"
-          className="block w-full min-w-0 px-4 text-sm"
+          className="block cursor-pointer w-full min-w-0 px-4 text-sm"
           onClick={handleClick}
         >
           <TreePath depth={depth}>
@@ -206,7 +206,7 @@ export const TaskTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       handleEditButtonClick();
                     }}
@@ -218,7 +218,7 @@ export const TaskTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}

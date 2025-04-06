@@ -185,7 +185,7 @@ export const FolderTreeItem = ({
           <div className="flex flex-1 justify-between" ref={setNodeRef}>
             <button
               type="button"
-              className="block flex-1 min-w-0 px-4 text-sm"
+              className="block cursor-pointer flex-1 min-w-0 px-4 text-sm"
               onClick={toggleIsOpen}
             >
               <TreePath depth={depth}>
@@ -214,7 +214,7 @@ export const FolderTreeItem = ({
                     <MenuItem>
                       <button
                         type="button"
-                        className="px-3 py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
+                        className="px-3 cursor-pointer py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
                         onClick={() => {
                           handleEditButtonClick();
                         }}
@@ -226,7 +226,7 @@ export const FolderTreeItem = ({
                     <MenuItem>
                       <button
                         type="button"
-                        className="px-3 py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
+                        className="px-3 py-2 cursor-pointer text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                         onClick={() => {
                           void handleDeleteButtonClick();
                         }}

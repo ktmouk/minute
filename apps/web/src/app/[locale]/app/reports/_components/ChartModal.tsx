@@ -23,7 +23,7 @@ type Props = {
 };
 
 const submitButtonStyle = tv({
-  base: "py-2.5 px-4 bg-green-500 text-white text-sm rounded-sm inline-block",
+  base: "py-2.5 px-4 bg-green-500 cursor-pointer text-white text-sm rounded-sm inline-block",
   variants: {
     disabled: {
       true: "bg-gray-400",
@@ -194,7 +194,7 @@ export const ChartModal = ({
               <Tooltip sideOffset={5} content={t("delete")}>
                 <button
                   type="button"
-                  className="p-2.5 hover:bg-gray-200 text-red-400 rounded-sm inline-block"
+                  className="p-2.5 hover:bg-gray-200 cursor-pointer text-red-400 rounded-sm inline-block"
                   onClick={() => {
                     void handleDeleteButtonClick();
                   }}

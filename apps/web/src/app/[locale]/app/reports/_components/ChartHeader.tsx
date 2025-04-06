@@ -17,7 +17,7 @@ export const ChartHeader = ({ name, onEditClick }: Props) => {
         <button
           type="button"
           onClick={onEditClick}
-          className="hover:bg-gray-200 p-2 rounded-sm"
+          className="hover:bg-gray-200 cursor-pointer p-2 rounded-sm"
         >
           <PiNotePencil className="text-xl" />
         </button>

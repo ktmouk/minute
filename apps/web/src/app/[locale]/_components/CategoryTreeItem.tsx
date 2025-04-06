@@ -69,7 +69,7 @@ export const CategoryTreeItem = ({
         <div className="flex flex-1 justify-between">
           <button
             type="button"
-            className="block w-full px-4 text-sm"
+            className="block cursor-pointer w-full px-4 text-sm"
             onClick={toggleIsOpen}
           >
             <TreePath depth={0}>
@@ -97,7 +97,7 @@ export const CategoryTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 w-full flex items-center gap-1 data-active:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 w-full flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       setIsModalOpen(true);
                     }}
@@ -109,7 +109,7 @@ export const CategoryTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}

@@ -176,7 +176,7 @@ export const SidebarFolderPanel = () => {
           onClick={() => {
             setIsShowForm(true);
           }}
-          className="flex items-center w-full my-2.5 px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
+          className="flex cursor-pointer items-center w-full my-2.5 px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
         >
           <PiPlus className="text-base" />
           {t("addNewFolder")}
