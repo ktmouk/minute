@@ -37,7 +37,7 @@ export const ChartList = ({ startDate, endDate, datePart }: Props) => {
         {(charts.data ?? []).map((chart) => (
           <section
             key={chart.id}
-            className="border border-gray-300 rounded p-2"
+            className="border border-gray-300 rounded-sm p-2"
           >
             <ChartHeader
               name={chart.name}

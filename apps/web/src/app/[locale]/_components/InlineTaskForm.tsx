@@ -55,7 +55,7 @@ export const InlineTaskForm = ({
   return (
     <form
       ref={ref}
-      className="mx-3 flex items-center border-gray-300 text-sm shadow-sm border rounded"
+      className="mx-3 flex items-center border-gray-300 text-sm shadow-xs border rounded-sm"
       onSubmit={(event) => {
         void handleSubmit(handleSave)(event);
       }}
@@ -63,7 +63,7 @@ export const InlineTaskForm = ({
       <PiFile size={20} className="mx-2 cursor-default" style={{ color }} />
       <input
         type="text"
-        className="pr-2 py-1.5 flex-1 outline-none bg-transparent"
+        className="pr-2 py-1.5 flex-1 outline-hidden bg-transparent"
         placeholder={t("enterTaskName")}
         data-1p-ignore
         data-lpignore

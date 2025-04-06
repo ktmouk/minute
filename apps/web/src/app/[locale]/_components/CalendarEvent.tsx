@@ -30,7 +30,7 @@ export const CalendarEvent = ({
           {emoji} {title}
         </span>
         <span
-          className="font-mono text-white whitespace-normal rounded-sm md:whitespace-nowrap"
+          className="font-mono text-white whitespace-normal rounded-xs md:whitespace-nowrap"
           style={{
             color: chroma(color).darken(0.7).hex(),
           }}

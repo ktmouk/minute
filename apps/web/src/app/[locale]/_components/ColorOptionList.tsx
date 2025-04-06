@@ -26,7 +26,7 @@ type Props = {
 
 export const ColorOptionList = ({ children }: Props) => {
   return (
-    <ul className="p-2 bg-white rounded border border-gray-300 text-sm shadow-sm">
+    <ul className="p-2 bg-white rounded-sm border border-gray-300 text-sm shadow-xs">
       {R.chunk(COLORS, 5).flatMap((colors) => (
         <li key={colors.join("-")} className="flex">
           {colors.map((color) => {
@@ -34,7 +34,7 @@ export const ColorOptionList = ({ children }: Props) => {
               <ListboxOption
                 key={color}
                 value={color}
-                className="flex items-center cursor-pointer justify-center ui-active:bg-gray-200 rounded p-1.5"
+                className="flex items-center cursor-pointer justify-center ui-active:bg-gray-200 rounded-sm p-1.5"
               >
                 {children(color)}
               </ListboxOption>

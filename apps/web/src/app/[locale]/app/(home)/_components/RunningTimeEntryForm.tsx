@@ -191,7 +191,7 @@ export const RunningTimeEntryForm = () => {
 
   return (
     <form onSubmit={(event) => void handleSubmit(event)}>
-      <div className="w-full rounded border border-gray-300 bg-white text-sm">
+      <div className="w-full rounded-sm border border-gray-300 bg-white text-sm">
         <h2 className="sr-only">{t("timerIsNotRunning")}</h2>
         <div className="mx-4 flex items-center border-b border-gray-300 py-2">
           <div className="mr-2 shrink-0 border-r border-r-gray-300 px-2 pr-4">

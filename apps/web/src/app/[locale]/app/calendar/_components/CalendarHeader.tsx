@@ -53,7 +53,7 @@ export const CalendarHeader = ({ date, today }: Props) => {
           onClick={() => {
             changeDate({ date: today, isHighlighted: false });
           }}
-          className="h-10 px-3 flex items-center gap-0.5 hover:bg-gray-200 text-green-500 border border-gray-300 rounded text-sm"
+          className="h-10 px-3 flex items-center gap-0.5 hover:bg-gray-200 text-green-500 border border-gray-300 rounded-sm text-sm"
         >
           <PiCalendarBlank className="text-lg" />
           {t("today")}

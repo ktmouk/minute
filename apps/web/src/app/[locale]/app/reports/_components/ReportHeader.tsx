@@ -168,7 +168,7 @@ export const ReportHeader = ({
       <div className="flex justify-between items-end text-sm">
         <div className="flex items-center shrink-0">
           <span className="text-gray-500 mr-2">{t("fromToday")}:</span>
-          <ul className="flex border border-gray-300 rounded divide-x overflow-hidden">
+          <ul className="flex border border-gray-300 rounded-sm divide-x divide-gray-200 overflow-hidden">
             {presets.map((preset) => {
               const isSelected =
                 datePart === preset.datePart &&

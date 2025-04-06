@@ -1,18 +1,121 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer utilities {
-  .custom-scrollbar::-webkit-scrollbar {
+@plugin '@headlessui/tailwindcss';
+
+@theme {
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-red-400: #c7444f;
+  --color-red-500: #a22e38;
+
+  --color-green-500: #405e63;
+
+  --color-blue-500: #365a7b;
+
+  --color-gray-100: #fbfbfb;
+  --color-gray-200: #f3f3f3;
+  --color-gray-300: #dee1dd;
+  --color-gray-400: #8c9da1;
+  --color-gray-500: #667375;
+  --color-gray-600: #4e585a;
+  --color-gray-700: #353c3d;
+  --color-gray-800: #141617;
+
+  --drop-shadow-*: initial;
+  --drop-shadow-sm: 0 8px 10px rgba(0, 0, 0, 0.1);
+
+  --font-*: initial;
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-roboto);
+
+  --animate-fade-up: fade-up 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-right: fade-right 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-down: fade-down 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-fade-left: fade-left 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-toast-up: toast-up 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-toast-down: toast-down 300ms ease-out;
+  --animate-blink: blink 1s ease infinite;
+
+  @keyframes fade-up {
+    0% {
+      opacity: 0;
+      transform: translateY(0.5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-0.5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes fade-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes fade-left {
+    0% {
+      opacity: 0;
+      transform: translateX(0.5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+  @keyframes toast-up {
+    from {
+      transform: translateY(calc(100% + 1rem)) scale(0);
+    }
+    to {
+      transform: translateY(0) scale(1);
+    }
+  }
+  @keyframes toast-down {
+    from {
+      transform: translateY(0) scale(1);
+    }
+    to {
+      transform: translateY(calc(100% + 1rem)) scale(0);
+    }
+  }
+}
+
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
     width: 7px;
   }
-  .custom-scrollbar::-webkit-scrollbar-track {
+  &::-webkit-scrollbar-track {
     background: #f3f3f3;
   }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     background-color: #8c9da1;
   }
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  &::-webkit-scrollbar-thumb:hover {
     background: #4e585a;
   }
 }

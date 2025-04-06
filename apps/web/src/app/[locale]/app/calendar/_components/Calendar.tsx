@@ -19,11 +19,11 @@ export const Calendar = ({ date, isHighlighted }: Props) => {
         {today !== undefined ? (
           <CalendarHeader today={today} date={date ?? today} />
         ) : (
-          <div className="h-10 animate-pulse bg-gray-300 w-48 rounded" />
+          <div className="h-10 animate-pulse bg-gray-300 w-48 rounded-sm" />
         )}
       </div>
       <div className="flex-1">
-        <div className="flex h-full relative justify-between border border-gray-300 rounded">
+        <div className="flex h-full relative justify-between border border-gray-300 rounded-sm">
           {today !== undefined && (
             <CalendarContent
               today={today}

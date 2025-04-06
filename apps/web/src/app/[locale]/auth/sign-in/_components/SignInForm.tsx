@@ -24,7 +24,7 @@ export const SignInForm = () => {
       <button
         type="button"
         disabled={isSigningIn}
-        className="bg-gray-800 disabled:bg-gray-600 flex gap-2 rounded text-white p-2 px-4 text-sm"
+        className="bg-gray-800 disabled:bg-gray-600 flex gap-2 rounded-sm text-white p-2 px-4 text-sm"
         onClick={() => {
           void handleClick();
         }}

@@ -29,8 +29,8 @@ export const ReportContainer = ({ datePart, dateRange }: Props) => {
           />
         ) : (
           <div className="flex justify-between w-full">
-            <div className="h-10 animate-pulse bg-gray-300 w-72 rounded" />
-            <div className="h-10 animate-pulse bg-gray-300 w-20 rounded" />
+            <div className="h-10 animate-pulse bg-gray-300 w-72 rounded-sm" />
+            <div className="h-10 animate-pulse bg-gray-300 w-20 rounded-sm" />
           </div>
         )}
       </div>

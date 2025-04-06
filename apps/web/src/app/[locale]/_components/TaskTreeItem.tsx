@@ -45,7 +45,7 @@ const startButtonStyle = tv({
   variants: {
     isRunning: {
       false:
-        "group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100",
+        "group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-open:opacity-100",
     },
   },
 });
@@ -195,18 +195,18 @@ export const TaskTreeItem = ({
 
             <Menu>
               <Tooltip sideOffset={3} side="top" content={t("openMenu")}>
-                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
+                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-open:opacity-100">
                   <PiDotsThreeBold />
                 </MenuButton>
               </Tooltip>
               <MenuItems
                 anchor="bottom start"
-                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded overflow-hidden"
+                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded-sm overflow-hidden"
               >
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 flex w-full items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       handleEditButtonClick();
                     }}
@@ -218,7 +218,7 @@ export const TaskTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}
