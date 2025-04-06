@@ -30,7 +30,7 @@
     "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
     "date-fns": "^4.0.0",
-    "dotenv-cli": "^7.4.2",
+    "dotenv-cli": "^8.0.0",
     "lint-staged": "^15.2.5",
     "prisma": "6.5.0",
     "typescript": "5.8.3",
