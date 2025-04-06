@@ -58,7 +58,7 @@ export const AccountMenu = () => {
     <div className="text-sm relative flex items-center">
       <Menu>
         {({ open }) => (
-          <>
+          <div>
             <Transition
               show={open || totalDurationVisible}
               enter="duration-200 ease-out"
@@ -110,7 +110,7 @@ export const AccountMenu = () => {
               <PiUserCircleDuotone className="text-2xl text-green-500" />
               {currentUser.data?.name}
             </MenuButton>
-          </>
+          </div>
         )}
       </Menu>
     </div>

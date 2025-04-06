@@ -21,9 +21,7 @@ type Props = {
 
 const Layout = async (props: Props) => {
   const params = await props.params;
-
   const { locale } = params;
-
   const { children } = props;
 
   // https://next-intl-docs.vercel.app/docs/getting-started/app-router/with-i18n-routing#layout
