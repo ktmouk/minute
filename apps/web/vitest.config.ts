@@ -6,5 +6,11 @@ export default defineConfig({
     coverage: {
       include: ["config/next-auth.ts", "src/middleware.ts"],
     },
+    server: {
+      deps: {
+        // https://next-intl.dev/docs/environments/testing#vitest
+        inline: ["next-intl"],
+      },
+    },
   },
 });
