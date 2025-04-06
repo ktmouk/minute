@@ -121,14 +121,14 @@ export default function middleware(
   }
 
   if (!isAllowedIp(ipAddress(req))) {
-    return new NextResponse(null, { status: 404 });
+    return new NextResponse("not found", { status: 404 });
   }
 
   if (req.nextUrl.pathname.startsWith("/api/trpc")) {
     const isValidApiRequest =
       hasJsonContentType(req) && hasValidOrigin(req) && hasValidXhrHeader(req);
     if (!isValidApiRequest) {
-      return new NextResponse(null, { status: 400 });
+      return new NextResponse("bad request", { status: 400 });
     }
   }
 
