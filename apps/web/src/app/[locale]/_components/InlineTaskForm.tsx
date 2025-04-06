@@ -1,5 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
+import type { RefObject } from "react";
 import { useRef } from "react";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
@@ -47,7 +48,9 @@ export const InlineTaskForm = ({
     onSubmit(data);
   };
 
-  useOnClickOutside(ref, () => ref.current?.requestSubmit());
+  useOnClickOutside(ref as unknown as RefObject<HTMLElement>, () =>
+    ref.current?.requestSubmit(),
+  );
 
   return (
     <form
