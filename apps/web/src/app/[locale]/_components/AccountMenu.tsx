@@ -89,7 +89,7 @@ export const AccountMenu = () => {
                       </p>
                     </div>
                   </div>
-                  <div className="p-1 flex items-center w-full border-t">
+                  <div className="p-1 flex items-center w-full border-t border-gray-200">
                     <MenuItem>
                       <button
                         type="button"
