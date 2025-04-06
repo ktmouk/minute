@@ -1,5 +1,6 @@
 import "server-only";
 
+import { ipAddress } from "@vercel/functions";
 import { NextRequest, NextResponse, type NextFetchEvent } from "next/server";
 import type { NextRequestWithAuth } from "next-auth/middleware";
 import withAuth from "next-auth/middleware";
@@ -119,7 +120,7 @@ export default function middleware(
     return NextResponse.next();
   }
 
-  if (!isAllowedIp(req.ip)) {
+  if (!isAllowedIp(ipAddress(req))) {
     return new NextResponse(null, { status: 404 });
   }
 
