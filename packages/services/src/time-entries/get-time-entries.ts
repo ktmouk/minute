@@ -18,6 +18,7 @@ export const getTimeEntries = (db: PrismaClient) =>
             id: z.string().uuid(),
           })
           .optional(),
+        direction: z.enum(["forward", "backward"]).optional(),
       }),
       output: z.promise(
         z.strictObject({

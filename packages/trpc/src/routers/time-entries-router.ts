@@ -37,6 +37,7 @@ export const timeEntriesRouter = router({
             id: z.string().uuid(),
           })
           .optional(),
+        direction: z.enum(["forward", "backward"]).optional(),
       }),
     )
     .output(
