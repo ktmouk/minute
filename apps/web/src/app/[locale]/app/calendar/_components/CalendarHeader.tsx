@@ -3,7 +3,7 @@
 import { addWeeks, format, isSameWeek, startOfWeek } from "date-fns";
 import { useTranslations } from "next-intl";
 import { PiCalendarBlank } from "react-icons/pi";
-import { useRouter } from "../../../../../i18n/routing";
+import { useRouter } from "../../../../../i18n/navigation";
 import { DatePicker } from "../../../_components/DatePicker";
 
 type Props = {

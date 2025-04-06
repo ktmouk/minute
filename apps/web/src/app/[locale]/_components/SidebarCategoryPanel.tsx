@@ -4,7 +4,7 @@ import { TabPanel } from "@headlessui/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { PiPlus, PiQuestion } from "react-icons/pi";
-import { Link } from "../../../i18n/routing";
+import { Link } from "../../../i18n/navigation";
 import { trpc } from "../_components/TrpcProvider";
 import { CategoryModal } from "./CategoryModal";
 import { CategoryTreeItem } from "./CategoryTreeItem";
