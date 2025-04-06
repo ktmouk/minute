@@ -50,7 +50,7 @@ const Layout = async (props: Props) => {
             <body>
               {children}
               <Toast />
-              <ReactQueryDevtools position="bottom" />
+              <ReactQueryDevtools position="right" />
             </body>
           </NextIntlClientProvider>
         </Provider>
