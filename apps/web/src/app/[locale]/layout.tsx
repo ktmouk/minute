@@ -1,7 +1,7 @@
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { Provider } from "jotai";
 import { notFound } from "next/navigation";
-import { NextIntlClientProvider } from "next-intl";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import type { ReactNode } from "react";
 import { roboto, inter } from "../../../config/fonts";
@@ -25,10 +25,7 @@ const Layout = async (props: Props) => {
   const { children } = props;
 
   // https://next-intl-docs.vercel.app/docs/getting-started/app-router/with-i18n-routing#layout
-  if (
-    typeof locale !== "string" ||
-    !routing.locales.includes(locale as (typeof routing.locales)[number])
-  ) {
+  if (typeof locale !== "string" || !hasLocale(routing.locales, locale)) {
     notFound();
   }
 
