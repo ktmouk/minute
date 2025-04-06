@@ -16,7 +16,7 @@ import {
 } from "date-fns";
 import { useTranslations } from "next-intl";
 import { tv } from "tailwind-variants";
-import { useRouter } from "../../../../../i18n/routing";
+import { useRouter } from "../../../../../i18n/navigation";
 import { DatePicker } from "../../../_components/DatePicker";
 import { ListboxButton } from "../../../_components/ListboxButton";
 import { ListboxOption } from "../../../_components/ListboxOption";
