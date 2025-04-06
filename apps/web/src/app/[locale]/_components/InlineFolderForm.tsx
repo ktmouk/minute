@@ -2,6 +2,7 @@ import data from "@emoji-mart/data";
 import Picker from "@emoji-mart/react";
 import { Listbox, ListboxButton, ListboxOptions } from "@headlessui/react";
 import { useTranslations } from "next-intl";
+import type { RefObject } from "react";
 import { useRef, useState } from "react";
 import { PiFolder } from "react-icons/pi";
 import { useOnClickOutside } from "usehooks-ts";
@@ -44,7 +45,7 @@ export const InlineFolderForm = ({
     onSubmit({ color, emoji, name });
   };
 
-  useOnClickOutside(ref, handleSubmit);
+  useOnClickOutside(ref as unknown as RefObject<HTMLElement>, handleSubmit);
 
   return (
     <form

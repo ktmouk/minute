@@ -32,8 +32,8 @@ const sendUserSecurityLog = async ({
   account?: Account | null;
 }) => {
   // https://github.com/nextauthjs/next-auth/discussions/8991#discussioncomment-7441559
-  const userAgent = headers().get("user-agent") ?? undefined;
-  const ipAddress = headers().get("x-real-ip") ?? undefined;
+  const userAgent = (await headers()).get("user-agent") ?? undefined;
+  const ipAddress = (await headers()).get("x-real-ip") ?? undefined;
 
   try {
     await createUserSecurityLog(db)({

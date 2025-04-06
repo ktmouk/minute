@@ -14,12 +14,16 @@ export const fetchCache = "only-no-store";
 
 type Props = {
   children: ReactNode;
-  params: {
+  params: Promise<{
     locale: string;
-  };
+  }>;
 };
 
-const Layout = async ({ children, params: { locale } }: Props) => {
+const Layout = async (props: Props) => {
+  const params = await props.params;
+  const { locale } = params;
+  const { children } = props;
+
   // https://next-intl-docs.vercel.app/docs/getting-started/app-router/with-i18n-routing#layout
   if (
     typeof locale !== "string" ||

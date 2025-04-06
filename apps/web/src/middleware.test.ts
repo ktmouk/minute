@@ -34,7 +34,9 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/robots.txt", {
-          ip: "1.1.1.1",
+          headers: {
+            "x-real-ip": "1.1.1.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -50,8 +52,8 @@ describe("middleware", () => {
     describe("when the requset has valid headers", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:4001",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "application/json",
@@ -69,8 +71,8 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "1.1.1.1",
           headers: {
+            "x-real-ip": "1.1.1.1",
             Origin: "http://localhost:4001",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "application/json",
@@ -106,8 +108,8 @@ describe("middleware", () => {
     describe("when the requset has an empty ip", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "",
           headers: {
+            "x-real-ip": "",
             Origin: "http://localhost:4001",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "application/json",
@@ -125,8 +127,8 @@ describe("middleware", () => {
     describe("when the requset does not have an origin header", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "application/json",
           },
@@ -143,8 +145,8 @@ describe("middleware", () => {
     describe("when the requset has a invalid origin header", () => {
       it("returns 400", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:3000",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "application/json",
@@ -162,8 +164,8 @@ describe("middleware", () => {
     describe("when the requset has an invalid content-type header", () => {
       it("returns 400", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:4001",
             "X-Requested-With": "XMLHttpRequest",
             "Content-Type": "multipart/form-data",
@@ -181,8 +183,8 @@ describe("middleware", () => {
     describe("when the requset has an invalid custom header", () => {
       it("returns 400", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:4001",
             "X-Requested-With": "invalid",
             "Content-Type": "application/json",
@@ -200,8 +202,8 @@ describe("middleware", () => {
     describe("when the requset does not have a custom header", () => {
       it("returns 400", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
-          ip: "127.0.0.1",
           headers: {
+            "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:4001",
             "Content-Type": "application/json",
           },
@@ -220,7 +222,9 @@ describe("middleware", () => {
     describe("when the requset has an allowed ip", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/_next", {
-          ip: "127.0.0.1",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -234,7 +238,9 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 404", async () => {
         const req = new NextRequest("http://localhost:3000/_next", {
-          ip: "1.1.1.1",
+          headers: {
+            "x-real-ip": "1.1.1.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -250,7 +256,9 @@ describe("middleware", () => {
     describe("when the requset has an allowed ip", () => {
       it("returns 200", async () => {
         const req = new NextRequest("http://localhost:3000/api", {
-          ip: "127.0.0.1",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -264,7 +272,9 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 404", async () => {
         const req = new NextRequest("http://localhost:3000/api/", {
-          ip: "1.1.1.1",
+          headers: {
+            "x-real-ip": "1.1.1.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -280,7 +290,9 @@ describe("middleware", () => {
     describe("when the requset has an allowed ip", () => {
       it("returns 200 and has the csp header", async () => {
         const req = new NextRequest("http://localhost:3000/en/auth/sign-in", {
-          ip: "127.0.0.1",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -295,7 +307,9 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 404", async () => {
         const req = new NextRequest("http://localhost:3000/en/auth/sign-in", {
-          ip: "1.1.1.1",
+          headers: {
+            "x-real-ip": "1.1.1.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -311,7 +325,9 @@ describe("middleware", () => {
     describe("when the requset does not have a session cookie", () => {
       it("redirects to the sign in page", async () => {
         const req = new NextRequest("http://localhost:3000/en/app", {
-          ip: "127.0.0.1",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,
@@ -328,7 +344,9 @@ describe("middleware", () => {
     describe("when the requset has a session cookie", () => {
       it("returns 200 and has the csp header", async () => {
         const req = new NextRequest("http://localhost:3000/en/app", {
-          ip: "127.0.0.1",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+          },
         });
         req.cookies.set("next-auth.session-token", "token");
         const res = await middleware(
@@ -344,7 +362,9 @@ describe("middleware", () => {
     describe("when the requset has a disallowed ip", () => {
       it("returns 404", async () => {
         const req = new NextRequest("http://localhost:3000/en/app", {
-          ip: "1.1.1.1",
+          headers: {
+            "x-real-ip": "1.1.1.1",
+          },
         });
         const res = await middleware(
           req as NextRequestWithAuth,

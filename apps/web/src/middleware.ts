@@ -1,5 +1,6 @@
 import "server-only";
 
+import { ipAddress } from "@vercel/functions";
 import { NextRequest, NextResponse, type NextFetchEvent } from "next/server";
 import type { NextRequestWithAuth } from "next-auth/middleware";
 import withAuth from "next-auth/middleware";
@@ -119,15 +120,15 @@ export default function middleware(
     return NextResponse.next();
   }
 
-  if (!isAllowedIp(req.ip)) {
-    return new NextResponse(null, { status: 404 });
+  if (!isAllowedIp(ipAddress(req))) {
+    return new NextResponse("not found", { status: 404 });
   }
 
   if (req.nextUrl.pathname.startsWith("/api/trpc")) {
     const isValidApiRequest =
       hasJsonContentType(req) && hasValidOrigin(req) && hasValidXhrHeader(req);
     if (!isValidApiRequest) {
-      return new NextResponse(null, { status: 400 });
+      return new NextResponse("bad request", { status: 400 });
     }
   }
 
