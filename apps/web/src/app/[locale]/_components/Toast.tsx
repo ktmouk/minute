@@ -29,7 +29,7 @@ export const Toast = () => {
         return (
           <ToastPrimitive.Root
             key={id}
-            className="rounded py-3 px-4 drop-shadow-sm text-center text-sm bg-green-500 mb-4 text-white data-[state=open]:animate-toast-up data-[state=closed]:animate-toast-down"
+            className="rounded-sm py-3 px-4 drop-shadow-sm text-center text-sm bg-green-500 mb-4 text-white data-[state=open]:animate-toast-up data-[state=closed]:animate-toast-down"
             open={open}
             onOpenChange={(open) => {
               handleOpenChange(open, id);
@@ -43,7 +43,7 @@ export const Toast = () => {
         );
       })}
 
-      <ToastPrimitive.Viewport className="fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-50 m-0 list-none outline-none" />
+      <ToastPrimitive.Viewport className="fixed bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center z-50 m-0 list-none outline-hidden" />
     </ToastPrimitive.Provider>
   );
 };

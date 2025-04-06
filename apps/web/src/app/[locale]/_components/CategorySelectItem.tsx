@@ -19,7 +19,7 @@ export const CategorySelectItem = ({
   return (
     <li>
       <ListboxOption
-        className="block cursor-pointer rounded w-full px-2 text-sm ui-active:bg-gray-200"
+        className="block cursor-pointer rounded-sm w-full px-2 text-sm ui-active:bg-gray-200"
         value={id}
       >
         <span className="flex w-full py-1 min-w-0 items-center">

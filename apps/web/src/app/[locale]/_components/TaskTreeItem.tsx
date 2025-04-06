@@ -41,11 +41,11 @@ const listStyle = tv({
 });
 
 const startButtonStyle = tv({
-  base: "text-green-500 px-2.5 focus:bg-gray-200 hover:bg-gray-300 opacity-0",
+  base: "text-green-500 px-2.5 cursor-pointer focus:bg-gray-200 hover:bg-gray-300 opacity-0",
   variants: {
     isRunning: {
       false:
-        "group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100",
+        "group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-open:opacity-100",
     },
   },
 });
@@ -158,7 +158,7 @@ export const TaskTreeItem = ({
       <div className="group flex hover:bg-gray-200">
         <button
           type="button"
-          className="block w-full min-w-0 px-4 text-sm"
+          className="block cursor-pointer w-full min-w-0 px-4 text-sm"
           onClick={handleClick}
         >
           <TreePath depth={depth}>
@@ -195,18 +195,18 @@ export const TaskTreeItem = ({
 
             <Menu>
               <Tooltip sideOffset={3} side="top" content={t("openMenu")}>
-                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
+                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-open:opacity-100">
                   <PiDotsThreeBold />
                 </MenuButton>
               </Tooltip>
               <MenuItems
                 anchor="bottom start"
-                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded overflow-hidden"
+                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded-sm overflow-hidden"
               >
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 flex w-full items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 flex w-full items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       handleEditButtonClick();
                     }}
@@ -218,7 +218,7 @@ export const TaskTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}

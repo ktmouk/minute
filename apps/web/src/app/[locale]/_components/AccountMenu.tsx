@@ -70,9 +70,9 @@ export const AccountMenu = () => {
             >
               <MenuItems
                 static
-                className="absolute bottom-16 left-4 w-full outline-none mt-1"
+                className="absolute bottom-16 left-4 w-full outline-hidden mt-1"
               >
-                <div className="w-56 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
+                <div className="w-56 rounded-sm border border-gray-300 bg-white text-sm drop-shadow-sm">
                   <div className="p-4 py-5">
                     <div className="text-center gap-1 flex-col">
                       <p className="text-sm text-gray-500">
@@ -93,7 +93,7 @@ export const AccountMenu = () => {
                     <MenuItem>
                       <button
                         type="button"
-                        className="px-4 py-2 flex items-center w-full text-left gap-2 hover:bg-gray-200"
+                        className="px-4 cursor-pointer py-2 flex items-center w-full text-left gap-2 hover:bg-gray-200"
                         onClick={() => {
                           void handleSignOutButtonClick();
                         }}
@@ -106,7 +106,7 @@ export const AccountMenu = () => {
                 </div>
               </MenuItems>
             </Transition>
-            <MenuButton className="flex m-2 p-2 rounded w-full items-center gap-2 hover:bg-gray-200">
+            <MenuButton className="flex m-2 p-2 rounded-sm w-full items-center gap-2 hover:bg-gray-200">
               <PiUserCircleDuotone className="text-2xl text-green-500" />
               {currentUser.data?.name}
             </MenuButton>

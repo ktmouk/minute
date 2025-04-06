@@ -12,7 +12,7 @@ import { trpc } from "../../../_components/TrpcProvider";
 import { useToast } from "../../../_hooks/useToast";
 
 const repeatButtonStyle = tv({
-  base: "rounded p-3 text-green-500 outline-none",
+  base: "rounded-sm p-3 cursor-pointer text-green-500 outline-hidden",
   variants: {
     isRunning: {
       false: "text-green-500 hover:bg-gray-200 focus:bg-gray-200",
@@ -59,7 +59,7 @@ export const TimeEntryListItem = ({ timeEntry, isRunning }: Props) => {
     <li key={timeEntry.id} className="flex p-1">
       <button
         type="button"
-        className="flex flex-1 items-baseline rounded p-3 outline-none hover:bg-gray-200 focus:bg-gray-200"
+        className="flex flex-1 cursor-pointer items-baseline rounded-sm p-3 outline-hidden hover:bg-gray-200 focus:bg-gray-200"
         onClick={() => {
           setIsModalOpen(true);
         }}

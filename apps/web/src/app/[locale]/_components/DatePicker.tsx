@@ -62,11 +62,11 @@ export const DatePicker = ({
   }, [startDate, endDate]);
 
   return (
-    <div className="inline-flex h-10 overflow-hidden border border-gray-300 rounded">
+    <div className="inline-flex h-10 overflow-hidden border border-gray-300 rounded-sm">
       <Tooltip sideOffset={5} content={t("prev")}>
         <button
           type="button"
-          className="px-2 group hover:bg-gray-200 border-gray-300"
+          className="px-2 cursor-pointer group hover:bg-gray-200 border-gray-300"
           onClick={() => {
             onClickPrev();
           }}
@@ -81,7 +81,7 @@ export const DatePicker = ({
         >
           <input
             type="date"
-            className="px-2 outline-none h-full text-sm hover:bg-gray-200"
+            className="px-2 outline-hidden h-full text-sm hover:bg-gray-200"
             onChange={handleChangeStartDate}
             value={startDateValue}
           />
@@ -103,7 +103,7 @@ export const DatePicker = ({
       <Tooltip sideOffset={5} content={t("next")}>
         <button
           type="button"
-          className="px-2 hover:bg-gray-200 border-gray-300 group"
+          className="px-2 cursor-pointer hover:bg-gray-200 border-gray-300 group"
           onClick={() => {
             onClickNext();
           }}

@@ -91,7 +91,7 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
                   `/app/calendar?date=${format(date, "yyyy-MM-dd")}&isHighlighted=true`,
                 );
               }}
-              className="mb-0.5 rounded p-1 text-sm text-green-500 outline-none hover:bg-gray-200 focus:bg-gray-200"
+              className="mb-0.5 cursor-pointer rounded-sm p-1 text-sm text-green-500 outline-hidden hover:bg-gray-200 focus:bg-gray-200"
             >
               <PiCalendarBlank size={22} />
             </button>
@@ -106,7 +106,7 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
               <Tooltip side="top" content={t("addManually")}>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1 rounded px-2 py-1.5 text-sm text-green-500 outline-none hover:bg-gray-200 focus:bg-gray-200"
+                  className="inline-flex cursor-pointer items-center gap-1 rounded-sm px-2 py-1.5 text-sm text-green-500 outline-hidden hover:bg-gray-200 focus:bg-gray-200"
                   onClick={() => {
                     setIsModalOpen(true);
                   }}
@@ -130,7 +130,7 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
           )}
         </div>
       </header>
-      <ul className="mt-2 divide-y divide-gray-200 rounded border border-gray-300 bg-white text-sm">
+      <ul className="mt-2 divide-y divide-gray-200 rounded-sm border border-gray-300 bg-white text-sm">
         {timeEntries.map((timeEntry) => (
           <TimeEntryListItem
             key={timeEntry.id}

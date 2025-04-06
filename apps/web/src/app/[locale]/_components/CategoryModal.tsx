@@ -33,7 +33,7 @@ type Props = {
 };
 
 const submitButtonStyle = tv({
-  base: "py-2.5 px-4 bg-green-500 text-white text-sm rounded inline-block",
+  base: "py-2.5 px-4 cursor-pointer bg-green-500 text-white text-sm rounded-sm inline-block",
   variants: {
     disabled: {
       true: "bg-gray-400",
@@ -171,21 +171,21 @@ export const CategoryModal = ({
         <div className="m-4 flex flex-col">
           <Field className="flex w-full flex-col flex-1 gap-2">
             <Label className="text-sm">{t("color")}</Label>
-            <div className="border border-gray-300 rounded overflow-hidden p-1">
+            <div className="border border-gray-300 rounded-sm overflow-hidden p-1">
               <Listbox
                 value={watch("color")}
                 onChange={(color) => {
                   setValue("color", color, { shouldValidate: true });
                 }}
               >
-                <ListboxButton className="py-1.5 rounded flex items-center gap-2 text-left px-2 h-full w-full text-sm hover:bg-gray-200 border-gray-300">
+                <ListboxButton className="py-1.5 rounded-sm flex items-center gap-2 text-left px-2 h-full w-full text-sm hover:bg-gray-200 border-gray-300">
                   <PiSquaresFourLight
                     size={20}
                     style={{ color: watch("color") }}
                   />
                   {watch("color")}
                 </ListboxButton>
-                <ListboxOptions className="flex outline-none absolute mt-2 animate-fade-down">
+                <ListboxOptions className="flex outline-hidden absolute mt-2 animate-fade-down">
                   <ColorOptionList>
                     {(color) => (
                       <PiSquaresFourLight size={20} style={{ color }} />
@@ -199,10 +199,10 @@ export const CategoryModal = ({
         <div className="m-4 flex flex-col">
           <label className="flex w-full flex-col flex-1 gap-2">
             <span className="text-sm">{t("emoji")}</span>
-            <div className="border border-gray-300 rounded overflow-hidden p-1">
+            <div className="border border-gray-300 rounded-sm overflow-hidden p-1">
               <button
                 type="button"
-                className="py-1 rounded text-left px-3 h-full w-full text-base hover:bg-gray-200 border-gray-300"
+                className="py-1 cursor-pointer rounded-sm text-left px-3 h-full w-full text-base hover:bg-gray-200 border-gray-300"
                 onClick={() => {
                   setIsEmojiPickerOpen(true);
                 }}
@@ -234,7 +234,7 @@ export const CategoryModal = ({
               type="text"
               data-1p-ignore
               data-lpignore
-              className="border flex-1 border-gray-300 rounded text-sm p-3"
+              className="border flex-1 border-gray-300 rounded-sm text-sm p-3"
               {...register("name")}
             />
           </label>
@@ -250,7 +250,7 @@ export const CategoryModal = ({
               {t("folders")}
               {t("multiple")}
             </span>
-            <div className="border text-sm border-gray-300 rounded">
+            <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleFolderSelect
                   folderIds={watch("folderIds")}
@@ -278,7 +278,7 @@ export const CategoryModal = ({
               <Tooltip sideOffset={5} content={t("delete")}>
                 <button
                   type="button"
-                  className="p-2.5 hover:bg-gray-200 text-red-400 rounded inline-block"
+                  className="p-2.5 cursor-pointer hover:bg-gray-200 text-red-400 rounded-sm inline-block"
                   onClick={() => {
                     void handleDeleteButtonClick();
                   }}

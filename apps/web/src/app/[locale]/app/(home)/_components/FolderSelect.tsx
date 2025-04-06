@@ -16,14 +16,14 @@ export const FolderSelect = ({ folderId, onSelect }: Props) => {
   return (
     <Listbox value={folderId} onChange={onSelect}>
       <div className="relative w-full">
-        <ListboxButton className="inline-flex w-full rounded px-2 py-1 outline-none hover:bg-gray-200 focus:bg-gray-200">
+        <ListboxButton className="inline-flex w-full rounded-sm px-2 py-1 outline-hidden hover:bg-gray-200 focus:bg-gray-200">
           <FolderBreadcrumb
             folderId={folderId}
             fallback={<p className="text-gray-500 py-0.5">{t("noFolder")}</p>}
           />
         </ListboxButton>
-        <ListboxOptions className="absolute z-10 cursor-pointer w-full outline-none mt-1 animate-fade-down">
-          <div className="w-72 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
+        <ListboxOptions className="absolute z-10 cursor-pointer w-full outline-hidden mt-1 animate-fade-down">
+          <div className="w-72 rounded-sm border border-gray-300 bg-white text-sm drop-shadow-sm">
             <h3 className="border-b border-gray-300 px-4 py-2">
               {t("selectFolder")}
             </h3>

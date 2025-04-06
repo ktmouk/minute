@@ -13,7 +13,7 @@ export const Modal = ({ isOpen, onClose, children }: Props) => {
       <Dialog onClose={onClose} open={isOpen} className="relative z-40">
         {isOpen && <div className="fixed inset-0 bg-gray-800 opacity-20" />}
         <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="drop-shadow-sm space-y-4 bg-white rounded">
+          <DialogPanel className="drop-shadow-sm space-y-4 bg-white rounded-sm">
             {children}
           </DialogPanel>
         </div>

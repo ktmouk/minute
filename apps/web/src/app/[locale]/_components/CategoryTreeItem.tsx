@@ -69,7 +69,7 @@ export const CategoryTreeItem = ({
         <div className="flex flex-1 justify-between">
           <button
             type="button"
-            className="block w-full px-4 text-sm"
+            className="block cursor-pointer w-full px-4 text-sm"
             onClick={toggleIsOpen}
           >
             <TreePath depth={0}>
@@ -86,18 +86,18 @@ export const CategoryTreeItem = ({
           <div className="relative">
             <Menu>
               <Tooltip sideOffset={3} side="top" content={t("openMenu")}>
-                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-[open]:opacity-100">
+                <MenuButton className="px-1.5 focus:bg-gray-200 hover:bg-gray-300 h-full text-xl opacity-0 group-focus:opacity-100 focus:opacity-100 group-hover:opacity-100 data-open:opacity-100">
                   <PiDotsThreeBold />
                 </MenuButton>
               </Tooltip>
               <MenuItems
                 anchor="bottom start"
-                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded overflow-hidden"
+                className="bg-white drop-shadow-sm border border-gray-300 text-sm rounded-sm overflow-hidden"
               >
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 w-full flex items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 w-full flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       setIsModalOpen(true);
                     }}
@@ -109,7 +109,7 @@ export const CategoryTreeItem = ({
                 <MenuItem>
                   <button
                     type="button"
-                    className="px-3 py-2 text-red-500 flex items-center gap-1 data-[active]:bg-gray-200"
+                    className="px-3 cursor-pointer py-2 text-red-500 flex items-center gap-1 data-active:bg-gray-200"
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}

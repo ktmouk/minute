@@ -21,7 +21,7 @@ const payloadSchema = z.array(
 
 export const ChartToolip = ({ payload, label }: Props) => {
   return (
-    <section className="text-xs bg-gray-600 text-white rounded p-3">
+    <section className="text-xs bg-gray-600 text-white rounded-sm p-3">
       <h4>{label}</h4>
       <ul className="text-xs flex flex-col gap-1 mt-2">
         {payloadSchema

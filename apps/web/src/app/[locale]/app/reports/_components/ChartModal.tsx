@@ -23,7 +23,7 @@ type Props = {
 };
 
 const submitButtonStyle = tv({
-  base: "py-2.5 px-4 bg-green-500 text-white text-sm rounded inline-block",
+  base: "py-2.5 px-4 bg-green-500 cursor-pointer text-white text-sm rounded-sm inline-block",
   variants: {
     disabled: {
       true: "bg-gray-400",
@@ -139,7 +139,7 @@ export const ChartModal = ({
               type="text"
               data-1p-ignore
               data-lpignore
-              className="border flex-1 border-gray-300 rounded text-sm p-3"
+              className="border flex-1 border-gray-300 rounded-sm text-sm p-3"
               {...register("name")}
             />
           </label>
@@ -154,7 +154,7 @@ export const ChartModal = ({
             <span className="text-sm">
               {t("folders")} {t("multiple")}
             </span>
-            <div className="border text-sm border-gray-300 rounded">
+            <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleFolderSelect
                   folderIds={watch("folderIds")}
@@ -169,7 +169,7 @@ export const ChartModal = ({
             <span className="text-sm">
               {t("categories")} {t("multiple")}
             </span>
-            <div className="border text-sm border-gray-300 rounded">
+            <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleCategorySelect
                   categoryIds={watch("categoryIds")}
@@ -194,7 +194,7 @@ export const ChartModal = ({
               <Tooltip sideOffset={5} content={t("delete")}>
                 <button
                   type="button"
-                  className="p-2.5 hover:bg-gray-200 text-red-400 rounded inline-block"
+                  className="p-2.5 hover:bg-gray-200 cursor-pointer text-red-400 rounded-sm inline-block"
                   onClick={() => {
                     void handleDeleteButtonClick();
                   }}

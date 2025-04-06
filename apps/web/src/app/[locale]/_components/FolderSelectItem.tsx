@@ -25,7 +25,7 @@ export const FolderSelectItem = ({
   return (
     <li>
       <ListboxOption
-        className="block cursor-pointer rounded w-full px-2 text-sm ui-active:bg-gray-200"
+        className="block cursor-pointer rounded-sm w-full px-2 text-sm ui-active:bg-gray-200"
         value={id}
       >
         <TreePath depth={depth}>

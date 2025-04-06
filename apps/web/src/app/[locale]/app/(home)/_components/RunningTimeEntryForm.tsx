@@ -22,7 +22,7 @@ import { RunningTimeEntryDescription } from "./RunningTimeEntryDescription";
 import { TaskSuggestionList } from "./TaskSuggestionList";
 
 const submitButtonStyle = tv({
-  base: "mr-4 flex h-11 w-11 shrink-0 items-center justify-center rounded-[100%] bg-green-500 text-3xl text-white",
+  base: "mr-4 flex size-11 cursor-pointer shrink-0 items-center justify-center rounded-[100%] bg-green-500 text-3xl text-white",
   variants: {
     isLoading: {
       true: "animate-pulse bg-gray-300",
@@ -191,7 +191,7 @@ export const RunningTimeEntryForm = () => {
 
   return (
     <form onSubmit={(event) => void handleSubmit(event)}>
-      <div className="w-full rounded border border-gray-300 bg-white text-sm">
+      <div className="w-full rounded-sm border border-gray-300 bg-white text-sm">
         <h2 className="sr-only">{t("timerIsNotRunning")}</h2>
         <div className="mx-4 flex items-center border-b border-gray-300 py-2">
           <div className="mr-2 shrink-0 border-r border-r-gray-300 px-2 pr-4">

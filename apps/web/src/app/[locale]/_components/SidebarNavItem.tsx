@@ -29,7 +29,7 @@ export const SidebarNavItem = ({ href, barColor, children }: Props) => {
   return (
     <li>
       <Link
-        className="flex w-full items-center outline-none pr-4 hover:bg-gray-200 focus:bg-gray-200"
+        className="flex w-full items-center outline-hidden pr-4 hover:bg-gray-200 focus:bg-gray-200"
         aria-current={isCurrent ? "page" : undefined}
         href={href}
       >

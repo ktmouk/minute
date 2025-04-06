@@ -36,7 +36,7 @@ export const SidebarCategoryPanel = () => {
           onClick={() => {
             setIsModalOpen(true);
           }}
-          className="flex items-center w-full px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
+          className="flex cursor-pointer items-center w-full px-4 py-1.5 text-sm gap-2 hover:bg-gray-200"
         >
           <PiPlus className="text-base" />
           {t("addNewCategory")}

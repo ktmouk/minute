@@ -16,7 +16,7 @@ export const MultipleFolderSelect = ({ folderIds, onSelect }: Props) => {
   return (
     <Listbox value={folderIds} onChange={onSelect} multiple>
       <div className="relative w-full">
-        <ListboxButton className="inline-flex flex-wrap w-full rounded gap-1 outline-none p-1 hover:bg-gray-200">
+        <ListboxButton className="inline-flex flex-wrap w-full rounded-sm gap-1 outline-hidden p-1 hover:bg-gray-200">
           {folderIds.length > 0 ? (
             folderIds.map((folderId) => (
               <span
@@ -30,8 +30,8 @@ export const MultipleFolderSelect = ({ folderIds, onSelect }: Props) => {
             <p className="p-0.5 px-2 text-gray-500">{t("selectFolder")}</p>
           )}
         </ListboxButton>
-        <ListboxOptions className="absolute z-10 w-full outline-none mt-1 animate-fade-down">
-          <div className="w-72 rounded border border-gray-300 bg-white text-sm drop-shadow-sm">
+        <ListboxOptions className="absolute z-10 w-full outline-hidden mt-1 animate-fade-down">
+          <div className="w-72 rounded-sm border border-gray-300 bg-white text-sm drop-shadow-sm">
             <h3 className="border-b border-gray-300 px-4 py-2">
               {t("selectFolder")}
             </h3>

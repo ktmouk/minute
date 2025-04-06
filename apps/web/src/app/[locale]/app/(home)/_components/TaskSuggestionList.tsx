@@ -27,11 +27,11 @@ export const TaskSuggestionList = ({
   const t = useTranslations("components.TaskSuggestionList");
 
   return (
-    <section className="w-full rounded border border-gray-300 bg-white p-0 text-sm drop-shadow-sm">
+    <section className="w-full rounded-sm border border-gray-300 bg-white p-0 text-sm drop-shadow-sm">
       <h3 className="border-b border-gray-300 px-4 py-2">
         {t("recentEntries")}
       </h3>
-      <ul className="max-h-96 divide-y overflow-y-auto">
+      <ul className="max-h-96 divide-y divide-gray-200 overflow-y-auto">
         {tasks.map((task, index) => {
           const highlighted = highlightedIndex === index;
           const { key, ...props } = getItemProps({

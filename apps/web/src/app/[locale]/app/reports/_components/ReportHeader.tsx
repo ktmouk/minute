@@ -80,7 +80,7 @@ const presets = [
 ] as const;
 
 const datePartList = tv({
-  base: "px-4 text-sm py-2 border-gray-300",
+  base: "px-4 text-sm py-2 cursor-pointer border-gray-300",
   variants: {
     isSelected: {
       true: "text-white bg-green-500",
@@ -168,7 +168,7 @@ export const ReportHeader = ({
       <div className="flex justify-between items-end text-sm">
         <div className="flex items-center shrink-0">
           <span className="text-gray-500 mr-2">{t("fromToday")}:</span>
-          <ul className="flex border border-gray-300 rounded divide-x overflow-hidden">
+          <ul className="flex border border-gray-300 rounded-sm divide-x divide-gray-200 overflow-hidden">
             {presets.map((preset) => {
               const isSelected =
                 datePart === preset.datePart &&

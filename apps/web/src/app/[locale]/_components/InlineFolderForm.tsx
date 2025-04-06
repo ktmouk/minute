@@ -50,7 +50,7 @@ export const InlineFolderForm = ({
   return (
     <form
       ref={ref}
-      className="mx-3 flex border-gray-300 text-sm shadow-sm border rounded"
+      className="mx-3 flex border-gray-300 text-sm shadow-xs border rounded-sm"
       onSubmit={(event) => {
         handleSubmit();
         event.preventDefault();
@@ -72,7 +72,7 @@ export const InlineFolderForm = ({
             </ListboxButton>
           </Tooltip>
 
-          <ListboxOptions className="flex outline-none absolute mt-2 animate-fade-down">
+          <ListboxOptions className="flex outline-hidden absolute mt-2 animate-fade-down">
             <ColorOptionList>
               {(color) => <PiFolder size={20} style={{ color }} />}
             </ColorOptionList>
@@ -88,7 +88,7 @@ export const InlineFolderForm = ({
         >
           <button
             type="button"
-            className="py-1 px-2 h-full text-base hover:bg-gray-200 border-r border-gray-300"
+            className="py-1 cursor-pointer px-2 h-full text-base hover:bg-gray-200 border-r border-gray-300"
             onClick={() => {
               setIsEmojiPickerOpen(true);
             }}
@@ -114,7 +114,7 @@ export const InlineFolderForm = ({
       </div>
       <input
         type="text"
-        className="px-2 flex-1 outline-none bg-transparent"
+        className="px-2 flex-1 outline-hidden bg-transparent"
         placeholder={t("enterFolderName")}
         value={name}
         data-1p-ignore

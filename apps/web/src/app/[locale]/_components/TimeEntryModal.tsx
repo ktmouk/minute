@@ -25,7 +25,7 @@ type Props = {
 };
 
 const submitButtonStyle = tv({
-  base: "py-2.5 px-4 bg-green-500 text-white text-sm rounded inline-block",
+  base: "py-2.5 px-4 bg-green-500 cursor-pointer text-white text-sm rounded-sm inline-block",
   variants: {
     disabled: {
       true: "bg-gray-400",
@@ -197,7 +197,7 @@ export const TimeEntryModal = ({
           </header>
           <div className="m-4 flex flex-col">
             <div className="mb-4">
-              <div className="border text-sm border-gray-300 rounded">
+              <div className="border text-sm border-gray-300 rounded-sm">
                 <div className="mx-2 flex items-center border-b border-gray-300 py-1">
                   <div className="mr-2 shrink-0 border-r border-r-gray-300 px-2 pr-4">
                     {t("addTo")}
@@ -218,7 +218,7 @@ export const TimeEntryModal = ({
                   required
                   data-1p-ignore
                   data-lpignore
-                  className="w-full text-sm rounded bg-transparent py-5 px-6 outline-none placeholder:text-gray-400"
+                  className="w-full text-sm rounded-sm bg-transparent py-5 px-6 outline-hidden placeholder:text-gray-400"
                   {...register("description")}
                   placeholder={t("descriptionPlaceholder")}
                 />
@@ -233,17 +233,15 @@ export const TimeEntryModal = ({
             <div className="flex flex-col gap-4">
               <div>
                 <label className="text-sm flex items-center">
-                  <span className="flex-shrink-0 mr-6 w-20">
-                    {t("startedAt")}
-                  </span>
+                  <span className="shrink-0 mr-6 w-20">{t("startedAt")}</span>
                   <input
-                    className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
                     type="date"
                     required
                     {...register("startDate")}
                   />
                   <input
-                    className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
                     type="time"
                     step="1"
                     required
@@ -263,17 +261,15 @@ export const TimeEntryModal = ({
               </div>
               <div>
                 <label className="text-sm flex items-center">
-                  <span className="flex-shrink-0 mr-6 w-20">
-                    {t("stoppedAt")}
-                  </span>
+                  <span className="shrink-0 mr-6 w-20">{t("stoppedAt")}</span>
                   <input
-                    className="text-sm border flex-1 border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
                     type="date"
                     required
                     {...register("endDate")}
                   />
                   <input
-                    className="text-sm ml-4 flex-1 border border-gray-300 rounded bg-transparent p-3 outline-none placeholder:text-gray-400"
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
                     type="time"
                     required
                     step="1"
@@ -307,7 +303,7 @@ export const TimeEntryModal = ({
                     onClick={() => {
                       void handleDeleteButtonClick();
                     }}
-                    className="p-2.5 hover:bg-gray-200 text-red-400 rounded inline-block"
+                    className="p-2.5 cursor-pointer hover:bg-gray-200 text-red-400 rounded-sm inline-block"
                   >
                     <PiTrash className="text-xl" />
                   </button>

@@ -51,7 +51,7 @@ export const TimeEntryTreeItem = ({
     <li>
       <button
         type="button"
-        className="block w-full px-4 text-sm hover:bg-gray-200"
+        className="block cursor-pointer w-full px-4 text-sm hover:bg-gray-200"
         onClick={handleClick}
       >
         <TreePath depth={depth}>

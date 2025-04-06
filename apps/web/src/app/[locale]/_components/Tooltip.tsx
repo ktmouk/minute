@@ -17,7 +17,7 @@ const tooltipStyle = tv({
   variants: {
     variant: {
       default: "bg-gray-700 text-white rounded-2xl",
-      coach: "bg-white text-gray-600 rounded drop-shadow-sm",
+      coach: "bg-white text-gray-600 rounded-sm drop-shadow-sm",
     },
   },
 });
