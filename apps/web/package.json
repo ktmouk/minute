@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack -p 4000",
+    "dev": "next dev -p 4000",
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "SKIP_ENV_VALIDATION=true next lint",
