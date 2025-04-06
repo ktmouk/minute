@@ -48,8 +48,13 @@ export const RunningTimeEntryForm = () => {
   const setTotalDurationVisible = useSetAtom(totalDurationVisibleAtom);
   const { notify } = useToast();
 
-  const runningTimeEntry = trpc.runningTimeEntry.getRunningTimeEntry.useQuery();
   const allFolders = trpc.folders.getAllFolders.useQuery();
+  const runningTimeEntry = trpc.runningTimeEntry.getRunningTimeEntry.useQuery(
+    undefined,
+    {
+      refetchOnWindowFocus: true,
+    },
+  );
 
   const startRunningTimeEntry =
     trpc.runningTimeEntry.startRunningTimeEntry.useMutation({
