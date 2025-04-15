@@ -10,19 +10,19 @@ importers:
     devDependencies:
       '@secretlint/secretlint-rule-preset-recommend':
         specifier: ^9.0.0
-        version: 9.3.0
+        version: 9.3.1
       husky:
         specifier: ^9.0.11
         version: 9.1.7
       lint-staged:
         specifier: ^15.2.5
-        version: 15.5.0
+        version: 15.5.1
       prettier:
         specifier: ^3.3.1
         version: 3.5.3
       secretlint:
         specifier: ^9.0.0
-        version: 9.3.0
+        version: 9.3.1
       turbo:
         specifier: ^2.0.3
         version: 2.5.0
@@ -1552,42 +1552,42 @@ packages:
   '@schummar/icu-type-parser@1.21.5':
     resolution: {integrity: sha512-bXHSaW5jRTmke9Vd0h5P7BtWZG9Znqb8gSDxZnxaGSJnGwPLDPfS+3g0BKzeWqzgZPsIVZkM7m2tbo18cm5HBw==}
 
-  '@secretlint/config-creator@9.3.0':
-    resolution: {integrity: sha512-LhzeARGULbQ+FFcOV7HTSxvnWghSCGfwVNT+lMPK2/KIzN7ASTVDaMHHfUpxHGxqHHqvTj+GXY1u4SwxtGE0tQ==}
+  '@secretlint/config-creator@9.3.1':
+    resolution: {integrity: sha512-XVQ8qcAIWG9q3fgM9dVZI8S+CdrtKite7WZq7Gt36PhsWWWXVVPknd2Sr7wjPVbYeDIl1AH/lXZsthFJPlkFSQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/config-loader@9.3.0':
-    resolution: {integrity: sha512-hjfQPAFDd8OEbDVS2G99S+6a4Qf70RczaSRtQoEuAhOqMR8C82gAeFoqGz7ub7+A1BttHIIcp/R+uPe/tnvswA==}
+  '@secretlint/config-loader@9.3.1':
+    resolution: {integrity: sha512-aAw66YWt+ur2s9ZNbD28JwlSD6IrqJnQvpdARH/ZUve0Zb5oXt38jSjQss3kPx1jfgHTStN6UvFGnbko3uYDAg==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/core@9.3.0':
-    resolution: {integrity: sha512-/bT+Ka4Az+Z+RIxbsfOjb8vfzE/QN1YDCpAruVIJvDIE83OxhuRLnFT7ZxnGPfnuPWCkCDpsWrHAMHoWGFceDg==}
+  '@secretlint/core@9.3.1':
+    resolution: {integrity: sha512-J9ju4G0hQxd0yTv9NC4bjZu/LFDfeD977jxNcdif46+chxJ8IR8948JWHOGWC/CJhlZdiF6bgu2CrzkKzOWF4A==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/formatter@9.3.0':
-    resolution: {integrity: sha512-hKcu2k68lN8aj4OvywSb4GigvRg8IRsH47ondbHPLp6HvuwN1BKufIb9TFIBNLJM0lhGEM0gqEZsc0YAwiWIVQ==}
+  '@secretlint/formatter@9.3.1':
+    resolution: {integrity: sha512-kiMaykULG1yiK4LPZCGI6zMtsdlNDtUxXNDSRCrU3JkOH4eCtIcYc5Frn/9A2oluvCqhsYwmPiM/ma2OvpovbQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/node@9.3.0':
-    resolution: {integrity: sha512-bmySbxikeVpJQH7HWiGZAjCVISPY/5pVZzLTvJQKfLm02W/S3Cc3O9IjA5qAR9QXHGbh6uGQ5FEU5weOBti3Pg==}
+  '@secretlint/node@9.3.1':
+    resolution: {integrity: sha512-HwLHnvKC8PMbW3TOyelqjiNg7FWTowPMIQMJx9Q7gkpilFEDokWKlF1XItLLgVfc/SH5sIKaqqsf9iZgmP8hOw==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/profiler@9.3.0':
-    resolution: {integrity: sha512-e9Pyy6z0O0JqeNcJqjM/2EmI7tPIVG9E3EX8MVquGmi+e0SxVE5bq22WrKQUfK7XCAPVcqaw49AOmdtMiqzpfw==}
+  '@secretlint/profiler@9.3.1':
+    resolution: {integrity: sha512-NRiHp/YiYuugXsmqCQrj0C1btoa+szuarroNEefby+ikHLgJugBpsTjbxYsF9ZioD+mOEJIM/OtJrKULTIMCpw==}
 
-  '@secretlint/resolver@9.3.0':
-    resolution: {integrity: sha512-4vynrpJ8vfhjBclZeK87Pg/TwGinCZK955Ec3pa5j4ihLVwjNHCYWRY9kaQhlE1Nc/h7zk98Bv7SoZIZaYrXBw==}
+  '@secretlint/resolver@9.3.1':
+    resolution: {integrity: sha512-i6INVQph9TOhifFBb1qsirscynm8LOXdoZKoPd+9DLQNCQ7krsqXF0evS4gQqOjzw+o8u59aq/nuGdeEZaJ+0w==}
 
-  '@secretlint/secretlint-rule-preset-recommend@9.3.0':
-    resolution: {integrity: sha512-jfic3wP8RieWC5+q/miUgmDHdNXXYrbRj3+5C/I6MrMElPODkGXlr+Pj+wiQSloWSgQhnxQyiXn684sVJ3NPgg==}
+  '@secretlint/secretlint-rule-preset-recommend@9.3.1':
+    resolution: {integrity: sha512-lyFcSBQFhsYI0fPWbRWVbV+bebCzZ2n8rKDG4+cOiC0nD/oJd00gR4XCtlXhgvNOvC2RxyIjWuQ8dOzGzCh4lg==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/source-creator@9.3.0':
-    resolution: {integrity: sha512-DVSaEgEvnMIOLyqfZBFb/d0LvgozOIhRXxpEdrvTfHKcFqlccRn4ykdmLi3I57vRTy2l9hZJvpSZU2fid69/9A==}
+  '@secretlint/source-creator@9.3.1':
+    resolution: {integrity: sha512-cLpTmsRilB8pFqPv+OX6/HvXV5sXe6W4B9D+b9itTS04PqxoPXzTwhYJmY5wxr/hYWM1LSOYSlaLOwrWxLHFxQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
-  '@secretlint/types@9.3.0':
-    resolution: {integrity: sha512-yCLqrrbKNHejVbL8K2EX+c/B0/88DCzDRuEMeUyIAXUYJm5lngioPALKsyvYjYLaJOtxxCyhRzNAi231hujx0A==}
+  '@secretlint/types@9.3.1':
+    resolution: {integrity: sha512-rEkMeRL6EFQEvga0WM056jLr0e8NEfKarlWRvsNSUefT6CZSocMrtpk8JzEC0qmYkMLvjlyxsM24K5SZZk1O/g==}
     engines: {node: ^14.13.1 || >=16.0.0}
 
   '@sinclair/typebox@0.27.8':
@@ -3346,8 +3346,8 @@ packages:
     engines: {node: '>=18.12.0'}
     hasBin: true
 
-  lint-staged@15.5.0:
-    resolution: {integrity: sha512-WyCzSbfYGhK7cU+UuDDkzUiytbfbi0ZdPy2orwtM75P3WTtQBzmG40cCxIa8Ii2+XjfxzLH6Be46tUfWS85Xfg==}
+  lint-staged@15.5.1:
+    resolution: {integrity: sha512-6m7u8mue4Xn6wK6gZvSCQwBvMBR36xfY24nF5bMTf2MHDYG6S3yhJuOgdYVw99hsjyDt2d4z168b3naI8+NWtQ==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -3355,8 +3355,8 @@ packages:
     resolution: {integrity: sha512-iyAZCeyD+c1gPyE9qpFu8af0Y+MRtmKOncdGoA2S5EY8iFq99dmmvkNnHiWo+pj0s7yH7l3KPIgee77tKpXPWQ==}
     engines: {node: '>=18.0.0'}
 
-  listr2@8.3.1:
-    resolution: {integrity: sha512-tx4s1tp3IYxCyVdPunlZ7MHlQ3FkjadHkbTCcQsOCFK90nM/aFEVEKIwpnn4r1WK1pIRiVrfuEpHV7PmtfvSZw==}
+  listr2@8.3.2:
+    resolution: {integrity: sha512-vsBzcU4oE+v0lj4FhVLzr9dBTv4/fHIa57l+GCwovP8MoFNZJTOhGU8PXd4v2VJCbECAaijBiHntiekFMLvo0g==}
     engines: {node: '>=18.0.0'}
 
   locate-path@6.0.0:
@@ -3908,8 +3908,8 @@ packages:
   scheduler@0.26.0:
     resolution: {integrity: sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA==}
 
-  secretlint@9.3.0:
-    resolution: {integrity: sha512-XEGNiCuUkXqYraH3pg+UftbHsqaO/JWbocdXxC7Z2DQavyUc8g2ESAKABiYGs3HAfypaGs36xXrd/qQevXnpRQ==}
+  secretlint@9.3.1:
+    resolution: {integrity: sha512-VxtGBuPU1TsjSz+egW38G/oiVaWpdBv0K1+alXVudV8xo9GEMOToQkonYsy5TP0NTboEAUcGhAOhmI53R/eR9A==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
 
@@ -4270,8 +4270,8 @@ packages:
     resolution: {integrity: sha512-s6zVrxuyKbbAsSAD5ZPTB77q4YIdRctkTbJ2/Dqlinwz+8ooH2gd+YA7VA6Pa93KML9GockVvoxjZ2vHP+mu8g==}
     engines: {node: '>=16'}
 
-  type-fest@4.39.1:
-    resolution: {integrity: sha512-uW9qzd66uyHYxwyVBYiwS4Oi0qZyUqwjU+Oevr6ZogYiXt99EOYtwvzMSLw1c3lYo2HzJsep/NB23iEVEgjG/w==}
+  type-fest@4.40.0:
+    resolution: {integrity: sha512-ABHZ2/tS2JkvH1PEjxFDTUWC8dB5OsIGZP4IFLhR293GqT5Y5qB1WwL2kMPYhQW9DVgVD8Hd7I8gjwPIf5GFkw==}
     engines: {node: '>=16'}
 
   typed-array-buffer@1.0.2:
@@ -5449,15 +5449,15 @@ snapshots:
 
   '@schummar/icu-type-parser@1.21.5': {}
 
-  '@secretlint/config-creator@9.3.0':
+  '@secretlint/config-creator@9.3.1':
     dependencies:
-      '@secretlint/types': 9.3.0
+      '@secretlint/types': 9.3.1
 
-  '@secretlint/config-loader@9.3.0':
+  '@secretlint/config-loader@9.3.1':
     dependencies:
-      '@secretlint/profiler': 9.3.0
-      '@secretlint/resolver': 9.3.0
-      '@secretlint/types': 9.3.0
+      '@secretlint/profiler': 9.3.1
+      '@secretlint/resolver': 9.3.1
+      '@secretlint/types': 9.3.1
       ajv: 8.17.1
       debug: 4.4.0
       rc-config-loader: 4.1.3
@@ -5465,19 +5465,19 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/core@9.3.0':
+  '@secretlint/core@9.3.1':
     dependencies:
-      '@secretlint/profiler': 9.3.0
-      '@secretlint/types': 9.3.0
+      '@secretlint/profiler': 9.3.1
+      '@secretlint/types': 9.3.1
       debug: 4.4.0
       structured-source: 4.0.0
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/formatter@9.3.0':
+  '@secretlint/formatter@9.3.1':
     dependencies:
-      '@secretlint/resolver': 9.3.0
-      '@secretlint/types': 9.3.0
+      '@secretlint/resolver': 9.3.1
+      '@secretlint/types': 9.3.1
       '@textlint/linter-formatter': 14.6.0
       '@textlint/module-interop': 14.6.0
       '@textlint/types': 14.6.0
@@ -5491,31 +5491,31 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/node@9.3.0':
+  '@secretlint/node@9.3.1':
     dependencies:
-      '@secretlint/config-loader': 9.3.0
-      '@secretlint/core': 9.3.0
-      '@secretlint/formatter': 9.3.0
-      '@secretlint/profiler': 9.3.0
-      '@secretlint/source-creator': 9.3.0
-      '@secretlint/types': 9.3.0
+      '@secretlint/config-loader': 9.3.1
+      '@secretlint/core': 9.3.1
+      '@secretlint/formatter': 9.3.1
+      '@secretlint/profiler': 9.3.1
+      '@secretlint/source-creator': 9.3.1
+      '@secretlint/types': 9.3.1
       debug: 4.4.0
       p-map: 4.0.0
     transitivePeerDependencies:
       - supports-color
 
-  '@secretlint/profiler@9.3.0': {}
+  '@secretlint/profiler@9.3.1': {}
 
-  '@secretlint/resolver@9.3.0': {}
+  '@secretlint/resolver@9.3.1': {}
 
-  '@secretlint/secretlint-rule-preset-recommend@9.3.0': {}
+  '@secretlint/secretlint-rule-preset-recommend@9.3.1': {}
 
-  '@secretlint/source-creator@9.3.0':
+  '@secretlint/source-creator@9.3.1':
     dependencies:
-      '@secretlint/types': 9.3.0
+      '@secretlint/types': 9.3.1
       istextorbinary: 6.0.0
 
-  '@secretlint/types@9.3.0': {}
+  '@secretlint/types@9.3.1': {}
 
   '@sinclair/typebox@0.27.8': {}
 
@@ -7480,14 +7480,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  lint-staged@15.5.0:
+  lint-staged@15.5.1:
     dependencies:
       chalk: 5.4.1
       commander: 13.1.0
       debug: 4.4.0
       execa: 8.0.1
       lilconfig: 3.1.3
-      listr2: 8.3.1
+      listr2: 8.3.2
       micromatch: 4.0.8
       pidtree: 0.6.0
       string-argv: 0.3.2
@@ -7504,7 +7504,7 @@ snapshots:
       rfdc: 1.4.1
       wrap-ansi: 9.0.0
 
-  listr2@8.3.1:
+  listr2@8.3.2:
     dependencies:
       cli-truncate: 4.0.0
       colorette: 2.0.20
@@ -7940,7 +7940,7 @@ snapshots:
       '@types/normalize-package-data': 2.4.4
       normalize-package-data: 6.0.2
       parse-json: 7.1.1
-      type-fest: 4.39.1
+      type-fest: 4.40.0
 
   recharts-scale@0.4.5:
     dependencies:
@@ -8065,12 +8065,12 @@ snapshots:
 
   scheduler@0.26.0: {}
 
-  secretlint@9.3.0:
+  secretlint@9.3.1:
     dependencies:
-      '@secretlint/config-creator': 9.3.0
-      '@secretlint/formatter': 9.3.0
-      '@secretlint/node': 9.3.0
-      '@secretlint/profiler': 9.3.0
+      '@secretlint/config-creator': 9.3.1
+      '@secretlint/formatter': 9.3.1
+      '@secretlint/node': 9.3.1
+      '@secretlint/profiler': 9.3.1
       debug: 4.4.0
       globby: 14.1.0
       read-pkg: 8.1.0
@@ -8438,7 +8438,7 @@ snapshots:
 
   type-fest@4.33.0: {}
 
-  type-fest@4.39.1: {}
+  type-fest@4.40.0: {}
 
   typed-array-buffer@1.0.2:
     dependencies:
