@@ -116,7 +116,7 @@ export const CategoryModal = ({
     watch,
     setValue,
     formState: { errors, isValid: isFormValid },
-  } = useForm<z.infer<typeof schema>>({
+  } = useForm({
     resolver: zodResolver(schema),
     mode: "onBlur",
     defaultValues: {
