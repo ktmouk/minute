@@ -32,7 +32,7 @@ export const InlineTaskForm = ({
     register,
     handleSubmit,
     formState: { isValid: isFormValid },
-  } = useForm<z.infer<typeof schema>>({
+  } = useForm({
     resolver: zodResolver(schema),
     mode: "onBlur",
     defaultValues: {
