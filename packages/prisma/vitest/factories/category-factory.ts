@@ -6,7 +6,7 @@ import { db } from "@minute/prisma/vitest/helpers";
 export const categoryFactory = defineCategoryFactory(db)
   .props({
     id: () => faker.string.uuid(),
-    color: () => faker.internet.color(),
+    color: () => faker.color.rgb(),
   })
   .vars({
     user: async () => await userFactory.create(),
