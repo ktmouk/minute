@@ -37,7 +37,7 @@
     "eslint": "8.57.1"
   },
   "dependencies": {
-    "@prisma/client": "6.5.0",
+    "@prisma/client": "6.7.0",
     "server-only": "^0.0.1"
   }
 }

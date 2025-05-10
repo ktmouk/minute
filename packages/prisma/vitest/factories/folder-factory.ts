@@ -8,7 +8,7 @@ import { db } from "@minute/prisma/vitest/helpers";
 export const folderFactory = defineFolderFactory(db)
   .props({
     id: () => faker.string.uuid(),
-    color: () => faker.internet.color(),
+    color: () => faker.color.rgb(),
   })
   .vars({
     user: async () => await userFactory.create(),
