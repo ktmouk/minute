@@ -31,7 +31,7 @@
     "@minute/tsconfig": "workspace:*",
     "date-fns": "^4.0.0",
     "dotenv-cli": "^8.0.0",
-    "lint-staged": "^15.2.5",
+    "lint-staged": "^16.0.0",
     "prisma": "6.7.0",
     "typescript": "5.8.3",
     "eslint": "8.57.1"
