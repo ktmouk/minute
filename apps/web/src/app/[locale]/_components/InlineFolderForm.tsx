@@ -114,7 +114,7 @@ export const InlineFolderForm = ({
       </div>
       <input
         type="text"
-        className="px-2 flex-1 outline-hidden bg-transparent"
+        className="px-2 flex-1 outline-hidden bg-transparent placeholder-gray-400"
         placeholder={t("enterFolderName")}
         value={name}
         data-1p-ignore
