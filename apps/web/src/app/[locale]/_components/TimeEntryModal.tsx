@@ -218,7 +218,7 @@ export const TimeEntryModal = ({
                   required
                   data-1p-ignore
                   data-lpignore
-                  className="w-full text-sm rounded-sm bg-transparent py-5 px-6 outline-hidden placeholder:text-gray-400"
+                  className="w-full text-sm rounded-sm bg-transparent py-5 px-6 outline-hidden placeholder-gray-400"
                   {...register("description")}
                   placeholder={t("descriptionPlaceholder")}
                 />
@@ -235,13 +235,13 @@ export const TimeEntryModal = ({
                 <label className="text-sm flex items-center">
                   <span className="shrink-0 mr-6 w-20">{t("startedAt")}</span>
                   <input
-                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
+                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder-gray-400"
                     type="date"
                     required
                     {...register("startDate")}
                   />
                   <input
-                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder-gray-400"
                     type="time"
                     step="1"
                     required
@@ -263,13 +263,13 @@ export const TimeEntryModal = ({
                 <label className="text-sm flex items-center">
                   <span className="shrink-0 mr-6 w-20">{t("stoppedAt")}</span>
                   <input
-                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
+                    className="text-sm border flex-1 border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder-gray-400"
                     type="date"
                     required
                     {...register("endDate")}
                   />
                   <input
-                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder:text-gray-400"
+                    className="text-sm ml-4 flex-1 border border-gray-300 rounded-sm bg-transparent p-3 outline-hidden placeholder-gray-400"
                     type="time"
                     required
                     step="1"

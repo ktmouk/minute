@@ -81,7 +81,7 @@ export const DatePicker = ({
         >
           <input
             type="date"
-            className="px-2 outline-hidden h-full text-sm hover:bg-gray-200"
+            className="px-2 outline-hidden h-full text-sm hover:bg-gray-200 placeholder-gray-400"
             onChange={handleChangeStartDate}
             value={startDateValue}
           />
@@ -92,7 +92,7 @@ export const DatePicker = ({
             <Tooltip sideOffset={5} content={t("selectEndDate")}>
               <input
                 type="date"
-                className="px-2 h-full text-sm hover:bg-gray-200"
+                className="px-2 h-full text-sm hover:bg-gray-200 placeholder-gray-400"
                 onChange={handleChangeEndDate}
                 value={endDateValue}
               />

@@ -53,7 +53,7 @@ export const RunningTimeEntryDescription = <Item,>({
       disabled={isLoading}
       required
       aria-label={t("description")}
-      className="m-2 w-full rounded-sm bg-transparent p-4 text-base outline-hidden placeholder:text-gray-400"
+      className="m-2 w-full rounded-sm bg-transparent p-4 text-base outline-hidden placeholder-gray-400"
       type="text"
     />
   );

@@ -63,7 +63,7 @@ export const InlineTaskForm = ({
       <PiFile size={20} className="mx-2 cursor-default" style={{ color }} />
       <input
         type="text"
-        className="pr-2 py-1.5 flex-1 outline-hidden bg-transparent"
+        className="pr-2 py-1.5 flex-1 outline-hidden bg-transparent placeholder-gray-400"
         placeholder={t("enterTaskName")}
         data-1p-ignore
         data-lpignore

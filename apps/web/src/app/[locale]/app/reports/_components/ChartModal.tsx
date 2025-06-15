@@ -139,7 +139,7 @@ export const ChartModal = ({
               type="text"
               data-1p-ignore
               data-lpignore
-              className="border flex-1 border-gray-300 rounded-sm text-sm p-3"
+              className="border flex-1 border-gray-300 rounded-sm text-sm p-3 placeholder-gray-400"
               {...register("name")}
             />
           </label>
