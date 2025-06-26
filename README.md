@@ -57,7 +57,6 @@ cp apps/web/.env.sample apps/web/.env.local
 ```
 
 3. Visit [GitHub Developer Settings](https://github.com/settings/developers) and create new OAuth app.
-
    - Application name: You can set a name of your choice.
    - Homepage URL: http://localhost:4000/
    - Authorization callback URL: http://localhost:4000/api/auth/callback/github
