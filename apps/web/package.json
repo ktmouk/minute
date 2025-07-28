@@ -64,7 +64,7 @@
     "@minute/eslint-config": "workspace:*",
     "@minute/schemas": "workspace:*",
     "@minute/tsconfig": "workspace:*",
-    "@next/env": "15.4.2",
+    "@next/env": "15.4.4",
     "@playwright/test": "^1.44.1",
     "@prisma/nextjs-monorepo-workaround-plugin": "^6.0.0",
     "@tailwindcss/postcss": "^4.1.3",
