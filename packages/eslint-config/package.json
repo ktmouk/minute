@@ -17,9 +17,9 @@
     "eslint-config-prettier": "^10.0.0",
     "eslint-import-resolver-typescript": "^4.0.0",
     "eslint-plugin-import": "^2.29.0",
-    "eslint-config-next": "15.4.4",
+    "eslint-config-next": "15.4.5",
     "eslint-plugin-tailwindcss": "^3.11.0",
     "eslint-plugin-testing-library": "^7.0.0",
-    "typescript": "5.8.3"
+    "typescript": "5.9.2"
   }
 }
