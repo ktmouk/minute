@@ -59,7 +59,7 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.0.0",
+    "@faker-js/faker": "^10.0.0",
     "@headlessui/tailwindcss": "^0.2.1",
     "@minute/eslint-config": "workspace:*",
     "@minute/schemas": "workspace:*",
@@ -74,11 +74,11 @@
     "@types/node": "22.17.1",
     "@types/react": "19.1.10",
     "@types/react-dom": "19.1.7",
-    "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react": "^5.0.0",
     "@vitest/coverage-v8": "^3.0.0",
     "autoprefixer": "10.4.21",
     "dotenv": "^17.0.0",
-    "dotenv-cli": "^8.0.0",
+    "dotenv-cli": "^10.0.0",
     "eslint": "8.57.1",
     "jest-axe": "^10.0.0",
     "jsdom": "^26.0.0",
