@@ -8,6 +8,7 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  typedRoutes: true,
   reactStrictMode: true,
   headers() {
     return [

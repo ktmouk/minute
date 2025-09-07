@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -p 4000",
     "lint": "SKIP_ENV_VALIDATION=true next lint",
-    "type-check": "tsc --noEmit",
+    "type-check": "next typegen && tsc --noEmit",
     "test:e2e": "playwright install chromium && playwright test",
     "test:e2e:dev": "dotenv -e .env.e2e -- next dev -p 4001",
     "test:unit": "dotenv -e .env.test -- vitest run",

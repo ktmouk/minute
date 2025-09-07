@@ -2,7 +2,7 @@ import { isValid, toDate } from "date-fns";
 import { z } from "zod";
 import { Calendar } from "./_components/Calendar";
 
-const Page = async (props: { searchParams: Promise<unknown> }) => {
+const Page = async (props: PageProps<"/[locale]/app/calendar">) => {
   const searchParams = await props.searchParams;
   const { date, isHighlighted } = z
     .strictObject({

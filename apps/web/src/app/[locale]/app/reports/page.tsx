@@ -2,7 +2,7 @@ import { isBefore, isSameDay, isValid, toDate } from "date-fns";
 import { z } from "zod";
 import { ReportContainer } from "./_components/ReportContainer";
 
-const Page = async (props: { searchParams: Promise<unknown> }) => {
+const Page = async (props: PageProps<"/[locale]/app/reports">) => {
   const searchParams = await props.searchParams;
   const { datePart, dateRange } = z
     .strictObject({
