@@ -3,7 +3,6 @@ import { Provider } from "jotai";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
-import type { ReactNode } from "react";
 import { roboto, inter } from "../../../config/fonts";
 import { formats } from "../../../config/locale";
 import { routing } from "../../i18n/routing";
@@ -12,14 +11,7 @@ import { TrpcProvider } from "./_components/TrpcProvider";
 
 export const fetchCache = "only-no-store";
 
-type Props = {
-  children: ReactNode;
-  params: Promise<{
-    locale: string;
-  }>;
-};
-
-const Layout = async (props: Props) => {
+const Layout = async (props: LayoutProps<"/[locale]">) => {
   const params = await props.params;
   const { locale } = params;
   const { children } = props;

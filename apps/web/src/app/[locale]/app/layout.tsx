@@ -1,11 +1,6 @@
-import type { ReactNode } from "react";
 import { Sidebar } from "../_components/Sidebar";
 
-type Props = {
-  children: ReactNode;
-};
-
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: LayoutProps<"/[locale]/app">) => {
   return (
     <div className="flex">
       <h1 className="sr-only">minute</h1>
