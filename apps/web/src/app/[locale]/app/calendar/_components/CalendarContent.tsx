@@ -164,13 +164,13 @@ export const CalendarContent = ({
           <CalendarRowLines />
         </div>
       </div>
-      <div className="flex flex-1 divide-x divide-gray-300">
-        <DndContext
-          collisionDetection={closestCorners}
-          sensors={[mouseSensor]}
-          onDragMove={handleDragMove}
-          onDragEnd={() => void handleDragEnd()}
-        >
+      <DndContext
+        collisionDetection={closestCorners}
+        sensors={[mouseSensor]}
+        onDragMove={handleDragMove}
+        onDragEnd={() => void handleDragEnd()}
+      >
+        <div className="flex flex-1 divide-x divide-gray-300">
           {dates.map((date) => {
             return (
               <section
@@ -199,8 +199,8 @@ export const CalendarContent = ({
               </section>
             );
           })}
-        </DndContext>
-      </div>
+        </div>
+      </DndContext>
     </>
   );
 };
