@@ -1,6 +1,10 @@
 /* eslint-disable testing-library/prefer-screen-queries */
 
-import { sessionFactory, userFactory } from "@minute/prisma/vitest/factories";
+import {
+  folderFactory,
+  sessionFactory,
+  userFactory,
+} from "@minute/prisma/vitest/factories";
 import { test, request, expect } from "@playwright/test";
 import { addDays } from "date-fns";
 
@@ -105,8 +109,8 @@ test.describe("when a request does not have valid X-Requested-With header", () =
   });
 });
 
-test.describe("when a request has an invalid Content-Type", () => {
-  test("returns 400", async () => {
+test.describe("when a request method is GET and has an invalid Content-Type", () => {
+  test("returns 200", async () => {
     const session = await sessionFactory
       .props({ expires: () => addDays(new Date(), 1) })
       .create();
@@ -118,6 +122,37 @@ test.describe("when a request has an invalid Content-Type", () => {
         Cookie: `next-auth.session-token=${session.sessionToken}`,
       },
     });
+    expect(res.status()).toBe(200);
+  });
+});
+
+test.describe("when a request method is POST and has an invalid Content-Type", () => {
+  test("returns 400", async () => {
+    const user = await userFactory.create();
+    const session = await sessionFactory
+      .vars({ user: () => user })
+      .props({ expires: () => addDays(new Date(), 1) })
+      .create();
+    const folder = await folderFactory.vars({ user: () => user }).create();
+    const context = await request.newContext();
+    const res = await context.post(
+      "/api/trpc/runningTimeEntry.startRunningTimeEntry",
+      {
+        headers: {
+          "Content-Type": "text/plain",
+          "X-Requested-With": "XMLHttpRequest",
+          Cookie: `next-auth.session-token=${session.sessionToken}`,
+        },
+        data: {
+          json: {
+            folderId: folder.id,
+            description: "description",
+            startedAt: "2025-01-01T01:23:45.000Z",
+          },
+          meta: { values: { startedAt: ["Date"] } },
+        },
+      },
+    );
     expect(res.status()).toBe(400);
   });
 });
