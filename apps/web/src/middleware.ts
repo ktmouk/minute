@@ -95,6 +95,8 @@ const authMiddleware = withAuth(
 );
 
 const hasJsonContentType = (req: NextRequest) => {
+  if (req.method === "GET") return true;
+
   const contentType = req.headers.get("Content-Type");
   return (
     typeof contentType === "string" &&

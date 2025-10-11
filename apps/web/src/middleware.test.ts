@@ -161,9 +161,50 @@ describe("middleware", () => {
       });
     });
 
-    describe("when the requset has an invalid content-type header", () => {
+    describe("when the requset method is GET and the content-type header is invalid", () => {
+      it("returns 200", async () => {
+        const req = new NextRequest("http://localhost:3000/api/trpc", {
+          method: "GET",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+            Origin: "http://localhost:4001",
+            "X-Requested-With": "XMLHttpRequest",
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        const res = await middleware(
+          req as NextRequestWithAuth,
+          {} as NextFetchEvent,
+        );
+        expect(res?.ok).toBe(true);
+        expect(res?.status).toBe(200);
+      });
+    });
+
+    describe("when the requset method is POST and the content-type header is invalid", () => {
       it("returns 400", async () => {
         const req = new NextRequest("http://localhost:3000/api/trpc", {
+          method: "POST",
+          headers: {
+            "x-real-ip": "127.0.0.1",
+            Origin: "http://localhost:4001",
+            "X-Requested-With": "XMLHttpRequest",
+            "Content-Type": "multipart/form-data",
+          },
+        });
+        const res = await middleware(
+          req as NextRequestWithAuth,
+          {} as NextFetchEvent,
+        );
+        expect(res?.ok).toBe(false);
+        expect(res?.status).toBe(400);
+      });
+    });
+
+    describe("when the requset method is DELETE and the content-type header is invalid", () => {
+      it("returns 400", async () => {
+        const req = new NextRequest("http://localhost:3000/api/trpc", {
+          method: "DELETE",
           headers: {
             "x-real-ip": "127.0.0.1",
             Origin: "http://localhost:4001",
