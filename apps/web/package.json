@@ -71,7 +71,7 @@
     "@tanstack/react-query-devtools": "^5.71.10",
     "@types/chroma-js": "^3.0.0",
     "@types/hh-mm-ss": "^1.2.3",
-    "@types/node": "22.18.9",
+    "@types/node": "22.18.10",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.1",
     "@vitejs/plugin-react": "^5.0.0",
