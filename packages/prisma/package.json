@@ -32,7 +32,7 @@
     "date-fns": "^4.0.0",
     "dotenv-cli": "^10.0.0",
     "lint-staged": "^16.0.0",
-    "prisma": "6.17.1",
+    "prisma": "6.18.0",
     "typescript": "5.9.3",
     "eslint": "8.57.1"
   },
