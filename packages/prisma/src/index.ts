@@ -1,9 +1,10 @@
 import "server-only";
 
-import type { PrismaClient } from "@prisma/client";
-import type { ITXClientDenyList } from "@prisma/client/runtime/library";
+import type { PrismaClient } from "../generated/prisma/client";
 
-export { Prisma } from "@prisma/client";
-export { PrismaClient } from "@prisma/client";
+export { Prisma, PrismaClient } from "../generated/prisma/client";
 
-export type TXPrismaClient = Omit<PrismaClient, ITXClientDenyList>;
+export type TXPrismaClient = Omit<
+  PrismaClient,
+  "$connect" | "$disconnect" | "$on" | "$transaction" | "$extends"
+>;

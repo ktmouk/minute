@@ -10,6 +10,7 @@ import {
 } from "../../../packages/services/src";
 import { serverEnv } from "../env/server.mjs";
 import { db } from "./db";
+import { nextAuthPageOptions } from "./next-auth-page-options";
 
 const isAllowedGithubId = (id: string | undefined) => {
   if (typeof serverEnv.ALLOWED_GITHUB_IDS !== "string") return true;
@@ -50,10 +51,6 @@ const sendUserSecurityLog = async ({
   }
 };
 
-export const pageOptions = {
-  signIn: "/auth/sign-in",
-} as const;
-
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(db),
   callbacks: {
@@ -81,7 +78,7 @@ export const authOptions: AuthOptions = {
       clientSecret: serverEnv.GITHUB_SECRET,
     }),
   ],
-  pages: pageOptions,
+  pages: nextAuthPageOptions,
   events: {
     signIn: async ({ user, account }) => {
       await sendUserSecurityLog({ type: "SIGN_IN", name: user.name, account });

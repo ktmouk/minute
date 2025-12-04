@@ -44,6 +44,7 @@ jobs:
 
       - name: Prepare env files
         run: |
+          cp packages/prisma/.env.test.sample packages/prisma/.env
           cp packages/prisma/.env.test.sample packages/prisma/.env.test
           cp apps/web/.env.e2e.sample apps/web/.env.local
           cp apps/web/.env.e2e.sample apps/web/.env.e2e

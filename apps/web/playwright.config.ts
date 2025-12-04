@@ -1,7 +1,9 @@
 import path from "path";
+import { fileURLToPath } from "url";
 import { defineConfig, devices } from "@playwright/test";
 import dotenv from "dotenv";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const isCI = process.env["CI"] !== undefined;
 
 dotenv.config({
