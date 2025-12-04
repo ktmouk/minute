@@ -29,15 +29,18 @@
     "@faker-js/faker": "^10.0.0",
     "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
+    "@types/node": "22.19.1",
     "date-fns": "^4.0.0",
+    "dotenv": "^17.2.3",
     "dotenv-cli": "^10.0.0",
+    "eslint": "8.57.1",
     "lint-staged": "^16.0.0",
-    "prisma": "6.15.0",
-    "typescript": "5.9.3",
-    "eslint": "8.57.1"
+    "prisma": "7.1.0",
+    "typescript": "5.9.3"
   },
   "dependencies": {
-    "@prisma/client": "6.15.0",
+    "@prisma/adapter-pg": "^7.1.0",
+    "@prisma/client": "7.1.0",
     "server-only": "^0.0.1"
   }
 }

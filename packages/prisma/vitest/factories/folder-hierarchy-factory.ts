@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
-import type { Folder } from "@prisma/client";
 import { defineFolderHierarchyFactory } from "../../generated/factories";
+import type { Folder } from "../../generated/prisma/client";
 import { folderFactory } from "./folder-factory";
 import { userFactory } from "./user-factory";
 import { db } from "@minute/prisma/vitest/helpers";
@@ -20,10 +20,9 @@ export const folderHierarchyFactory = defineFolderHierarchyFactory(db)
     self: (folder: Folder) => ({
       props: {
         depth: () => 0,
+        userId: () => folder.userId,
       },
       vars: {
-        user: async () =>
-          await db.user.findUniqueOrThrow({ where: { id: folder.userId } }),
         descendant: () => folder,
         ancestor: () => folder,
       },

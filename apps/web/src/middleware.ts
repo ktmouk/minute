@@ -7,7 +7,7 @@ import withAuth from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
 import * as R from "remeda";
 import { locales } from "../config/locale";
-import { pageOptions } from "../config/next-auth";
+import { nextAuthPageOptions } from "../config/next-auth-page-options";
 import { serverEnv } from "../env/server.mjs";
 import { routing } from "./i18n/routing";
 
@@ -90,7 +90,7 @@ const authMiddleware = withAuth(
         return sessionToken !== undefined;
       },
     },
-    pages: pageOptions,
+    pages: nextAuthPageOptions,
   },
 );
 

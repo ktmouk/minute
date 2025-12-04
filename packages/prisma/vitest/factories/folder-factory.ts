@@ -1,6 +1,6 @@
 import { faker } from "@faker-js/faker";
-import type { Folder } from "@prisma/client";
 import { defineFolderFactory } from "../../generated/factories";
+import type { Folder } from "../../generated/prisma/client";
 import { folderHierarchyFactory } from "./folder-hierarchy-factory";
 import { userFactory } from "./user-factory";
 import { db } from "@minute/prisma/vitest/helpers";

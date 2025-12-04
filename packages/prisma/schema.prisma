@@ -1,16 +1,17 @@
 generator client {
-  provider        = "prisma-client-js"
+  provider        = "prisma-client"
+  output          = "./generated/prisma"
+  engineType      = "client"
   previewFeatures = ["strictUndefinedChecks"]
 }
 
 generator factory {
-  provider = "prisma-factory"
+  provider           = "prisma-factory"
+  prismaClientModule = "./prisma/client"
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
+  provider = "postgresql"
 }
 
 enum ChartType {
