@@ -1,11 +1,9 @@
-import "server-only";
-
 import { ipAddress } from "@vercel/functions";
 import { NextRequest, NextResponse, type NextFetchEvent } from "next/server";
 import type { NextRequestWithAuth } from "next-auth/middleware";
 import withAuth from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
-import * as R from "remeda";
+import { entries } from "remeda";
 import { locales } from "../config/locale";
 import { pageOptions } from "../config/next-auth";
 import { serverEnv } from "../env/server.mjs";
@@ -49,7 +47,7 @@ const generateCsp = (nonce: string) => {
     ],
   } satisfies Record<string, string[]>;
 
-  return R.entries(csp)
+  return entries(csp)
     .map(
       ([key, directives]) =>
         `${key} ${directives
