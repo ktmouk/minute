@@ -32,12 +32,12 @@
     "date-fns": "^4.0.0",
     "dotenv-cli": "^10.0.0",
     "lint-staged": "^16.0.0",
-    "prisma": "6.19.0",
+    "prisma": "6.15.0",
     "typescript": "5.9.3",
     "eslint": "8.57.1"
   },
   "dependencies": {
-    "@prisma/client": "6.19.0",
+    "@prisma/client": "6.15.0",
     "server-only": "^0.0.1"
   }
 }
