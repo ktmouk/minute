@@ -44,6 +44,7 @@ jobs:
 
       - name: Prepare env files
         run: |
+          cp packages/prisma/.env.test.sample packages/prisma/.env
           cp packages/prisma/.env.test.sample packages/prisma/.env.test
           cp packages/services/.env.test.sample packages/services/.env.test
           cp packages/trpc/.env.test.sample packages/trpc/.env.test

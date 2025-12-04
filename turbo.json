@@ -36,11 +36,17 @@
       "cache": false
     },
     "test:unit": {
-      "dependsOn": ["@minute/prisma#db:test:reset"],
+      "dependsOn": [
+        "@minute/prisma#db:test:reset",
+        "@minute/prisma#db:generate"
+      ],
       "cache": false
     },
     "test:unit:coverage": {
-      "dependsOn": ["@minute/prisma#db:test:reset"],
+      "dependsOn": [
+        "@minute/prisma#db:test:reset",
+        "@minute/prisma#db:generate"
+      ],
       "cache": false
     },
     "start": {

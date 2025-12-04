@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
 
+      - name: Prepare env files
+        run: |
+          cp packages/prisma/.env.test.sample packages/prisma/.env
+
       - name: Run secretlint
         run: pnpm run secretlint
 
