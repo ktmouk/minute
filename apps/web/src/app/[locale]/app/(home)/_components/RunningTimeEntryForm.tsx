@@ -6,7 +6,7 @@ import type { UseComboboxStateChange } from "downshift";
 import { useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import type { FormEvent } from "react";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { PiPlayFill, PiStopFill } from "react-icons/pi";
 import * as R from "remeda";
 import { tv } from "tailwind-variants";
@@ -88,6 +88,8 @@ export const RunningTimeEntryForm = () => {
   const [selectedFolderId, setSelectedFolderId] = useState<
     string | undefined
   >();
+  const [prevRunningData, setPrevRunningData] = useState(runningTimeEntry.data);
+  const [prevAllFoldersData, setPrevAllFoldersData] = useState(allFolders.data);
 
   const handleSelectedItemChange = async ({
     selectedItem,
@@ -170,21 +172,23 @@ export const RunningTimeEntryForm = () => {
     }
   };
 
-  useEffect(() => {
+  if (runningTimeEntry.data !== prevRunningData) {
+    setPrevRunningData(runningTimeEntry.data);
     setInputValue(runningTimeEntry.data?.description ?? "");
     if (isRunning && R.isNonNullish(runningTimeEntry.data)) {
       setSelectedFolderId(runningTimeEntry.data.folderId);
     }
-  }, [runningTimeEntry.data, isRunning, setInputValue]);
+  }
 
-  useEffect(() => {
+  if (allFolders.data !== prevAllFoldersData) {
+    setPrevAllFoldersData(allFolders.data);
     const hasSelectedFolder = allFolders.data?.find(
       ({ id }) => id === selectedFolderId,
     );
     if (!isRunning && !hasSelectedFolder) {
       setSelectedFolderId(allFolders.data?.[0]?.id);
     }
-  }, [isRunning, allFolders, selectedFolderId, setSelectedFolderId]);
+  }
 
   const handleFolderSelect = async (folderId: string) => {
     setSelectedFolderId(folderId);

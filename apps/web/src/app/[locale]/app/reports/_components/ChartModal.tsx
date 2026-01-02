@@ -125,7 +125,7 @@ export const ChartModal = ({
   return (
     <Modal onClose={onClose} isOpen>
       <form
-        className="w-[36rem]"
+        className="w-xl"
         onSubmit={(event) => {
           void handleSubmit(handleSave)(event);
         }}

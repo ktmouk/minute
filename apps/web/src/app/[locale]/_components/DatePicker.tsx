@@ -3,9 +3,11 @@
 import { format, isAfter, isBefore, isValid, parse } from "date-fns";
 import { useTranslations } from "next-intl";
 import type { ChangeEvent } from "react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { PiCaretLeft, PiCaretRight } from "react-icons/pi";
 import { Tooltip } from "../_components/Tooltip";
+
+const formatDate = (date: Date) => format(date, "yyyy-MM-dd");
 
 type Props = {
   startDate: Date;
@@ -24,12 +26,21 @@ export const DatePicker = ({
   onStartDateChange,
   onEndDateChange,
 }: Props) => {
-  const [startDateValue, setStartDateValue] = useState(
-    format(startDate, "yyyy-MM-dd"),
-  );
+  const [startDateValue, setStartDateValue] = useState(formatDate(startDate));
   const [endDateValue, setEndDateValue] = useState(
-    format(endDate ?? startDate, "yyyy-MM-dd"),
+    formatDate(endDate ?? startDate),
   );
+  const [prevStartDate, setPrevStartDate] = useState(startDate);
+  const [prevEndDate, setPrevEndDate] = useState(endDate);
+
+  if (startDate !== prevStartDate) {
+    setPrevStartDate(startDate);
+    setStartDateValue(formatDate(startDate));
+  }
+  if (endDate !== prevEndDate) {
+    setPrevEndDate(endDate);
+    setEndDateValue(formatDate(endDate ?? startDate));
+  }
 
   const t = useTranslations("components.DatePicker");
 
@@ -55,11 +66,6 @@ export const DatePicker = ({
       return;
     }
   };
-
-  useEffect(() => {
-    setStartDateValue(format(startDate, "yyyy-MM-dd"));
-    setEndDateValue(format(endDate ?? startDate, "yyyy-MM-dd"));
-  }, [startDate, endDate]);
 
   return (
     <div className="inline-flex h-10 overflow-hidden border border-gray-300 rounded-sm">
