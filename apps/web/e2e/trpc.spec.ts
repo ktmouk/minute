@@ -54,6 +54,9 @@ test.describe("when a request has an unknown session", () => {
       },
     });
     expect(res.status()).toBe(401);
+    expect(await res.json()).not.toMatchObject({
+      error: { json: { data: { stack: expect.anything() } } },
+    });
   });
 });
 
