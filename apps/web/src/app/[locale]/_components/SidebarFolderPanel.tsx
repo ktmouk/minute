@@ -109,22 +109,23 @@ export const SidebarFolderPanel = () => {
               afterFolderId: null,
               folderId: parsedActive.id,
             });
-            return;
+            break;
           case "before":
             await moveFolder.mutateAsync({
               ancestorId: parsedOver.parentId,
               afterFolderId: null,
               folderId: parsedActive.id,
             });
-            return;
+            break;
           case "after":
             await moveFolder.mutateAsync({
               ancestorId: parsedOver.parentId,
               afterFolderId: parsedOver.id,
               folderId: parsedActive.id,
             });
-            return;
+            break;
         }
+        break;
       case "task":
         switch (parsedOver.action) {
           case "in":
@@ -132,7 +133,7 @@ export const SidebarFolderPanel = () => {
               id: parsedActive.id,
               folderId: parsedOver.id,
             });
-            return;
+            break;
         }
     }
   };

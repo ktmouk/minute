@@ -67,9 +67,11 @@ export const ChartList = ({ startDate, endDate, datePart }: Props) => {
             setEditingChart(undefined);
           }}
           id={editingChart.id}
-          name={editingChart.name}
-          folderIds={editingChart.chartFolders.map(({ folderId }) => folderId)}
-          categoryIds={editingChart.chartCategories.map(
+          defaultName={editingChart.name}
+          defaultFolderIds={editingChart.chartFolders.map(
+            ({ folderId }) => folderId,
+          )}
+          defaultCategoryIds={editingChart.chartCategories.map(
             ({ categoryId }) => categoryId,
           )}
         />

@@ -27,10 +27,6 @@
       "dependsOn": ["@minute/prisma#db:generate"],
       "cache": false
     },
-    "lint": {
-      "dependsOn": ["@minute/prisma#db:generate"],
-      "cache": false
-    },
     "test:e2e": {
       "dependsOn": ["@minute/prisma#db:test:reset", "build"],
       "cache": false

@@ -117,10 +117,10 @@ export const TimeEntryList = ({ date, timeEntries }: Props) => {
               </Tooltip>
               {isModalOpen && (
                 <TimeEntryModal
-                  folderId={allFolders.data[0].id}
-                  description=""
-                  startedAt={date}
-                  stoppedAt={date}
+                  defaultFolderId={allFolders.data[0].id}
+                  defaultDescription=""
+                  defaultStartedAt={date}
+                  defaultStoppedAt={date}
                   onClose={() => {
                     setIsModalOpen(false);
                   }}

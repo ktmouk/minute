@@ -10,7 +10,7 @@
     "test:e2e": "turbo run test:e2e",
     "test:unit": "turbo run test:unit",
     "test:unit:coverage": "turbo run test:unit:coverage",
-    "lint": "turbo run lint",
+    "lint": "eslint --max-warnings=0 '**/*.{ts,tsx,js,jsx,mjs}'",
     "type-check": "turbo run type-check",
     "db:generate": "pnpm -F @minute/prisma db:generate",
     "db:studio": "pnpm -F @minute/prisma db:studio",
@@ -27,12 +27,20 @@
     "prepare": "husky"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
     "@secretlint/secretlint-rule-preset-recommend": "^11.0.0",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.1.1",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-import-resolver-typescript": "^4.0.0",
+    "eslint-plugin-import": "^2.29.0",
+    "globals": "^16.0.0",
     "husky": "^9.0.11",
     "lint-staged": "^16.0.0",
     "prettier": "^3.3.1",
     "secretlint": "^11.0.0",
-    "turbo": "^2.0.3"
+    "turbo": "^2.0.3",
+    "typescript-eslint": "^8.0.0"
   },
   "packageManager": "pnpm@10.26.2"
 }

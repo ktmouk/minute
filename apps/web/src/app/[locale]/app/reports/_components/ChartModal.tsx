@@ -3,7 +3,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import type { SubmitHandler } from "react-hook-form";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { PiTrash } from "react-icons/pi";
 import { tv } from "tailwind-variants";
 import { z } from "zod";
@@ -17,9 +17,9 @@ import { useToast } from "../../../_hooks/useToast";
 type Props = {
   onClose: () => void;
   id?: string;
-  name?: string;
-  folderIds?: string[];
-  categoryIds?: string[];
+  defaultName?: string;
+  defaultFolderIds?: string[];
+  defaultCategoryIds?: string[];
 };
 
 const submitButtonStyle = tv({
@@ -34,9 +34,9 @@ const submitButtonStyle = tv({
 export const ChartModal = ({
   onClose,
   id,
-  name,
-  folderIds,
-  categoryIds,
+  defaultName,
+  defaultFolderIds,
+  defaultCategoryIds,
 }: Props) => {
   const utils = trpc.useUtils();
   const { notify } = useToast();
@@ -80,16 +80,16 @@ export const ChartModal = ({
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     setValue,
     formState: { errors, isValid: isFormValid },
   } = useForm({
     resolver: zodResolver(schema),
     mode: "onBlur",
     defaultValues: {
-      name: name ?? t("defaultChartName"),
-      folderIds: folderIds ?? [],
-      categoryIds: categoryIds ?? [],
+      name: defaultName ?? t("defaultChartName"),
+      folderIds: defaultFolderIds ?? [],
+      categoryIds: defaultCategoryIds ?? [],
     },
   });
 
@@ -118,6 +118,9 @@ export const ChartModal = ({
     onClose();
     await deleteChart.mutateAsync({ id });
   };
+
+  const folderIds = useWatch({ control, name: "folderIds" });
+  const categoryIds = useWatch({ control, name: "categoryIds" });
 
   return (
     <Modal onClose={onClose} isOpen>
@@ -157,7 +160,7 @@ export const ChartModal = ({
             <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleFolderSelect
-                  folderIds={watch("folderIds")}
+                  folderIds={folderIds}
                   onSelect={(folderIds) => {
                     setValue("folderIds", folderIds, { shouldValidate: true });
                   }}
@@ -172,9 +175,9 @@ export const ChartModal = ({
             <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleCategorySelect
-                  categoryIds={watch("categoryIds")}
-                  onSelect={(categoryId) => {
-                    setValue("categoryIds", categoryId, {
+                  categoryIds={categoryIds}
+                  onSelect={(categoryIds) => {
+                    setValue("categoryIds", categoryIds, {
                       shouldValidate: true,
                     });
                   }}

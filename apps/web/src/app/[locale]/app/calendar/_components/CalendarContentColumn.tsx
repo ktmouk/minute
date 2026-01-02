@@ -130,10 +130,10 @@ export const CalendarContentColumn = ({
       {editingTimeEntry !== undefined && (
         <TimeEntryModal
           id={editingTimeEntry.id}
-          folderId={editingTimeEntry.task.folder.id}
-          description={editingTimeEntry.task.description}
-          startedAt={editingTimeEntry.startedAt}
-          stoppedAt={editingTimeEntry.stoppedAt}
+          defaultFolderId={editingTimeEntry.task.folder.id}
+          defaultDescription={editingTimeEntry.task.description}
+          defaultStartedAt={editingTimeEntry.startedAt}
+          defaultStoppedAt={editingTimeEntry.stoppedAt}
           onClose={() => {
             setEditingTimeEntry(undefined);
           }}

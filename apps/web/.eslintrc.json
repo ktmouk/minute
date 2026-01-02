@@ -1,7 +1,0 @@
-{
-  "root": true,
-  "extends": ["@minute/eslint-config/next"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}

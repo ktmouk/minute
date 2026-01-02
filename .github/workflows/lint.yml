@@ -42,4 +42,4 @@ jobs:
         run: pnpm exec turbo run type-check
 
       - name: Run lint
-        run: pnpm exec turbo run lint
+        run: pnpm run lint

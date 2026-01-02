@@ -19,7 +19,6 @@
     "db:test:push": "dotenv -e .env.test -- prisma db push",
     "db:test:studio": "dotenv -e .env.test -- prisma studio",
     "format:fix": "prisma format",
-    "lint": "eslint --max-warnings=0 '**/*.{ts,tsx,js,jsx,mjs}'",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf node_modules .turbo"
   },
@@ -27,13 +26,11 @@
     "@factory-js/factory": "^0.4.0",
     "@factory-js/prisma-factory": "^0.2.1",
     "@faker-js/faker": "^10.0.0",
-    "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
     "@types/node": "22.19.3",
     "date-fns": "^4.0.0",
     "dotenv": "^17.2.3",
     "dotenv-cli": "^10.0.0",
-    "eslint": "8.57.1",
     "lint-staged": "^16.0.0",
     "prisma": "7.2.0",
     "typescript": "5.9.3"

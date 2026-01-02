@@ -12,7 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { useMemo, useState } from "react";
 import type { SubmitHandler } from "react-hook-form";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { PiSquaresFourLight, PiTrash } from "react-icons/pi";
 import { tv } from "tailwind-variants";
 import { z } from "zod";
@@ -26,10 +26,10 @@ import { trpc } from "./TrpcProvider";
 type Props = {
   onClose: () => void;
   id?: string;
-  name?: string;
-  emoji?: string;
-  color?: string;
-  folderIds?: string[];
+  defaultName?: string;
+  defaultEmoji?: string;
+  defaultColor?: string;
+  defaultFolderIds?: string[];
 };
 
 const submitButtonStyle = tv({
@@ -43,11 +43,11 @@ const submitButtonStyle = tv({
 
 export const CategoryModal = ({
   onClose,
-  emoji,
   id,
-  name,
-  color,
-  folderIds,
+  defaultName,
+  defaultEmoji,
+  defaultColor,
+  defaultFolderIds,
 }: Props) => {
   const utils = trpc.useUtils();
   const { notify } = useToast();
@@ -113,17 +113,17 @@ export const CategoryModal = ({
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     setValue,
     formState: { errors, isValid: isFormValid },
   } = useForm({
     resolver: zodResolver(schema),
     mode: "onBlur",
     defaultValues: {
-      name: name ?? t("defaultCategoryName"),
-      folderIds: folderIds ?? [],
-      emoji: emoji ?? "😀",
-      color: color ?? "#026773",
+      name: defaultName ?? t("defaultCategoryName"),
+      folderIds: defaultFolderIds ?? [],
+      emoji: defaultEmoji ?? "😀",
+      color: defaultColor ?? "#026773",
     },
   });
 
@@ -155,10 +155,14 @@ export const CategoryModal = ({
     await deleteCategory.mutateAsync({ id });
   };
 
+  const color = useWatch({ control, name: "color" });
+  const emoji = useWatch({ control, name: "emoji" });
+  const folderIds = useWatch({ control, name: "folderIds" });
+
   return (
     <Modal onClose={onClose} isOpen>
       <form
-        className="w-[36rem]"
+        className="w-xl"
         onSubmit={(event) => {
           void handleSubmit(handleSave)(event);
         }}
@@ -173,17 +177,14 @@ export const CategoryModal = ({
             <Label className="text-sm">{t("color")}</Label>
             <div className="border border-gray-300 rounded-sm overflow-hidden p-1">
               <Listbox
-                value={watch("color")}
+                value={color}
                 onChange={(color) => {
                   setValue("color", color, { shouldValidate: true });
                 }}
               >
                 <ListboxButton className="py-1.5 rounded-sm flex items-center gap-2 text-left px-2 h-full w-full text-sm hover:bg-gray-200 border-gray-300">
-                  <PiSquaresFourLight
-                    size={20}
-                    style={{ color: watch("color") }}
-                  />
-                  {watch("color")}
+                  <PiSquaresFourLight size={20} style={{ color }} />
+                  {color}
                 </ListboxButton>
                 <ListboxOptions className="flex outline-hidden absolute mt-2 animate-fade-down">
                   <ColorOptionList>
@@ -207,7 +208,7 @@ export const CategoryModal = ({
                   setIsEmojiPickerOpen(true);
                 }}
               >
-                {watch("emoji")}
+                {emoji}
               </button>
               {isEmojiPickerOpen && (
                 <div className="absolute mt-2 z-10">
@@ -253,7 +254,7 @@ export const CategoryModal = ({
             <div className="border text-sm border-gray-300 rounded-sm">
               <div className="flex items-center border-gray-300 p-1">
                 <MultipleFolderSelect
-                  folderIds={watch("folderIds")}
+                  folderIds={folderIds}
                   onSelect={(folderIds) => {
                     setValue("folderIds", folderIds, { shouldValidate: true });
                   }}
