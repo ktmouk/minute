@@ -4,7 +4,7 @@ import { format, isAfter, isValid, parseISO } from "date-fns";
 import { useTranslations } from "next-intl";
 import { useMemo } from "react";
 import type { SubmitHandler } from "react-hook-form";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { PiTrash } from "react-icons/pi";
 import { tv } from "tailwind-variants";
 import { z } from "zod";
@@ -18,10 +18,10 @@ import { TimeEntryModalCalendar } from "./TimeEntryModalCalendar";
 type Props = {
   onClose: () => void;
   id?: string;
-  folderId: string;
-  description: string;
-  startedAt: Date;
-  stoppedAt: Date;
+  defaultFolderId: string;
+  defaultDescription: string;
+  defaultStartedAt: Date;
+  defaultStoppedAt: Date;
 };
 
 const submitButtonStyle = tv({
@@ -40,10 +40,10 @@ const parseDateFromInput = (date: string, time: string) => {
 export const TimeEntryModal = ({
   onClose,
   id,
-  folderId,
-  description,
-  startedAt,
-  stoppedAt,
+  defaultFolderId,
+  defaultDescription,
+  defaultStartedAt,
+  defaultStoppedAt,
 }: Props) => {
   const utils = trpc.useUtils();
 
@@ -134,19 +134,19 @@ export const TimeEntryModal = ({
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     setValue,
     formState: { errors, isValid: isFormValid },
   } = useForm({
     resolver: zodResolver(schema),
     mode: "onBlur",
     defaultValues: {
-      folderId: folderId,
-      description: description,
-      startDate: format(startedAt, "yyyy-MM-dd"),
-      startTime: format(startedAt, "HH:mm:ss"),
-      endDate: format(stoppedAt, "yyyy-MM-dd"),
-      endTime: format(stoppedAt, "HH:mm:ss"),
+      folderId: defaultFolderId,
+      description: defaultDescription,
+      startDate: format(defaultStartedAt, "yyyy-MM-dd"),
+      startTime: format(defaultStartedAt, "HH:mm:ss"),
+      endDate: format(defaultStoppedAt, "yyyy-MM-dd"),
+      endTime: format(defaultStoppedAt, "HH:mm:ss"),
     },
   });
 
@@ -181,9 +181,16 @@ export const TimeEntryModal = ({
     await deleteTimeEntry.mutateAsync({ id });
   };
 
+  const folderId = useWatch({ control, name: "folderId" });
+  const description = useWatch({ control, name: "description" });
+  const startDate = useWatch({ control, name: "startDate" });
+  const startTime = useWatch({ control, name: "startTime" });
+  const endDate = useWatch({ control, name: "endDate" });
+  const endTime = useWatch({ control, name: "endTime" });
+
   return (
     <Modal onClose={onClose} isOpen>
-      <div className="flex items-stretch h-[30rem]">
+      <div className="flex items-stretch h-120">
         <form
           className="w-full"
           onSubmit={(event) => {
@@ -206,7 +213,7 @@ export const TimeEntryModal = ({
                     <div className="animate-pulse w-32 my-2 h-4 bg-gray-300 rounded-full" />
                   ) : (
                     <FolderSelect
-                      folderId={watch("folderId")}
+                      folderId={folderId}
                       onSelect={(folderId) => {
                         setValue("folderId", folderId);
                       }}
@@ -315,13 +322,10 @@ export const TimeEntryModal = ({
         <div className="w-96 flex-col flex h-full">
           <TimeEntryModalCalendar
             id={id}
-            folderId={watch("folderId")}
-            description={watch("description")}
-            startedAt={parseDateFromInput(
-              watch("startDate"),
-              watch("startTime"),
-            )}
-            stoppedAt={parseDateFromInput(watch("endDate"), watch("endTime"))}
+            folderId={folderId}
+            description={description}
+            startedAt={parseDateFromInput(startDate, startTime)}
+            stoppedAt={parseDateFromInput(endDate, endTime)}
           />
         </div>
       </div>

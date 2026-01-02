@@ -6,7 +6,6 @@
   "main": "./src/index.ts",
   "exports": "./src/index.ts",
   "scripts": {
-    "lint": "eslint --max-warnings=0 '**/*.{ts,tsx,js,jsx,mjs}'",
     "type-check": "tsc --noEmit",
     "test:unit": "dotenv -e .env.test -- vitest run",
     "test:unit:coverage": "dotenv -e .env.test -- vitest run --coverage",
@@ -15,14 +14,12 @@
   "devDependencies": {
     "@factory-js/factory": "^0.4.0",
     "@faker-js/faker": "^10.0.0",
-    "@minute/eslint-config": "workspace:*",
     "@minute/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^3.0.0",
     "dotenv-cli": "^10.0.0",
     "lint-staged": "^16.0.0",
     "typescript": "5.9.3",
-    "vitest": "^3.0.0",
-    "eslint": "8.57.1"
+    "vitest": "^3.0.0"
   },
   "dependencies": {
     "@minute/prisma": "workspace:*",

@@ -1,5 +1,3 @@
-/* eslint-disable testing-library/prefer-screen-queries */
-
 import {
   folderFactory,
   sessionFactory,

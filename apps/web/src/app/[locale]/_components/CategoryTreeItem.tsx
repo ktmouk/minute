@@ -126,10 +126,10 @@ export const CategoryTreeItem = ({
       {isModalOpen && (
         <CategoryModal
           id={id}
-          name={name}
-          folderIds={folderIds}
-          emoji={emoji}
-          color={color}
+          defaultName={name}
+          defaultFolderIds={folderIds}
+          defaultEmoji={emoji}
+          defaultColor={color}
           onClose={() => {
             setIsModalOpen(false);
           }}

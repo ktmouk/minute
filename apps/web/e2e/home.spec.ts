@@ -1,5 +1,3 @@
-/* eslint-disable testing-library/prefer-screen-queries */
-
 import { sessionFactory } from "@minute/prisma/vitest/factories";
 import { test, expect } from "@playwright/test";
 import { addDays } from "date-fns";

@@ -97,10 +97,10 @@ export const TimeEntryListItem = ({ timeEntry, isRunning }: Props) => {
       {isModalOpen && (
         <TimeEntryModal
           id={timeEntry.id}
-          folderId={timeEntry.task.folder.id}
-          description={timeEntry.task.description}
-          startedAt={timeEntry.startedAt}
-          stoppedAt={timeEntry.stoppedAt}
+          defaultFolderId={timeEntry.task.folder.id}
+          defaultDescription={timeEntry.task.description}
+          defaultStartedAt={timeEntry.startedAt}
+          defaultStoppedAt={timeEntry.stoppedAt}
           onClose={() => {
             setIsModalOpen(false);
           }}

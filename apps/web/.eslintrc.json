@@ -1,8 +1,0 @@
-{
-  "root": true,
-  "extends": ["@minute/eslint-config/next"],
-  "ignorePatterns": ["next-env.d.ts"],
-  "parserOptions": {
-    "project": "./tsconfig.json"
-  }
-}
