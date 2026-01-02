@@ -73,12 +73,6 @@ export default defineConfig([
     },
   },
   {
-    files: ["apps/web/**/*.{ts,tsx}"],
-    rules: {
-      "react-hooks/set-state-in-effect": "off",
-    },
-  },
-  {
     ignores: [
       "**/dist",
       "**/coverage",

@@ -1,5 +1,5 @@
 import { differenceInSeconds } from "date-fns";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 const calcDuration = (startedAt?: Date, stoppedAt?: Date) => {
   const now = new Date();
@@ -7,23 +7,19 @@ const calcDuration = (startedAt?: Date, stoppedAt?: Date) => {
 };
 
 export const useDuration = (startedAt?: Date, stoppedAt?: Date) => {
-  const [duration, setDuration] = useState(0);
-
-  const updateDuration = useCallback(() => {
-    setDuration(calcDuration(startedAt, stoppedAt));
-  }, [startedAt, stoppedAt]);
+  const [duration, setDuration] = useState(() =>
+    calcDuration(startedAt, stoppedAt),
+  );
 
   useEffect(() => {
-    updateDuration();
+    if (!startedAt || stoppedAt) return;
+    const timerId = setInterval(() => {
+      setDuration(calcDuration(startedAt, undefined));
+    }, 500);
+    return () => {
+      clearInterval(timerId);
+    };
+  }, [startedAt, stoppedAt]);
 
-    if (startedAt && !stoppedAt) {
-      const timerId = setInterval(updateDuration, 500);
-      return () => {
-        clearInterval(timerId);
-      };
-    }
-    return;
-  }, [startedAt, stoppedAt, updateDuration]);
-
-  return duration;
+  return stoppedAt ? calcDuration(startedAt, stoppedAt) : duration;
 };
