@@ -2,6 +2,8 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDependencies": ["**/.env.*local"],
   "globalEnv": [
+    "CI",
+    "SKIP_ENV_VALIDATION",
     "POSTGRES_PRISMA_URL",
     "POSTGRES_URL_NON_POOLING",
     "ORIGIN",

@@ -2,6 +2,7 @@ import js from "@eslint/js";
 import { defineConfig } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import eslintConfigPrettier from "eslint-config-prettier";
+import turbo from "eslint-config-turbo/flat";
 import importPlugin from "eslint-plugin-import";
 import globals from "globals";
 import tseslint from "typescript-eslint";
@@ -12,6 +13,7 @@ export default defineConfig([
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   importPlugin.flatConfigs.recommended,
+  turbo,
   ...nextVitals.map(({ plugins = {}, ...config }) => {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const { import: _, ...rest } = plugins;
