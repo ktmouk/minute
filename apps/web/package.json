@@ -50,7 +50,7 @@
     "react-dom": "19.2.3",
     "react-hook-form": "7.69.0",
     "react-icons": "^5.2.1",
-    "recharts": "^2.12.7",
+    "recharts": "^3.0.0",
     "remeda": "^2.0.8",
     "server-only": "^0.0.1",
     "superjson": "^2.2.1",
