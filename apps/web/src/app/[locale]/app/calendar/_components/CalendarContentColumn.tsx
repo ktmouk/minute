@@ -118,9 +118,7 @@ export const CalendarContentColumn = ({
                 color={event.task.folder.color}
                 startDate={event.startedAt}
                 endDate={min([event.stoppedAt, endOfDay(baseDate)])}
-                isDragging={
-                  ghostEvent !== undefined && event.id === ghostEvent.id
-                }
+                isDragging={event.id === ghostEvent?.id}
                 onClick={() => {
                   handeClickEvent(event);
                 }}

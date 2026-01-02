@@ -31,7 +31,7 @@ export const createFolder = (db: PrismaClient) =>
             id: input.ancestorId,
           },
         });
-        if (ancestor === null || ancestor.userId !== input.userId) {
+        if (ancestor?.userId !== input.userId) {
           throw Error("The ancestor folder does not exist.");
         }
       }
