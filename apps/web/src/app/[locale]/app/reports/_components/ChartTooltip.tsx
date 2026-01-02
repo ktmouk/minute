@@ -8,7 +8,7 @@ import { z } from "zod";
 
 type Props = {
   label: string;
-  payload: Payload<ValueType, NameType>[] | undefined;
+  payload: readonly Payload<ValueType, NameType>[] | undefined;
 };
 
 const payloadSchema = z.array(

@@ -123,9 +123,9 @@ export const LineChartContainer = ({
       <LineChart data={data}>
         <Legend wrapperStyle={{ fontSize: 14, minHeight: 20 }} />
         <CartesianGrid strokeDasharray="3 3" stroke="#dee1dd" />
-        <XAxis dataKey="name" className="text-xs" />
+        <XAxis dataKey="name" fontSize={12} />
         <YAxis
-          className="text-xs"
+          fontSize={12}
           tickFormatter={(value: number) => fromS(value, "hh:mm:ss")}
         />
         <Tooltip
