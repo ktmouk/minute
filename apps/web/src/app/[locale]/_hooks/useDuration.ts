@@ -7,12 +7,11 @@ const calcDuration = (startedAt?: Date, stoppedAt?: Date) => {
 };
 
 export const useDuration = (startedAt?: Date, stoppedAt?: Date) => {
-  const [duration, setDuration] = useState(() =>
-    calcDuration(startedAt, stoppedAt),
-  );
+  const [duration, setDuration] = useState(0);
 
   useEffect(() => {
     if (!startedAt || stoppedAt) return;
+
     const timerId = setInterval(() => {
       setDuration(calcDuration(startedAt, undefined));
     }, 500);
@@ -20,6 +19,10 @@ export const useDuration = (startedAt?: Date, stoppedAt?: Date) => {
       clearInterval(timerId);
     };
   }, [startedAt, stoppedAt]);
+
+  if (!startedAt && duration !== 0) {
+    setDuration(0);
+  }
 
   return stoppedAt ? calcDuration(startedAt, stoppedAt) : duration;
 };
