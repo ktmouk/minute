@@ -73,7 +73,7 @@ importers:
         version: 2.2.9(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@hookform/resolvers':
         specifier: ^5.0.0
-        version: 5.2.2(react-hook-form@7.69.0(react@19.2.3))
+        version: 5.2.2(react-hook-form@7.70.0(react@19.2.3))
       '@minute/prisma':
         specifier: workspace:*
         version: link:../../packages/prisma
@@ -153,8 +153,8 @@ importers:
         specifier: 19.2.3
         version: 19.2.3(react@19.2.3)
       react-hook-form:
-        specifier: 7.69.0
-        version: 7.69.0(react@19.2.3)
+        specifier: 7.70.0
+        version: 7.70.0(react@19.2.3)
       react-icons:
         specifier: ^5.2.1
         version: 5.5.0(react@19.2.3)
@@ -163,7 +163,7 @@ importers:
         version: 3.6.0(@types/react@19.2.7)(react-dom@19.2.3(react@19.2.3))(react-is@18.3.1)(react@19.2.3)(redux@5.0.1)
       remeda:
         specifier: ^2.0.8
-        version: 2.32.0
+        version: 2.33.1
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -343,7 +343,7 @@ importers:
         version: 4.1.0
       remeda:
         specifier: ^2.0.8
-        version: 2.32.0
+        version: 2.33.1
       server-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -432,7 +432,7 @@ importers:
     dependencies:
       remeda:
         specifier: ^2.0.8
-        version: 2.32.0
+        version: 2.33.1
       zod:
         specifier: ^3.23.8
         version: 3.25.76
@@ -4182,8 +4182,8 @@ packages:
     peerDependencies:
       react: ^19.2.3
 
-  react-hook-form@7.69.0:
-    resolution: {integrity: sha512-yt6ZGME9f4F6WHwevrvpAjh42HMvocuSnSIHUGycBqXIJdhqGSPQzTpGF+1NLREk/58IdPxEMfPcFCjlMhclGw==}
+  react-hook-form@7.70.0:
+    resolution: {integrity: sha512-COOMajS4FI3Wuwrs3GPpi/Jeef/5W1DRR84Yl5/ShlT3dKVFUfoGiEZ/QE6Uw8P4T2/CLJdcTVYKvWBMQTEpvw==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18 || ^19
@@ -4260,8 +4260,8 @@ packages:
   remeda@2.21.3:
     resolution: {integrity: sha512-XXrZdLA10oEOQhLLzEJEiFFSKi21REGAkHdImIb4rt/XXy8ORGXh5HCcpUOsElfPNDb+X6TA/+wkh+p2KffYmg==}
 
-  remeda@2.32.0:
-    resolution: {integrity: sha512-BZx9DsT4FAgXDTOdgJIc5eY6ECIXMwtlSPQoPglF20ycSWigttDDe88AozEsPPT4OWk5NujroGSBC1phw5uU+w==}
+  remeda@2.33.1:
+    resolution: {integrity: sha512-404Eba/HI/blNfbebo586OjEnAhq/x5jN1aIfK4gHnjAP7SADaRfDdIjo8Acpz7hkXgM06MPTwu4IbXamvM9Qw==}
 
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
@@ -5420,10 +5420,10 @@ snapshots:
     dependencies:
       hono: 4.10.6
 
-  '@hookform/resolvers@5.2.2(react-hook-form@7.69.0(react@19.2.3))':
+  '@hookform/resolvers@5.2.2(react-hook-form@7.70.0(react@19.2.3))':
     dependencies:
       '@standard-schema/utils': 0.3.0
-      react-hook-form: 7.69.0(react@19.2.3)
+      react-hook-form: 7.70.0(react@19.2.3)
 
   '@humanfs/core@0.19.1': {}
 
@@ -8734,7 +8734,7 @@ snapshots:
       react: 19.2.3
       scheduler: 0.27.0
 
-  react-hook-form@7.69.0(react@19.2.3):
+  react-hook-form@7.70.0(react@19.2.3):
     dependencies:
       react: 19.2.3
 
@@ -8823,9 +8823,7 @@ snapshots:
     dependencies:
       type-fest: 4.41.0
 
-  remeda@2.32.0:
-    dependencies:
-      type-fest: 4.41.0
+  remeda@2.33.1: {}
 
   require-from-string@2.0.2: {}
 
