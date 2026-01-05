@@ -185,7 +185,7 @@ importers:
     devDependencies:
       '@faker-js/faker':
         specifier: ^10.0.0
-        version: 10.1.0
+        version: 10.2.0
       '@headlessui/tailwindcss':
         specifier: ^0.2.1
         version: 0.2.2(tailwindcss@4.1.18)
@@ -279,7 +279,7 @@ importers:
         version: 0.2.2
       '@faker-js/faker':
         specifier: ^10.0.0
-        version: 10.1.0
+        version: 10.2.0
       '@minute/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -356,7 +356,7 @@ importers:
         version: 0.4.1
       '@faker-js/faker':
         specifier: ^10.0.0
-        version: 10.1.0
+        version: 10.2.0
       '@minute/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -884,8 +884,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@faker-js/faker@10.1.0':
-    resolution: {integrity: sha512-C3mrr3b5dRVlKPJdfrAXS8+dq+rq8Qm5SNRazca0JKgw1HQERFmrVb0towvMmw5uu8hHKNiQasMaR/tydf3Zsg==}
+  '@faker-js/faker@10.2.0':
+    resolution: {integrity: sha512-rTXwAsIxpCqzUnZvrxVh3L0QA0NzToqWBLAhV+zDV3MIIwiQhAZHMdPCIaj5n/yADu/tyk12wIPgL6YHGXJP+g==}
     engines: {node: ^20.19.0 || ^22.13.0 || ^23.5.0 || >=24.0.0, npm: '>=10'}
 
   '@floating-ui/core@1.7.3':
@@ -5345,7 +5345,7 @@ snapshots:
       decimal.js: 10.6.0
       prettier: 3.7.4
 
-  '@faker-js/faker@10.1.0': {}
+  '@faker-js/faker@10.2.0': {}
 
   '@floating-ui/core@1.7.3':
     dependencies:
