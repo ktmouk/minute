@@ -5,7 +5,7 @@ import { useCombobox } from "downshift";
 import type { UseComboboxStateChange } from "downshift";
 import { useSetAtom } from "jotai";
 import { useTranslations } from "next-intl";
-import type { FormEvent } from "react";
+import type { SyntheticEvent } from "react";
 import { useCallback, useState } from "react";
 import { PiPlayFill, PiStopFill } from "react-icons/pi";
 import * as R from "remeda";
@@ -143,7 +143,7 @@ export const RunningTimeEntryForm = () => {
     onInputValueChange: (event) => void debouncedHandleInputChange(event),
   });
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     if (isRunning) {
