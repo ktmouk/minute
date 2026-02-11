@@ -1,12 +1,10 @@
 "use client";
 
-import Error from "next/error";
-
 const NotFound = () => {
   return (
     <html lang="en">
       <body>
-        <Error statusCode={404} />
+        <p>404</p>
       </body>
     </html>
   );
