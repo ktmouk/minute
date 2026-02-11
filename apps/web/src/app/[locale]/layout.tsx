@@ -9,8 +9,6 @@ import { routing } from "../../i18n/routing";
 import { Toast } from "./_components/Toast";
 import { TrpcProvider } from "./_components/TrpcProvider";
 
-export const fetchCache = "only-no-store";
-
 const Layout = async (props: LayoutProps<"/[locale]">) => {
   const params = await props.params;
   const { locale } = params;
