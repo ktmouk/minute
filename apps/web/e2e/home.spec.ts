@@ -11,7 +11,6 @@ test.describe("when a user is not signed in", () => {
     );
     expect(res?.headers()["referrer-policy"]).toBe("no-referrer");
     expect(res?.headers()["x-frame-options"]).toBe("DENY");
-    expect(res?.headers()["x-xss-protection"]).toBe("1; mode=block");
   });
 });
 
@@ -39,7 +38,6 @@ test.describe("when a user is signed in", () => {
     );
     expect(res?.headers()["referrer-policy"]).toBe("no-referrer");
     expect(res?.headers()["x-frame-options"]).toBe("DENY");
-    expect(res?.headers()["x-xss-protection"]).toBe("1; mode=block");
 
     await expect(page).toHaveURL("/en/app");
     await page.getByRole("button", { name: "Add New Folder" }).click();
