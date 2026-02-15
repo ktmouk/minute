@@ -13,7 +13,7 @@ const cspRegxp = new RegExp(
     "child-src 'none'; ",
     "connect-src 'self'; ",
     "default-src 'self'; ",
-    "font-src 'self' 'nonce-.+'; ",
+    "font-src 'self'; ",
     "form-action 'self'; ",
     "frame-ancestors 'none'; ",
     "frame-src 'none'; ",
@@ -24,7 +24,8 @@ const cspRegxp = new RegExp(
     "prefetch-src 'none'; ",
     "worker-src 'none'; ",
     "script-src 'nonce-.+' 'strict-dynamic'; ",
-    "style-src 'self' 'nonce-.+' 'sha256-\\+A14ONesVdzkn6nr37Osn\\+rUqNz4oFGZFDbLXrlae04='",
+    "style-src 'self' 'nonce-.+' 'sha256-\\+A14ONesVdzkn6nr37Osn\\+rUqNz4oFGZFDbLXrlae04='; ",
+    "upgrade-insecure-requests;",
     "$",
   ].join(""),
 );
