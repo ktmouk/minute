@@ -344,6 +344,24 @@ describe("middleware", () => {
         expect(res?.status).toBe(200);
         expect(res?.headers.get("Content-Security-Policy")).toMatch(cspRegxp);
       });
+
+      it("generates a different nonce on each request", async () => {
+        const res1 = await middleware(
+          new NextRequest("http://localhost:3000/en/auth/sign-in", {
+            headers: { "x-real-ip": "127.0.0.1" },
+          }) as NextRequestWithAuth,
+          {} as NextFetchEvent,
+        );
+        const res2 = await middleware(
+          new NextRequest("http://localhost:3000/en/auth/sign-in", {
+            headers: { "x-real-ip": "127.0.0.1" },
+          }) as NextRequestWithAuth,
+          {} as NextFetchEvent,
+        );
+        const csp1 = res1?.headers.get("Content-Security-Policy");
+        const csp2 = res2?.headers.get("Content-Security-Policy");
+        expect(csp1).not.toBe(csp2);
+      });
     });
 
     describe("when the requset has a disallowed ip", () => {
