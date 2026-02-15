@@ -75,7 +75,8 @@ const hasJsonContentType = (req: NextRequest) => {
   const contentType = req.headers.get("Content-Type");
   return (
     typeof contentType === "string" &&
-    contentType.startsWith("application/json")
+    (contentType === "application/json" ||
+      contentType.startsWith("application/json;"))
   );
 };
 
