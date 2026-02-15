@@ -5,7 +5,6 @@ import { NextRequest, NextResponse, type NextFetchEvent } from "next/server";
 import type { NextRequestWithAuth } from "next-auth/middleware";
 import withAuth from "next-auth/middleware";
 import createIntlMiddleware from "next-intl/middleware";
-import * as R from "remeda";
 import { locales } from "../config/locale";
 import { nextAuthPageOptions } from "../config/next-auth-page-options";
 import { serverEnv } from "../env/server.mjs";
@@ -14,52 +13,28 @@ import { routing } from "./i18n/routing";
 const PUBLIC_PAGES = ["/auth/sign-in"];
 const PUBLIC_FILES = ["/favicon.ico", "/robots.txt"];
 
-// Based on https://trezy.gitbook.io/next-safe/configuration-options/contentsecuritypolicy
 const generateCsp = (nonce: string) => {
   const isDev = process.env.NODE_ENV === "development";
-  const csp = {
-    "base-uri": ["none"],
-    "child-src": ["none"],
-    "connect-src": ["self"],
-    "default-src": ["self"],
-    "font-src": ["self", `nonce-${nonce}`],
-    "form-action": ["self"],
-    "frame-ancestors": ["none"],
-    "frame-src": ["none"],
-    "img-src": ["self"],
-    "manifest-src": ["none"],
-    "media-src": ["none"],
-    "object-src": ["none"],
-    "prefetch-src": ["none"],
-    "worker-src": ["none"],
-    "script-src": [
-      `nonce-${nonce}`,
-      "strict-dynamic",
-      ...(isDev ? ["unsafe-eval"] : []),
-    ],
-    "style-src": [
-      "self",
-      ...(isDev
-        ? ["unsafe-inline"]
-        : [
-            `nonce-${nonce}`,
-            // emoji-mart
-            "sha256-+A14ONesVdzkn6nr37Osn+rUqNz4oFGZFDbLXrlae04=",
-          ]),
-    ],
-  } satisfies Record<string, string[]>;
-
-  return R.entries(csp)
-    .map(
-      ([key, directives]) =>
-        `${key} ${directives
-          .filter((directive) => {
-            return typeof directive === "string" && directive !== "";
-          })
-          .map((directive) => `'${directive}'`)
-          .join(" ")}`,
-    )
-    .join("; ");
+  const csp = `
+    base-uri 'none';
+    child-src 'none';
+    connect-src 'self';
+    default-src 'self';
+    font-src 'self';
+    form-action 'self';
+    frame-ancestors 'none';
+    frame-src 'none';
+    img-src 'self';
+    manifest-src 'none';
+    media-src 'none';
+    object-src 'none';
+    prefetch-src 'none';
+    worker-src 'none';
+    script-src 'nonce-${nonce}' 'strict-dynamic'${isDev ? " 'unsafe-eval'" : ""};
+    style-src 'self'${isDev ? " 'unsafe-inline'" : ` 'nonce-${nonce}' 'sha256-+A14ONesVdzkn6nr37Osn+rUqNz4oFGZFDbLXrlae04='`};
+    upgrade-insecure-requests;
+  `;
+  return csp.replace(/\s{2,}/g, " ").trim();
 };
 
 const isAllowedIp = (ip: string | undefined) => {
