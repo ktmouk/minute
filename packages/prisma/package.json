@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.1.0",
-    "@prisma/client": "7.3.0",
+    "@prisma/client": "7.4.2",
     "server-only": "^0.0.1"
   }
 }
