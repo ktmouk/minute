@@ -62,7 +62,7 @@
     "@headlessui/tailwindcss": "^0.2.1",
     "@minute/schemas": "workspace:*",
     "@minute/tsconfig": "workspace:*",
-    "@next/env": "16.2.0",
+    "@next/env": "16.2.1",
     "@playwright/test": "^1.44.1",
     "@tailwindcss/postcss": "^4.1.3",
     "@tanstack/react-query-devtools": "^5.71.10",
