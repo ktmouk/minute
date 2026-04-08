@@ -1,3 +1,6 @@
 packages:
   - "packages/*"
   - "apps/*"
+allowBuilds:
+  "@swc/core": true
+  prisma: true
