@@ -1,14 +1,10 @@
 import { fromS } from "hh-mm-ss";
-import type {
-  NameType,
-  Payload,
-  ValueType,
-} from "recharts/types/component/DefaultTooltipContent";
+import type { Payload } from "recharts/types/component/DefaultTooltipContent";
 import { z } from "zod";
 
 type Props = {
   label: string;
-  payload: readonly Payload<ValueType, NameType>[] | undefined;
+  payload: readonly Payload[] | undefined;
 };
 
 const payloadSchema = z.array(
