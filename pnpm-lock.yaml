@@ -171,8 +171,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.6
       tailwind-variants:
-        specifier: ^1.0.0
-        version: 1.0.0(tailwindcss@4.2.4)
+        specifier: ^3.0.0
+        version: 3.2.2(tailwind-merge@3.0.2)(tailwindcss@4.2.4)
       usehooks-ts:
         specifier: ^3.1.1
         version: 3.1.1(react@19.2.5)
@@ -4739,11 +4739,15 @@ packages:
   tailwind-merge@3.0.2:
     resolution: {integrity: sha512-l7z+OYZ7mu3DTqrL88RiKrKIqO3NcpEO8V/Od04bNpvk0kiIFndGEoqfuzvj4yuhRkHKjRkII2z+KS2HfPcSxw==}
 
-  tailwind-variants@1.0.0:
-    resolution: {integrity: sha512-2WSbv4ulEEyuBKomOunut65D8UZwxrHoRfYnxGcQNnHqlSCp2+B7Yz2W+yrNDrxRodOXtGD/1oCcKGNBnUqMqA==}
+  tailwind-variants@3.2.2:
+    resolution: {integrity: sha512-Mi4kHeMTLvKlM98XPnK+7HoBPmf4gygdFmqQPaDivc3DpYS6aIY6KiG/PgThrGvii5YZJqRsPz0aPyhoFzmZgg==}
     engines: {node: '>=16.x', pnpm: '>=7.x'}
     peerDependencies:
+      tailwind-merge: '>=3.0.0'
       tailwindcss: '*'
+    peerDependenciesMeta:
+      tailwind-merge:
+        optional: true
 
   tailwindcss@4.2.4:
     resolution: {integrity: sha512-HhKppgO81FQof5m6TEnuBWCZGgfRAWbaeOaGT00KOy/Pf/j6oUihdvBpA7ltCeAvZpFhW3j0PTclkxsd4IXYDA==}
@@ -9498,12 +9502,14 @@ snapshots:
 
   tagged-tag@1.0.0: {}
 
-  tailwind-merge@3.0.2: {}
+  tailwind-merge@3.0.2:
+    optional: true
 
-  tailwind-variants@1.0.0(tailwindcss@4.2.4):
+  tailwind-variants@3.2.2(tailwind-merge@3.0.2)(tailwindcss@4.2.4):
     dependencies:
-      tailwind-merge: 3.0.2
       tailwindcss: 4.2.4
+    optionalDependencies:
+      tailwind-merge: 3.0.2
 
   tailwindcss@4.2.4: {}
 
