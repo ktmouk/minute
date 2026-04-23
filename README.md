@@ -40,7 +40,7 @@ If you want to add new features or fix something, feel free to open a PR or issu
 - ✨ Looking for good issues to start contributing? Good issues are labeled with [contributors welcome](https://github.com/ktmouk/minute/issues?q=is%3Aissue+is%3Aopen+label%3A%22contributors+welcome%22).
 - 💭 Have a question or something to ask? Let us know in [Discussions](https://github.com/ktmouk/minute/discussions/new/choose).
 
-## Try Minute locally
+## Run Minute locally for development
 
 1. Clone this repository.
 
