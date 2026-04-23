@@ -42,7 +42,7 @@ describe("authOptions", () => {
             signIn({
               user: { name },
               account: { provider: "github", providerAccountId: "2345" },
-            } as unknown),
+            }),
           ).resolves.toBe(false);
           await expect(
             db.userSecurityLog.findFirst({
@@ -73,7 +73,7 @@ describe("authOptions", () => {
             signIn({
               user: { name },
               account: { provider: "github", providerAccountId: undefined },
-            } as unknown),
+            }),
           ).resolves.toBe(false);
           await expect(
             db.userSecurityLog.findFirst({
@@ -104,7 +104,7 @@ describe("authOptions", () => {
             signIn({
               user: { name },
               account: { provider: "github", providerAccountId: null },
-            } as unknown),
+            }),
           ).resolves.toBe(false);
           await expect(
             db.userSecurityLog.findFirst({
