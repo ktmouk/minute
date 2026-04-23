@@ -6,6 +6,7 @@
     "group:allNonMajor",
     "helpers:pinGitHubActionDigests"
   ],
+  "minimumReleaseAge": "3 days",
   "packageRules": [
     {
       "matchDepTypes": ["devDependencies"],
