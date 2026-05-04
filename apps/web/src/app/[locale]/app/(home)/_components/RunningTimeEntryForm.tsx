@@ -16,6 +16,7 @@ import { Duration } from "../../../_components/Duration";
 import { Tooltip } from "../../../_components/Tooltip";
 import { trpc } from "../../../_components/TrpcProvider";
 import { useToast } from "../../../_hooks/useToast";
+import { useKeyboardShortcut } from "../../../_hooks/useKeyboardShortcut";
 import { FolderSelect } from "./FolderSelect";
 import { RunningTimeEntryDescription } from "./RunningTimeEntryDescription";
 import { TaskSuggestionList } from "./TaskSuggestionList";
@@ -145,25 +146,7 @@ export const RunningTimeEntryForm = () => {
 
   const handleSubmit = async (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    if (isRunning) {
-      await stopRunningTimeEntry.mutateAsync({
-        stoppedAt: new Date(),
-      });
-      if (selectedFolderId !== undefined) {
-        await utils.tasks.getTasksInFolder.invalidate({
-          folderId: selectedFolderId,
-        });
-      }
-    } else {
-      if (selectedFolderId !== undefined) {
-        await startRunningTimeEntry.mutateAsync({
-          folderId: selectedFolderId,
-          description: inputValue,
-          startedAt: new Date(),
-        });
-      }
-    }
+    await toggleTimer();
   };
 
   const handleDescriptionBlur = async () => {
@@ -196,6 +179,42 @@ export const RunningTimeEntryForm = () => {
       await updateRunningTimeEntry.mutateAsync({ folderId });
     }
   };
+
+  const toggleTimer = useCallback(async () => {
+    if (runningTimeEntry.isLoading) return;
+    if (isRunning) {
+      await stopRunningTimeEntry.mutateAsync({
+        stoppedAt: new Date(),
+      });
+      if (selectedFolderId !== undefined) {
+        await utils.tasks.getTasksInFolder.invalidate({
+          folderId: selectedFolderId,
+        });
+      }
+    } else {
+      if (selectedFolderId !== undefined) {
+        await startRunningTimeEntry.mutateAsync({
+          folderId: selectedFolderId,
+          description: inputValue,
+          startedAt: new Date(),
+        });
+      }
+    }
+  }, [
+    isRunning,
+    selectedFolderId,
+    inputValue,
+    runningTimeEntry.isLoading,
+    stopRunningTimeEntry,
+    startRunningTimeEntry,
+    utils,
+  ]);
+
+  useKeyboardShortcut({
+    key: "s",
+    callback: toggleTimer,
+    enabled: !runningTimeEntry.isLoading,
+  });
 
   return (
     <form onSubmit={(event) => void handleSubmit(event)}>
