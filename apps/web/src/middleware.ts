@@ -11,7 +11,7 @@ import { serverEnv } from "../env/server.mjs";
 import { routing } from "./i18n/routing";
 
 const PUBLIC_PAGES = ["/auth/sign-in"];
-const PUBLIC_FILES = ["/favicon.ico", "/robots.txt"];
+const PUBLIC_FILES = ["/favicon.ico"];
 
 const generateCsp = (nonce: string) => {
   const isDev = process.env.NODE_ENV === "development";
@@ -93,11 +93,6 @@ export default function middleware(
   req: NextRequestWithAuth,
   event: NextFetchEvent,
 ) {
-  // Always allow accessing robots.txt.
-  if (req.nextUrl.pathname === "/robots.txt") {
-    return NextResponse.next();
-  }
-
   if (!isAllowedIp(ipAddress(req))) {
     return new NextResponse("not found", { status: 404 });
   }
