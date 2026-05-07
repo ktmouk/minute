@@ -33,7 +33,7 @@ const cspRegxp = new RegExp(
 describe("middleware", () => {
   describe("when the path is /robots.txt", () => {
     describe("when the requset has a disallowed ip", () => {
-      it("returns 200", async () => {
+      it("returns 404", async () => {
         const req = new NextRequest("http://localhost:3000/robots.txt", {
           headers: {
             "x-real-ip": "1.1.1.1",
@@ -43,8 +43,8 @@ describe("middleware", () => {
           req as NextRequestWithAuth,
           {} as NextFetchEvent,
         );
-        expect(res?.ok).toBe(true);
-        expect(res?.status).toBe(200);
+        expect(res?.ok).toBe(false);
+        expect(res?.status).toBe(404);
       });
     });
   });
