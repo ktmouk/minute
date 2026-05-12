@@ -23,6 +23,9 @@ export const PageTitle = () => {
     } else {
       document.title = "minute";
     }
+    return () => {
+      document.title = "minute";
+    };
   }, [runningTimeEntry.data, duration]);
 
   return null;
