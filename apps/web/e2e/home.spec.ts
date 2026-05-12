@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access */
 import { sessionFactory } from "@minute/prisma/vitest/factories";
 import { test, expect } from "@playwright/test";
 import { addDays } from "date-fns";
@@ -53,6 +54,55 @@ test.describe("when a user is signed in", () => {
     await expect(
       page.getByRole("button", { name: /example task/ }),
     ).toBeVisible();
+    await browser.close();
+  });
+
+  test("displays timer in page title when running", async ({ browser }) => {
+    const session = await sessionFactory
+      .props({ expires: () => addDays(new Date(), 1) })
+      .create();
+    const context = await browser.newContext();
+    await context.addCookies([
+      {
+        name: "next-auth.session-token",
+        domain: "localhost",
+        path: "/",
+        value: session.sessionToken,
+        httpOnly: true,
+        sameSite: "Lax",
+      },
+    ]);
+    const page = await context.newPage();
+
+    await page.goto("/app");
+    await expect(page).toHaveURL("/en/app");
+
+    // Initially, title should be just "minute"
+    await expect(page).toHaveTitle("minute");
+
+    // Create a folder and start timer
+    await page.getByRole("button", { name: "Add New Folder" }).click();
+    await page.getByPlaceholder("Enter folder name...").fill("test");
+    await page.getByRole("main").click();
+    await page
+      .getByPlaceholder("Enter the description of what")
+      .fill("example task");
+    await page.getByRole("main").click();
+    await page.getByLabel("Start Working").click();
+    await expect(page.getByLabel("Stop Working")).toBeVisible();
+
+    // Title should show timer with description
+    await expect(async () => {
+      const title = await page.title();
+      expect(title).toMatch(/^\d{2}:\d{2}:\d{2}・example task - minute$/);
+    }).toPass({ timeout: 2000 });
+
+    // Stop timer
+    await page.getByLabel("Stop Working").click();
+
+    // Title should return to "minute"
+    await expect(page).toHaveTitle("minute");
+
     await browser.close();
   });
 });
