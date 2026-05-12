@@ -5,3 +5,6 @@ allowBuilds:
   "@swc/core": true
   prisma: true
 minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  # Renovate security update: next@16.2.5
+  - next@16.2.5
