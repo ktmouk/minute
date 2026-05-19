@@ -17,8 +17,8 @@
     "@minute/tsconfig": "workspace:*",
     "@vitest/coverage-v8": "^4.0.0",
     "dotenv-cli": "^11.0.0",
-    "lint-staged": "^16.0.0",
-    "typescript": "5.9.3",
+    "lint-staged": "^17.0.0",
+    "typescript": "6.0.3",
     "vitest": "^4.0.0"
   },
   "dependencies": {
