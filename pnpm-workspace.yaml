@@ -2,8 +2,13 @@ packages:
   - "packages/*"
   - "apps/*"
 allowBuilds:
+  "@parcel/watcher": true
+  "@prisma/engines": true
   "@swc/core": true
+  esbuild: true
   prisma: true
+  sharp: true
+  unrs-resolver: true
 minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   # Renovate security update: next@16.2.5 || 16.2.6
