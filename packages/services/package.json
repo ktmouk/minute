@@ -15,18 +15,18 @@
     "@factory-js/factory": "^0.4.0",
     "@faker-js/faker": "^10.0.0",
     "@minute/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^4.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
     "dotenv-cli": "^11.0.0",
-    "lint-staged": "^16.0.0",
+    "lint-staged": "^17.3.0",
     "typescript": "5.9.3",
-    "vitest": "^4.0.0"
+    "vitest": "^4.1.10"
   },
   "dependencies": {
     "@minute/prisma": "workspace:*",
     "@minute/schemas": "workspace:*",
     "@minute/utils": "workspace:*",
     "date-fns": "^4.0.0",
-    "remeda": "^2.0.8",
+    "remeda": "^2.39.0",
     "server-only": "^0.0.1",
     "zod": "^3.23.8"
   }

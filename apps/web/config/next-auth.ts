@@ -24,11 +24,7 @@ const sendUserSecurityLog = async ({
   account,
 }: {
   type:
-    | "SIGN_IN"
-    | "SIGN_OUT"
-    | "BLOCK_SIGN_IN"
-    | "CREATE_USER"
-    | "LINK_ACCOUNT";
+    "SIGN_IN" | "SIGN_OUT" | "BLOCK_SIGN_IN" | "CREATE_USER" | "LINK_ACCOUNT";
   name?: string | null | undefined;
   account?: Account | null;
 }) => {

@@ -13,13 +13,13 @@
   },
   "devDependencies": {
     "@minute/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^4.0.0",
-    "lint-staged": "^16.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "lint-staged": "^17.3.0",
     "typescript": "5.9.3",
-    "vitest": "^4.0.0"
+    "vitest": "^4.1.10"
   },
   "dependencies": {
-    "remeda": "^2.0.8",
+    "remeda": "^2.39.0",
     "zod": "^3.23.8"
   }
 }
