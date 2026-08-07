@@ -19,7 +19,7 @@
     "vitest": "^4.1.10"
   },
   "dependencies": {
-    "remeda": "^2.0.8",
+    "remeda": "^2.39.0",
     "zod": "^3.23.8"
   }
 }
