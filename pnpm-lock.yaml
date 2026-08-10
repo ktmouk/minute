@@ -227,7 +227,7 @@ importers:
         version: 4.1.10(vitest@4.1.10)
       autoprefixer:
         specifier: 10.5.4
-        version: 10.5.4(postcss@8.5.25)
+        version: 10.5.4(postcss@8.5.26)
       dotenv:
         specifier: ^17.0.0
         version: 17.4.2
@@ -244,8 +244,8 @@ importers:
         specifier: ^17.3.0
         version: 17.3.0
       postcss:
-        specifier: 8.5.25
-        version: 8.5.25
+        specifier: 8.5.26
+        version: 8.5.26
       tailwindcss:
         specifier: 4.3.3
         version: 4.3.3
@@ -4288,11 +4288,6 @@ packages:
     resolution: {integrity: sha512-Tz09sEL2EEuv5fFowm419c1+a/jSMiBjI9gHxVLrVdbUkkNUUfjsVYs9pVZu5oCon/kmRh9TfLEObFtkVxmY0w==}
     engines: {node: '>=8.0.0'}
 
-  nanoid@3.3.12:
-    resolution: {integrity: sha512-ZB9RH/39qpq5Vu6Y+NmUaFhQR6pp+M2Xt76XBnEwDaGcVAqhlvxrl3B2bKS5D3NH3QR76v3aSrKaF/Kiy7lEtQ==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   nanoid@3.3.17:
     resolution: {integrity: sha512-xQLf0A3HOMlgHq0n247/LRuAOYmB7dXJ/DvAxGvsSBij45XtBSmQycu+F8ODbHwns/XyFZagyL1+J0Offw1E0g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -4571,6 +4566,10 @@ packages:
 
   postcss@8.5.25:
     resolution: {integrity: sha512-DTPx3RWSSnWyzLxQnlH0rJP+EW5ekl16ZU4/psbIhA0e53kJfdgaN5vKM+xP7yJtXVu+nfdVFmlgFDEKAe4Pyw==}
+    engines: {node: ^10 || ^12 || >=14}
+
+  postcss@8.5.26:
+    resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
     engines: {node: ^10 || ^12 || >=14}
 
   postgres-array@2.0.0:
@@ -7026,7 +7025,7 @@ snapshots:
       '@alloc/quick-lru': 5.2.0
       '@tailwindcss/node': 4.3.3
       '@tailwindcss/oxide': 4.3.3
-      postcss: 8.5.25
+      postcss: 8.5.26
       tailwindcss: 4.3.3
 
   '@tanstack/query-core@5.101.4': {}
@@ -7691,13 +7690,13 @@ snapshots:
 
   async-function@1.0.0: {}
 
-  autoprefixer@10.5.4(postcss@8.5.25):
+  autoprefixer@10.5.4(postcss@8.5.26):
     dependencies:
       browserslist: 4.28.7
       caniuse-lite: 1.0.30001806
       fraction.js: 5.3.4
       picocolors: 1.1.1
-      postcss: 8.5.25
+      postcss: 8.5.26
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -9302,8 +9301,6 @@ snapshots:
     dependencies:
       lru.min: 1.1.4
 
-  nanoid@3.3.12: {}
-
   nanoid@3.3.17: {}
 
   napi-postinstall@0.3.4: {}
@@ -9575,11 +9572,17 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 3.3.12
+      nanoid: 3.3.17
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
   postcss@8.5.25:
+    dependencies:
+      nanoid: 3.3.17
+      picocolors: 1.1.1
+      source-map-js: 1.2.1
+
+  postcss@8.5.26:
     dependencies:
       nanoid: 3.3.17
       picocolors: 1.1.1
