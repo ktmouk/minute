@@ -18,7 +18,7 @@
     "@vitest/coverage-v8": "^4.1.10",
     "dotenv-cli": "^11.0.0",
     "lint-staged": "^17.3.0",
-    "typescript": "5.9.3",
+    "typescript": "7.0.2",
     "vitest": "^4.1.10"
   },
   "dependencies": {
