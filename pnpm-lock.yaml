@@ -132,8 +132,8 @@ importers:
         specifier: ^1.2.0
         version: 1.2.0
       jotai:
-        specifier: ^2.20.2
-        version: 2.20.2(@babel/core@7.29.0(supports-color@10.2.2))(@babel/template@7.29.7)(@types/react@19.2.18)(react@19.2.8)
+        specifier: ^3.0.0
+        version: 3.0.0(@types/react@19.2.18)(react@19.2.8)
       next:
         specifier: 16.3.3
         version: 16.3.3(@babel/core@7.29.0(supports-color@10.2.2))(@playwright/test@1.63.0)(@types/node@24.13.3)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
@@ -4047,19 +4047,13 @@ packages:
   jose@5.10.0:
     resolution: {integrity: sha512-s+3Al/p9g32Iq+oqXxkW//7jk2Vig6FF1CFqzVXoTUXt2qz89YWbL+OwS17NFYEvxC35n0FKeGO2LGYSxeM2Gg==}
 
-  jotai@2.20.2:
-    resolution: {integrity: sha512-aHB4CNb9qRcyf0mwSB6EO5bCGAjx8cTwFgOFCE2leOnTzqACbnSWG8XoWB3LxCT1Qoj03I1OWAHszDmN4uHb/w==}
-    engines: {node: '>=12.20.0'}
+  jotai@3.0.0:
+    resolution: {integrity: sha512-KxhbmsJUp/tmrv6aZgO+nzB3H9K8C0xmk5i3aGkwy/EANg73DVBkggv3zVHaAi5PlNlQgTgP4uiVepo+JC+wSA==}
+    engines: {node: '>=22.12.0'}
     peerDependencies:
-      '@babel/core': '>=7.0.0'
-      '@babel/template': '>=7.0.0'
-      '@types/react': '>=17.0.0'
-      react: '>=17.0.0'
+      '@types/react': '>=18.0.0'
+      react: '>=18.0.0'
     peerDependenciesMeta:
-      '@babel/core':
-        optional: true
-      '@babel/template':
-        optional: true
       '@types/react':
         optional: true
       react:
@@ -9131,10 +9125,8 @@ snapshots:
 
   jose@5.10.0: {}
 
-  jotai@2.20.2(@babel/core@7.29.0(supports-color@10.2.2))(@babel/template@7.29.7)(@types/react@19.2.18)(react@19.2.8):
+  jotai@3.0.0(@types/react@19.2.18)(react@19.2.8):
     optionalDependencies:
-      '@babel/core': 7.29.0(supports-color@10.2.2)
-      '@babel/template': 7.29.7
       '@types/react': 19.2.18
       react: 19.2.8
 
