@@ -15,11 +15,11 @@
     "@factory-js/factory": "^0.4.0",
     "@faker-js/faker": "^10.0.0",
     "@minute/tsconfig": "workspace:*",
-    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/coverage-v8": "^5.0.0",
     "dotenv-cli": "^11.0.0",
     "lint-staged": "^17.3.0",
-    "typescript": "5.9.3",
-    "vitest": "^4.1.10"
+    "typescript": "7.0.2",
+    "vitest": "^5.0.0"
   },
   "dependencies": {
     "@minute/prisma": "workspace:*",
