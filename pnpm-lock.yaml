@@ -73,7 +73,7 @@ importers:
         version: 2.2.10(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@hookform/resolvers':
         specifier: ^5.7.1
-        version: 5.7.1(@sinclair/typebox@0.27.8)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(arktype@2.1.20)(effect@3.20.0)(react-hook-form@7.84.0(react@19.2.8))(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)
+        version: 5.7.1(@sinclair/typebox@0.27.8)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(arktype@2.1.20)(effect@3.20.0)(react-hook-form@7.84.0(react@19.2.8))(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)
       '@minute/prisma':
         specifier: workspace:*
         version: link:../../packages/prisma
@@ -97,7 +97,7 @@ importers:
         version: 1.2.16(@types/react-dom@19.3.0(@types/react@19.3.0))(@types/react@19.3.0)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.0
-        version: 0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)
+        version: 0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)
       '@tanstack/react-query':
         specifier: ^5.101.4
         version: 5.101.4(react@19.2.8)
@@ -177,8 +177,8 @@ importers:
         specifier: ^3.1.1
         version: 3.1.1(react@19.2.8)
       zod:
-        specifier: ^3.23.8
-        version: 3.25.76
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@faker-js/faker':
         specifier: ^10.0.0
@@ -308,8 +308,8 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       zod:
-        specifier: ^3.23.8
-        version: 3.25.76
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@minute/prisma':
         specifier: workspace:*
@@ -345,8 +345,8 @@ importers:
         specifier: ^0.0.1
         version: 0.0.1
       zod:
-        specifier: ^3.23.8
-        version: 3.25.76
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@factory-js/factory':
         specifier: ^0.4.0
@@ -394,8 +394,8 @@ importers:
         specifier: ^2.2.1
         version: 2.2.6
       zod:
-        specifier: ^3.23.8
-        version: 3.25.76
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@minute/tsconfig':
         specifier: workspace:*
@@ -431,8 +431,8 @@ importers:
         specifier: ^2.39.0
         version: 2.39.0
       zod:
-        specifier: ^3.23.8
-        version: 3.25.76
+        specifier: ^4.0.0
+        version: 4.1.11
     devDependencies:
       '@minute/tsconfig':
         specifier: workspace:*
@@ -586,11 +586,6 @@ packages:
 
   '@babel/parser@7.29.2':
     resolution: {integrity: sha512-4GgRzy/+fsBa72/RZVJmGKPmZu9Byn8o4MoLpmNe1m8ZfYnz5emHLQz3U4gLud6Zwl0RZIcgiLD7Uq7ySFuDLA==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
-  '@babel/parser@7.29.8':
-    resolution: {integrity: sha512-E8lTAYNB1KW+FH+VGJuZM1ioAx2E6oVlvQFRrf5P8ZZmsiJXYAD9vTFV7yyEURNzgh1dFqMZuO6tUwcARbqFCA==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
@@ -5504,9 +5499,6 @@ packages:
     peerDependencies:
       zod: ^3.25.0 || ^4.0.0
 
-  zod@3.25.76:
-    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
-
   zod@4.1.11:
     resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
 
@@ -5591,7 +5583,7 @@ snapshots:
       '@babel/helper-compilation-targets': 7.29.7
       '@babel/helper-module-transforms': 7.29.7(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2)
       '@babel/helpers': 7.29.7
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.7(supports-color@10.2.2)
       '@babel/types': 7.29.8
@@ -5614,7 +5606,7 @@ snapshots:
 
   '@babel/generator@7.29.7':
     dependencies:
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/types': 7.29.8
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
@@ -5700,10 +5692,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.0
 
-  '@babel/parser@7.29.8':
-    dependencies:
-      '@babel/types': 7.29.8
-
   '@babel/parser@7.29.9':
     dependencies:
       '@babel/types': 7.29.8
@@ -5729,7 +5717,7 @@ snapshots:
   '@babel/template@7.29.7':
     dependencies:
       '@babel/code-frame': 7.29.7
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/types': 7.29.8
 
   '@babel/traverse@7.29.0(supports-color@10.2.2)':
@@ -5749,7 +5737,7 @@ snapshots:
       '@babel/code-frame': 7.29.7
       '@babel/generator': 7.29.7
       '@babel/helper-globals': 7.29.7
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/template': 7.29.7
       '@babel/types': 7.29.8
       debug: 4.4.3(supports-color@10.2.2)
@@ -6063,7 +6051,7 @@ snapshots:
     dependencies:
       tailwindcss: 4.3.3
 
-  '@hookform/resolvers@5.7.1(@sinclair/typebox@0.27.8)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(arktype@2.1.20)(effect@3.20.0)(react-hook-form@7.84.0(react@19.2.8))(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)':
+  '@hookform/resolvers@5.7.1(@sinclair/typebox@0.27.8)(@standard-schema/spec@1.1.0)(ajv@8.20.0)(arktype@2.1.20)(effect@3.20.0)(react-hook-form@7.84.0(react@19.2.8))(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)':
     dependencies:
       '@standard-schema/utils': 0.3.0
       react-hook-form: 7.84.0(react@19.2.8)
@@ -6074,7 +6062,7 @@ snapshots:
       arktype: 2.1.20
       effect: 3.20.0
       valibot: 1.4.2(typescript@5.9.3)
-      zod: 3.25.76
+      zod: 4.1.11
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -7019,21 +7007,21 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@t3-oss/env-core@0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)':
+  '@t3-oss/env-core@0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)':
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.9.3
       valibot: 1.4.2(typescript@5.9.3)
-      zod: 3.25.76
+      zod: 4.1.11
 
-  '@t3-oss/env-nextjs@0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)':
+  '@t3-oss/env-nextjs@0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)':
     dependencies:
-      '@t3-oss/env-core': 0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@3.25.76)
+      '@t3-oss/env-core': 0.13.11(arktype@2.1.20)(typescript@5.9.3)(valibot@1.4.2(typescript@5.9.3))(zod@4.1.11)
     optionalDependencies:
       arktype: 2.1.20
       typescript: 5.9.3
       valibot: 1.4.2(typescript@5.9.3)
-      zod: 3.25.76
+      zod: 4.1.11
 
   '@tailwindcss/node@4.3.3':
     dependencies:
@@ -8559,8 +8547,8 @@ snapshots:
       '@babel/parser': 7.29.9
       eslint: 9.39.5(jiti@2.7.0)(supports-color@10.2.2)
       hermes-parser: 0.25.1
-      zod: 3.25.76
-      zod-validation-error: 4.0.2(zod@3.25.76)
+      zod: 4.1.11
+      zod-validation-error: 4.0.2(zod@4.1.11)
     transitivePeerDependencies:
       - supports-color
 
@@ -9334,7 +9322,7 @@ snapshots:
 
   magicast@0.5.4:
     dependencies:
-      '@babel/parser': 7.29.8
+      '@babel/parser': 7.29.9
       '@babel/types': 7.29.8
       source-map-js: 1.2.1
 
@@ -10674,10 +10662,8 @@ snapshots:
 
   zero-fill@2.2.4: {}
 
-  zod-validation-error@4.0.2(zod@3.25.76):
+  zod-validation-error@4.0.2(zod@4.1.11):
     dependencies:
-      zod: 3.25.76
-
-  zod@3.25.76: {}
+      zod: 4.1.11
 
   zod@4.1.11: {}
