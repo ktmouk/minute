@@ -29,11 +29,11 @@
     "@minute/tsconfig": "workspace:*",
     "@types/node": "24.13.6",
     "date-fns": "^4.0.0",
-    "dotenv": "^17.2.3",
+    "dotenv": "^18.0.0",
     "dotenv-cli": "^11.0.0",
     "lint-staged": "^17.3.0",
     "prisma": "7.10.0",
-    "typescript": "5.9.3"
+    "typescript": "7.0.2"
   },
   "dependencies": {
     "@prisma/adapter-pg": "^7.9.1",
